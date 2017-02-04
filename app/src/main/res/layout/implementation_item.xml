@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.github.takahirom.material_design_animation_playground.ForegroundConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:stateListAnimator="@animator/raise"
+    android:clickable="true"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/implementation_imge"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/implementation_image"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:background="#7F000000"
+        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/implementation_imge"></View>
+
+    <TextView
+        android:id="@+id/implementation_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#ffffff"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        android:layout_marginStart="16dp" />
+</com.github.takahirom.material_design_animation_playground.ForegroundConstraintLayout>
