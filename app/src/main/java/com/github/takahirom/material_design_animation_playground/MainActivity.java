@@ -16,7 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
-import com.github.takahirom.material_design_animation_playground.dynamicdurations.DurationAndEasingActivity;
+import com.github.takahirom.material_design_animation_playground.durationeasing.DurationAndEasingActivity;
 
 public class MainActivity extends AppCompatActivity {
 

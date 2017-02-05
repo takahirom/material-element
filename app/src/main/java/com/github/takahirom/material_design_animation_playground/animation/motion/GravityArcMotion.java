@@ -163,7 +163,7 @@ public class GravityArcMotion extends ArcMotion {
 
             float minimumArcDist2 = 0;
 
-            if (Math.abs(deltaX) < Math.abs(deltaY)) {
+            if (Math.abs(deltaX) <= Math.abs(deltaY)) {
                 // Similar triangles bfa and bde mean that (ab/fb = eb/bd)
                 // Therefore, eb = ab * bd / fb
                 // ab = hypotenuse

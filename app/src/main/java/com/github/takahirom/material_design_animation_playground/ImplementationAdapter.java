@@ -1,7 +1,5 @@
 package com.github.takahirom.material_design_animation_playground;
 
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.github.takahirom.material_design_animation_playground.dynamicdurations.DurationAndEasingActivity;
+import com.github.takahirom.material_design_animation_playground.durationeasing.DurationAndEasingActivity;
+import com.github.takahirom.material_design_animation_playground.movement.MovementActivity;
 
 import java.util.ArrayList;
 
@@ -22,7 +21,31 @@ public class ImplementationAdapter extends RecyclerView.Adapter<ImplementationAd
     public ImplementationAdapter(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
         listItems = new ArrayList<>();
-        for (int i = 0; i < 30; i++) {
+        listItems.add(
+                    new ListItem(
+                            1,
+                            "Duration & easing",
+                            "https://storage.googleapis.com/material-design/publish/material_v_10/assets/0BybB4JO78tNpRlY1eHJ4LTh4ZjQ/01-duration-and-easing.png",
+                            DurationAndEasingActivity.class
+                    )
+            );
+        listItems.add(
+                    new ListItem(
+                            2,
+                            "Movement",
+                            "https://storage.googleapis.com/material-design/publish/material_v_10/assets/0BybB4JO78tNpWnRtS1RnaVk3Sjg/02-movement.png",
+                            MovementActivity.class
+                    )
+            );
+        listItems.add(
+                    new ListItem(
+                            2,
+                            "Transforming material",
+                            "https://storage.googleapis.com/material-design/publish/material_v_10/assets/0BybB4JO78tNpNHFEd2JvRXlqRlU/03-transforming-material.png",
+                            TransformingActivity.class
+                    )
+            );
+        for (int i = 10; i < 30; i++) {
             listItems.add(
                     new ListItem(
                             i,

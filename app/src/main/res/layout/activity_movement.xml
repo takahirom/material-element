@@ -2,10 +2,9 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.github.takahirom.material_design_animation_playground.durationeasing.DurationAndEasingActivity">
+    tools:context="com.github.takahirom.material_design_animation_playground.movement.MovementActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -40,14 +39,28 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_duration_easing" />
+    <include layout="@layout/content_movement" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_margin="@dimen/fab_margin" />
 
+    <android.support.v7.widget.CardView
+        android:id="@+id/inset_card"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_gravity="bottom"
+        android:layout_margin="8dp"
+        android:translationY="128dp"
+        app:layout_insetEdge="bottom">
+
+        <TextView
+            android:layout_margin="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This animation uses standard curve" />
+    </android.support.v7.widget.CardView>
 </android.support.design.widget.CoordinatorLayout>

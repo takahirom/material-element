@@ -3,4 +3,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_dynamic_durations">DynamicDurationsActivity</string>
     <string name="implementation_image">implementation image</string>
+    <string name="title_activity_movement">MovementActivity</string>
+    <string name="title_activity_transforming">TransformingActivity</string>
 </resources>

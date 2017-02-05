@@ -1,9 +1,8 @@
-package com.github.takahirom.material_design_animation_playground.dynamicdurations;
+package com.github.takahirom.material_design_animation_playground.durationeasing;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.animation.FastOutLinearInInterpolator;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;

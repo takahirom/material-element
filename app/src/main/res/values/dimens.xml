@@ -1,4 +1,5 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="touch_raise">6dp</dimen>
+    <dimen name="elevation_card">2dp</dimen>
 </resources>
