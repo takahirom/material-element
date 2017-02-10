@@ -30,7 +30,7 @@
             android:label="@string/title_activity_movement"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TransformingActivity"
+            android:name=".transforming.TransformingActivity"
             android:label="@string/title_activity_transforming"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
