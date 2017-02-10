@@ -129,7 +129,7 @@ public class MovementActivity extends AppCompatActivity {
         final RelativeLayout sceneRoot = (RelativeLayout) findViewById(R.id.arc_scene_root);
         arcScene1 = Scene.getSceneForLayout(sceneRoot, R.layout.card_arc_scene1, this);
         arcScene2 = Scene.getSceneForLayout(sceneRoot, R.layout.card_arc_scene2, this);
-        findViewById(R.id.arc_scene_root).setOnClickListener(new View.OnClickListener() {
+        sceneRoot.setOnClickListener(new View.OnClickListener() {
             boolean isScene2 = false;
 
             @Override
@@ -149,7 +149,7 @@ public class MovementActivity extends AppCompatActivity {
         final RelativeLayout sceneRoot = (RelativeLayout) findViewById(R.id.not_arc_scene_root);
         notArcScene1 = Scene.getSceneForLayout(sceneRoot, R.layout.card_not_arc_scene1, this);
         notArcScene2 = Scene.getSceneForLayout(sceneRoot, R.layout.card_not_arc_scene2, this);
-        findViewById(R.id.not_arc_scene_root).setOnClickListener(new View.OnClickListener() {
+        sceneRoot.setOnClickListener(new View.OnClickListener() {
             boolean isScene2 = false;
 
             @Override
