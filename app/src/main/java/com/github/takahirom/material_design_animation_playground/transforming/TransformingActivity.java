@@ -4,12 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
-import android.transition.Scene;
 import android.transition.Transition;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -20,6 +20,7 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.github.takahirom.material_design_animation_playground.ListItem;
 import com.github.takahirom.material_design_animation_playground.R;
+import com.github.takahirom.material_design_animation_playground.animation.transition.FabTransform;
 
 public class TransformingActivity extends AppCompatActivity {
 
@@ -152,6 +153,17 @@ public class TransformingActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent intent = new Intent(TransformingActivity.this, LoginActivity.class);
+                final ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(TransformingActivity.this, v, getString(R.string.transition_name_login));
+                FabTransform.addExtras(intent, getColor(R.color.colorAccent), R.drawable.ic_add_white_24dp);
+                ActivityCompat.startActivity(TransformingActivity.this, intent, optionsCompat.toBundle());
+            }
+        });
+
+
     }
 
     @Override
@@ -166,6 +178,7 @@ public class TransformingActivity extends AppCompatActivity {
         setResult(RESULT_OK, resultData);
         ActivityCompat.finishAfterTransition(this);
     }
+
 
 }
 

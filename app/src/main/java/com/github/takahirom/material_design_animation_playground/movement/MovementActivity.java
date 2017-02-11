@@ -22,6 +22,7 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.github.takahirom.material_design_animation_playground.ListItem;
 import com.github.takahirom.material_design_animation_playground.R;
+import com.github.takahirom.material_design_animation_playground.animation.motion.GravityArcMotion;
 
 public class MovementActivity extends AppCompatActivity {
 
@@ -126,6 +127,7 @@ public class MovementActivity extends AppCompatActivity {
     }
 
     private void setupArcMotion() {
+
         final RelativeLayout sceneRoot = (RelativeLayout) findViewById(R.id.arc_scene_root);
         arcScene1 = Scene.getSceneForLayout(sceneRoot, R.layout.card_arc_scene1, this);
         arcScene2 = Scene.getSceneForLayout(sceneRoot, R.layout.card_arc_scene2, this);
@@ -134,10 +136,11 @@ public class MovementActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                final Transition transition = TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.change_bounds_arc);
                 if (isScene2) {
-                    TransitionManager.go(arcScene1, TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.shared_element_card));
+                    TransitionManager.go(arcScene1, transition);
                 } else {
-                    TransitionManager.go(arcScene2, TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.shared_element_card));
+                    TransitionManager.go(arcScene2, transition);
                 }
                 isScene2 = !isScene2;
             }
@@ -155,9 +158,9 @@ public class MovementActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (isScene2) {
-                    TransitionManager.go(notArcScene1, TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.shared_element_card));
+                    TransitionManager.go(notArcScene1, TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.change_bounds_arc));
                 } else {
-                    TransitionManager.go(notArcScene2, TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.shared_element_card));
+                    TransitionManager.go(notArcScene2, TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.change_bounds_arc));
                 }
                 isScene2 = !isScene2;
             }

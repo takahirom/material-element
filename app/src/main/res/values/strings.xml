@@ -5,4 +5,7 @@
     <string name="implementation_image">implementation image</string>
     <string name="title_activity_movement">MovementActivity</string>
     <string name="title_activity_transforming">TransformingActivity</string>
+
+    <string name="transition_name_login" translatable="false">login</string>
+    <string name="login_title">Log in to My Service</string>
 </resources>

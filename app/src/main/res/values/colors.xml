@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#8000a0</color>
-    <color name="colorPrimaryDark">#5d008f</color>
-    <color name="colorAccent">#f2004a</color>
+    <color name="colorPrimary">#8e24aa</color>
+    <color name="colorPrimaryDark">#6a1b9a</color>
+    <color name="colorAccent">#f50057</color>
+
+    <color name="scrim">#99323232</color>
+    <color name="background_light">#fafafa</color> <!-- grey 50 -->
 </resources>

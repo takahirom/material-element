@@ -25,7 +25,7 @@
     <View
         android:id="@+id/view"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
+        android:layout_height="@dimen/spacing_xlarge"
         android:background="#7F000000"
         app:layout_constraintBottom_toBottomOf="@+id/implementation_imge"
         tools:layout_editor_absoluteX="0dp" />
@@ -34,8 +34,8 @@
         android:id="@+id/implementation_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginLeft="@dimen/spacing_normal"
+        android:layout_marginStart="@dimen/spacing_normal"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
         android:textColor="#ffffff"

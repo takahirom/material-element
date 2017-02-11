@@ -33,6 +33,10 @@
             android:name=".transforming.TransformingActivity"
             android:label="@string/title_activity_transforming"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".transforming.LoginActivity"
+            android:theme="@style/AppTheme.Translucent.Login"
+            />
     </application>
 
 </manifest>
