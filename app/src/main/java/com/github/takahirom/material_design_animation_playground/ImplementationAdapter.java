@@ -46,6 +46,14 @@ public class ImplementationAdapter extends RecyclerView.Adapter<ImplementationAd
                             TransformingActivity.class
                     )
             );
+        listItems.add(
+                    new ListItem(
+                            3,
+                            "Choreography",
+                            "https://storage.googleapis.com/material-design/publish/material_v_10/assets/0BybB4JO78tNpaEZJZ0E2ODQ1blE/04-choreography.png",
+                            ChoreographyActivity.class
+                    )
+            );
         for (int i = 10; i < 30; i++) {
             listItems.add(
                     new ListItem(

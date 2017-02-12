@@ -43,7 +43,7 @@ public class FabTransform extends Transition {
     private static final String EXTRA_FAB_COLOR = "EXTRA_FAB_COLOR";
     private static final String EXTRA_FAB_ICON_RES_ID = "EXTRA_FAB_ICON_RES_ID";
     private static final long DEFAULT_DURATION = 240L;
-    private static final String PROP_BOUNDS = "plaid:fabTransform:bounds";
+    private static final String PROP_BOUNDS = "mdap:fabTransform:bounds";
     private static final String[] TRANSITION_PROPERTIES = {
             PROP_BOUNDS
     };

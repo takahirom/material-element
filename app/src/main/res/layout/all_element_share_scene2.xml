@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/all_content_element_all_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:showIn="@layout/content_choreography">
+
+    <ImageView
+        android:id="@+id/all_content_element_share_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:contentDescription="@null"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/all_content_element_share_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/all_content_element_share_image"
+        android:layout_toRightOf="@id/all_content_element_share_image"
+        android:text="All content elements are shared"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/all_content_element_share_image"
+        android:background="@android:drawable/divider_horizontal_bright" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/divider"
+        android:layout_margin="@dimen/spacing_normal"
+        android:layout_marginLeft="@dimen/spacing_normal"
+        android:text="While a surface is expanding, a significant number of elements should remain visible during the transition.\n\nComplex transitions should keep a single element visible."
+        android:transitionName="all_content_element_not_share_text" />
+</RelativeLayout>

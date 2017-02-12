@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="375">
+    <changeBounds />
+    <fade android:duration="75">
+        <targets android:targetName="all_content_element_not_share_text" />
+    </fade>
+</transitionSet>
