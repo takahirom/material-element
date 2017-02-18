@@ -3,6 +3,6 @@
     android:duration="375">
     <changeBounds />
     <fade android:duration="75">
-        <targets android:targetName="all_content_element_not_share_text" />
+        <targets android:targetName="all_content_element_nonshare_text" />
     </fade>
 </transitionSet>

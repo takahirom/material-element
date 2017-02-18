@@ -1,12 +1,14 @@
-package com.github.takahirom.material_design_animation_playground;
+package com.github.takahirom.material_design_animation_playground.choreography;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
@@ -16,12 +18,12 @@ import android.transition.TransitionInflater;
 import android.transition.TransitionManager;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
+import com.github.takahirom.material_design_animation_playground.ListItem;
+import com.github.takahirom.material_design_animation_playground.R;
 
 public class ChoreographyActivity extends AppCompatActivity {
 
@@ -50,14 +52,14 @@ public class ChoreographyActivity extends AppCompatActivity {
 //        collapsingToolbarLayout.setExpandedTitleColor(ContextCompat.ChoreographyActivity.this, android.R.color.white));
 
         final ImageView rowImage = (ImageView) findViewById(R.id.all_content_element_share_image);
-        Glide.with(this).load(item.imageUrl).asBitmap().into(new BitmapImageViewTarget(imageView) {
+        Glide.with(this).load(R.drawable.choreography).asBitmap().into(new BitmapImageViewTarget(imageView) {
             @Override
             protected void setResource(Bitmap resource) {
                 imageView.setImageBitmap(resource);
                 imageView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
                     @Override
                     public boolean onPreDraw() {
-                        ActivityCompat.startPostponedEnterTransition(com.github.takahirom.material_design_animation_playground.ChoreographyActivity.this);
+                        ActivityCompat.startPostponedEnterTransition(ChoreographyActivity.this);
                         imageView.getViewTreeObserver().removeOnPreDrawListener(this);
                         return true;
                     }
@@ -112,6 +114,19 @@ public class ChoreographyActivity extends AppCompatActivity {
                 isScene1 = !isScene1;
             }
         });
+        cardView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                final Intent intent = new Intent(ChoreographyActivity.this, ShareAllElementActivity.class);
+                final ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(ChoreographyActivity.this, cardView.getChildAt(0), "all_element_share");
+                ActivityCompat.startActivity(ChoreographyActivity.this, intent, optionsCompat.toBundle());
+                return false;
+            }
+        });
+
+
+
+
 
     }
 

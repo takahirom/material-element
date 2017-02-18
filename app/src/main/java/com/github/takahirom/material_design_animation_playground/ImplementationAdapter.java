@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.github.takahirom.material_design_animation_playground.choreography.ChoreographyActivity;
 import com.github.takahirom.material_design_animation_playground.durationeasing.DurationAndEasingActivity;
 import com.github.takahirom.material_design_animation_playground.movement.MovementActivity;
 import com.github.takahirom.material_design_animation_playground.transforming.TransformingActivity;

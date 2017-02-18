@@ -28,18 +28,21 @@
         <activity
             android:name=".movement.MovementActivity"
             android:label="@string/title_activity_movement"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar.Detail" />
         <activity
             android:name=".transforming.TransformingActivity"
             android:label="@string/title_activity_transforming"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar.Detail" />
         <activity
             android:name=".transforming.LoginActivity"
             android:theme="@style/AppTheme.Translucent.Login" />
         <activity
-            android:name=".ChoreographyActivity"
+            android:name=".choreography.ChoreographyActivity"
             android:label="@string/title_activity_choreography"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar.Detail" />
+        <activity android:name=".choreography.ShareAllElementActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
     </application>
 
 </manifest>

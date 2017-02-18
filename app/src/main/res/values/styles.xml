@@ -13,6 +13,11 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.NoActionBar.ChoreographyShare">
+        <item name="android:windowSharedElementEnterTransition">@transition/continuity_enter</item>
+        <item name="android:windowSharedElementReturnTransition">@transition/continuity_exit</item>
+    </style>
+
     <style name="AppTheme.NoActionBar.Detail">
         <item name="android:windowSharedElementEnterTransition">@transition/shared_element</item>
         <item name="android:windowSharedElementReturnTransition">@transition/shared_element</item>
