@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/all_content_element_all_layout"
-    android:layout_width="match_parent"
+    android:id="@+id/few_content_element_all_layout"
+    android:layout_width="96dp"
     android:layout_height="wrap_content"
     android:transitionGroup="true"
     tools:showIn="@layout/content_choreography">
 
     <ImageView
-        android:id="@+id/all_element_share_image"
+        android:id="@+id/few_element_share_image"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:contentDescription="@null" />
 
     <TextView
-        android:id="@+id/all_content_element_share_text"
+        android:id="@+id/few_element_share_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/all_element_share_image"
-        android:layout_toRightOf="@id/all_element_share_image"
-        android:text="All content elements are shared"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/few_element_share_image"
+        android:text="few element"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 </RelativeLayout>

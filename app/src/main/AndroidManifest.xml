@@ -41,7 +41,10 @@
             android:label="@string/title_activity_choreography"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
         <activity android:name=".choreography.ShareAllElementActivity"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:theme="@style/AppTheme.NoActionBar.ChoreographyShare"
+            />
+        <activity android:name=".choreography.ShareFewElementActivity"
+            android:theme="@style/AppTheme.NoActionBar.ChoreographyFewShare"
             />
     </application>
 

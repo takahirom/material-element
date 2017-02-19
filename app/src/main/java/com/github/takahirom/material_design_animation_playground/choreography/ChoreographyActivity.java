@@ -8,7 +8,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
-import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
@@ -51,7 +50,8 @@ public class ChoreographyActivity extends AppCompatActivity {
         ActivityCompat.postponeEnterTransition(this);
 //        collapsingToolbarLayout.setExpandedTitleColor(ContextCompat.ChoreographyActivity.this, android.R.color.white));
 
-        final ImageView rowImage = (ImageView) findViewById(R.id.all_content_element_share_image);
+        final ImageView allShareRowImage = (ImageView) findViewById(R.id.all_element_share_image);
+        final ImageView fewShareImage = (ImageView) findViewById(R.id.few_element_share_image);
         Glide.with(this).load(R.drawable.choreography).asBitmap().into(new BitmapImageViewTarget(imageView) {
             @Override
             protected void setResource(Bitmap resource) {
@@ -68,7 +68,8 @@ public class ChoreographyActivity extends AppCompatActivity {
                 RoundedBitmapDrawable circularBitmapDrawable =
                         RoundedBitmapDrawableFactory.create(getResources(), resource);
                 circularBitmapDrawable.setCircular(true);
-                rowImage.setImageDrawable(circularBitmapDrawable);
+                allShareRowImage.setImageDrawable(circularBitmapDrawable);
+                fewShareImage.setImageDrawable(circularBitmapDrawable);
             }
         });
         getWindow().getSharedElementEnterTransition().addListener(new Transition.TransitionListener() {
@@ -100,16 +101,24 @@ public class ChoreographyActivity extends AppCompatActivity {
             }
         });
 
-        final CardView cardView = (CardView) findViewById(R.id.all_content_element_share_card);
+        setupAllElemenShared(allShareRowImage);
+
+        setupFewElementsAreShared(fewShareImage);
+    }
+
+
+    private void setupAllElemenShared(final ImageView rowImage) {
+        final CardView cardView = (CardView) findViewById(R.id.all_element_share_card);
         cardView.setOnClickListener(new View.OnClickListener() {
             boolean isScene1 = true;
+
             @Override
             public void onClick(View v) {
                 final Scene scene = Scene.getSceneForLayout(cardView, isScene1 ? R.layout.all_element_share_scene2 : R.layout.all_element_share_scene1, ChoreographyActivity.this);
-                final Transition transition = TransitionInflater.from(ChoreographyActivity.this).inflateTransition(isScene1 ? R.transition.continuity_enter : R.transition.continuity_exit);
+                final Transition transition = TransitionInflater.from(ChoreographyActivity.this).inflateTransition(isScene1 ? R.transition.all_elemnet_share_enter : R.transition.all_element_share_return);
                 TransitionManager.go(scene, transition);
 
-                ((ImageView) scene.getSceneRoot().findViewById(R.id.all_content_element_share_image)).setImageDrawable(rowImage.getDrawable());
+                ((ImageView) scene.getSceneRoot().findViewById(R.id.all_element_share_image)).setImageDrawable(rowImage.getDrawable());
 
                 isScene1 = !isScene1;
             }
@@ -123,11 +132,34 @@ public class ChoreographyActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
 
+    private void setupFewElementsAreShared(final ImageView fewShareImage) {
+        final CardView cardView = (CardView) findViewById(R.id.few_element_share_card);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            boolean isScene1 = true;
 
+            @Override
+            public void onClick(View v) {
+                final Scene scene = Scene.getSceneForLayout(cardView, isScene1 ? R.layout.few_element_share_scene2 : R.layout.few_element_share_scene1, ChoreographyActivity.this);
+                final Transition transition = TransitionInflater.from(ChoreographyActivity.this).inflateTransition(R.transition.few_elemnet_share_enter);
+                TransitionManager.go(scene, transition);
 
+                ((ImageView) scene.getSceneRoot().findViewById(R.id.few_element_share_image)).setImageDrawable(fewShareImage.getDrawable());
 
+                isScene1 = !isScene1;
+            }
+        });
 
+        cardView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                final Intent intent = new Intent(ChoreographyActivity.this, ShareFewElementActivity.class);
+                final ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(ChoreographyActivity.this, cardView.getChildAt(0), "few_element_share");
+                ActivityCompat.startActivity(ChoreographyActivity.this, intent, optionsCompat.toBundle());
+                return false;
+            }
+        });
     }
 
 

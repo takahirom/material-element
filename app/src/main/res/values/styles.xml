@@ -13,14 +13,22 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+
+
     <style name="AppTheme.NoActionBar.ChoreographyShare">
-        <item name="android:windowSharedElementEnterTransition">@transition/continuity_enter</item>
-        <item name="android:windowSharedElementReturnTransition">@transition/continuity_exit</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/all_elemnet_share_enter</item>
+        <item name="android:windowSharedElementReturnTransition">@transition/all_element_share_return</item>
     </style>
 
+    <style name="AppTheme.NoActionBar.ChoreographyFewShare">
+        <item name="android:windowSharedElementEnterTransition">@transition/few_elemnet_share_enter</item>
+        <item name="android:windowSharedElementReturnTransition">@transition/few_elemnet_share_return</item>
+    </style>
+
+
     <style name="AppTheme.NoActionBar.Detail">
-        <item name="android:windowSharedElementEnterTransition">@transition/shared_element</item>
-        <item name="android:windowSharedElementReturnTransition">@transition/shared_element</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/default_share</item>
+        <item name="android:windowSharedElementReturnTransition">@transition/default_share</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

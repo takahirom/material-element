@@ -1,11 +1,12 @@
 package com.github.takahirom.material_design_animation_playground.choreography;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 
@@ -13,15 +14,15 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.github.takahirom.material_design_animation_playground.R;
 
-public class ShareAllElementActivity extends AppCompatActivity {
+public class ShareFewElementActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.all_element_share_scene2);
+        setContentView(R.layout.activity_share_few_element);
 
         ActivityCompat.postponeEnterTransition(this);
-        final ImageView rowImage = (ImageView) findViewById(R.id.all_element_share_image);
+        final ImageView rowImage = (ImageView) findViewById(R.id.few_element_share_image);
         Glide.with(this).load(R.drawable.choreography).asBitmap().into(new BitmapImageViewTarget(rowImage) {
             @Override
             protected void setResource(Bitmap resource) {
@@ -32,7 +33,7 @@ public class ShareAllElementActivity extends AppCompatActivity {
                 rowImage.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
                     @Override
                     public boolean onPreDraw() {
-                        ActivityCompat.startPostponedEnterTransition(ShareAllElementActivity.this);
+                        ActivityCompat.startPostponedEnterTransition(ShareFewElementActivity.this);
                         rowImage.getViewTreeObserver().removeOnPreDrawListener(this);
                         return true;
                     }
@@ -41,4 +42,17 @@ public class ShareAllElementActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        setResultAndFinish();
+    }
+
+
+    void setResultAndFinish() {
+        final Intent resultData = new Intent();
+        setResult(RESULT_OK, resultData);
+        ActivityCompat.finishAfterTransition(this);
+    }
+
 }

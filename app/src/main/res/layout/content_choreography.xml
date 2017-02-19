@@ -44,23 +44,23 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <FrameLayout
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
             android:layout_width="match_parent"
-            android:layout_height="176dp">
+            android:layout_height="176dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp">
 
             <android.support.v7.widget.CardView
-                android:id="@+id/all_content_element_share_card"
+                android:id="@+id/all_element_share_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:stateListAnimator="@animator/raise"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp">
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:stateListAnimator="@animator/raise">
 
                 <include layout="@layout/all_element_share_scene1" />
             </android.support.v7.widget.CardView>
@@ -73,5 +73,27 @@
             android:layout_marginTop="@dimen/spacing_large"
             android:text="Few or no content elements are shared"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="248dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/few_element_share_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:stateListAnimator="@animator/raise">
+                <include layout="@layout/few_element_share_scene1" />
+            </android.support.v7.widget.CardView>
+        </FrameLayout>
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

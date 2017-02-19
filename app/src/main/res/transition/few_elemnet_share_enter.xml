@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:duration="375"
+    android:interpolator="@android:interpolator/fast_out_slow_in">
+    <fade
+        android:duration="150"
+        android:startDelay="75" />
+    <transition class="com.github.takahirom.material_design_animation_playground.animation.transition.AsymmetricTransform">
+        <targets>
+            <target android:targetId="@id/few_element_share_card" />
+        </targets>
+    </transition>
+    <changeBounds>
+        <targets>
+            <target android:targetId="@id/few_element_share_image" />
+        </targets>
+    </changeBounds>
+    <!--<transition-->
+    <!--class="com.github.takahirom.material_design_animation_playground.animation.transition.LiftOff"-->
+    <!--app:initialElevation="@dimen/touch_raise">-->
+    <!--<targets>-->
+    <!--<target id="@id/few_element_share_card" />-->
+    <!--</targets>-->
+    <!--</transition>-->
+</transitionSet>
