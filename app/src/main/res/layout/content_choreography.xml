@@ -84,14 +84,16 @@
                 android:id="@+id/few_element_share_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|right"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="@dimen/spacing_normal_8dp"
                 android:layout_marginEnd="@dimen/spacing_normal_8dp"
                 android:layout_marginLeft="@dimen/spacing_normal_8dp"
                 android:layout_marginRight="@dimen/spacing_normal_8dp"
                 android:layout_marginStart="@dimen/spacing_normal_8dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:stateListAnimator="@animator/raise">
+                android:stateListAnimator="@animator/raise"
+                tools:targetApi="lollipop">
 
                 <include layout="@layout/few_element_share_scene1" />
             </android.support.v7.widget.CardView>
@@ -107,23 +109,33 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textColor="?colorPrimary" />
 
-        <ImageView
-            android:id="@+id/new_surface"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/padding_large_24dp"
-            android:layout_marginLeft="@dimen/spacing_normal_8dp"
-            android:layout_marginStart="@dimen/spacing_large_32dp"
-            app:srcCompat="@drawable/ic_apps_black_24dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
-            android:layout_marginRight="@dimen/spacing_normal_8dp"
             android:layout_marginTop="@dimen/spacing_large_32dp"
-            android:text="start choreographing surfaces"
-            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-            android:textColor="?colorPrimary" />
+            android:text="Creating new surfaces"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+
+        <ImageView
+            android:id="@+id/new_surface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_normal_8dp"
+            android:layout_marginBottom="@dimen/padding_large_24dp"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginStart="@dimen/spacing_large_32dp"
+            app:srcCompat="@drawable/ic_apps_black_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_large_32dp"
+            android:text="Start choreographing surfaces"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <Button
             android:id="@+id/start_choreographing_surfaces_button"
@@ -135,7 +147,29 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="380dp"
-            app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+            android:layout_height="380dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginRight="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_large_32dp"
+            android:text="Radial reaction"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="?colorPrimary" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/radical_reaction_card"
+            android:layout_width="272dp"
+            android:layout_height="272dp"
+            android:layout_marginBottom="@dimen/spacing_normal_8dp"
+            android:layout_marginEnd="@dimen/spacing_normal_8dp"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginRight="@dimen/spacing_normal_8dp"
+            android:layout_marginStart="@dimen/spacing_normal_8dp"
+            android:clickable="true"
+            android:stateListAnimator="@animator/raise"
+            tools:targetApi="lollipop" />
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

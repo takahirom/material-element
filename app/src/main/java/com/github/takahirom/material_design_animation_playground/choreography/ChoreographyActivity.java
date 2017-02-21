@@ -1,5 +1,6 @@
 package com.github.takahirom.material_design_animation_playground.choreography;
 
+import android.animation.Animator;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -16,6 +17,7 @@ import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.support.v4.widget.PopupWindowCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.ListPopupWindow;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -25,10 +27,13 @@ import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.transition.TransitionManager;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -42,6 +47,7 @@ import com.github.takahirom.material_design_animation_playground.ListItem;
 import com.github.takahirom.material_design_animation_playground.MainActivity;
 import com.github.takahirom.material_design_animation_playground.R;
 import com.github.takahirom.material_design_animation_playground.ScreenUtil;
+import com.github.takahirom.material_design_animation_playground.animation.transition.AnimatorUtils;
 
 import static com.github.takahirom.material_design_animation_playground.R.id.view;
 
@@ -129,6 +135,29 @@ public class ChoreographyActivity extends AppCompatActivity {
         setupCreation();
 
         setupChoreographingSurfaces();
+
+        setupRadicalReaction();
+    }
+
+    private void setupRadicalReaction() {
+        final CardView cardView = (CardView) findViewById(R.id.radical_reaction_card);
+        cardView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int endRadius = (int) (1.41421 * v.getWidth());
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    if (cardView.getChildCount() > 1){
+                        cardView.removeViewAt(0);
+                    }
+                    View view = new View(ChoreographyActivity.this);
+                    cardView.addView(view, new CardView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+                    view.setBackgroundColor(Color.RED);
+                    Animator circularReveal = ViewAnimationUtils.createCircularReveal(view, (int) event.getX(), (int) event.getY(), 0, endRadius);
+                    circularReveal.start();
+                }
+                return false;
+            }
+        });
     }
 
 
@@ -236,6 +265,12 @@ public class ChoreographyActivity extends AppCompatActivity {
 
     private void setupChoreographingSurfaces() {
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this){
+                @Override
+                public boolean canScrollVertically() {
+                return false;
+            }
+        });
         Button button = (Button) findViewById(R.id.start_choreographing_surfaces_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
