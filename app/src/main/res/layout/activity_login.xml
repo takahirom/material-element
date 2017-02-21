@@ -26,20 +26,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/spacing_normal"
+        android:layout_margin="@dimen/spacing_normal_8dp"
         android:background="@drawable/dialog_background"
         android:elevation="@dimen/z_fab"
         android:orientation="vertical"
-        android:padding="@dimen/spacing_large"
-        android:paddingTop="@dimen/spacing_xlarge"
+        android:padding="@dimen/spacing_large_32dp"
+        android:paddingTop="@dimen/spacing_xlarge_48dp"
         android:transitionName="@string/transition_name_login">
 
         <TextView
             android:id="@+id/dialog_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_normal"
-            android:layout_marginBottom="@dimen/dialog_title_spacing"
+            android:layout_marginStart="@dimen/spacing_normal_8dp"
+            android:layout_marginBottom="@dimen/dialog_title_spacing_20dp"
             android:text="@string/login_title"
             style="@style/TextAppearance.AppCompat.Title" />
 
@@ -47,7 +47,7 @@
             android:id="@+id/username_float_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_micro">
+            android:layout_marginStart="@dimen/spacing_micro_4dp">
 
             <AutoCompleteTextView
                 android:id="@+id/username"
@@ -62,13 +62,13 @@
             android:id="@+id/permission_primer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_normal" />
+            android:layout_marginStart="@dimen/spacing_normal_8dp" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/password_float_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_micro"
+            android:layout_marginStart="@dimen/spacing_micro_4dp"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="?colorControlNormal">
 

@@ -12,10 +12,12 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
+import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.support.v4.widget.PopupWindowCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.ListPopupWindow;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.transition.ChangeBounds;
 import android.transition.Scene;
@@ -28,6 +30,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
@@ -124,50 +127,8 @@ public class ChoreographyActivity extends AppCompatActivity {
         setupFewElementsAreShared(fewShareImage);
 
         setupCreation();
-    }
 
-    private void setupCreation() {
-        findViewById(R.id.new_surface).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View view) {
-
-                final CardView contentView = new CardView(ChoreographyActivity.this);
-
-                contentView.setUseCompatPadding(true);
-                final TextView textView = new TextView(ChoreographyActivity.this);
-                textView.setText("test");
-                contentView.addView(textView);
-
-                int dp8 = (int) ScreenUtil.dp2px(8, ChoreographyActivity.this);
-                ((CardView.LayoutParams) textView.getLayoutParams()).setMargins(dp8, dp8, dp8, dp8);
-                final int dp80 = (int) ScreenUtil.dp2px(80, ChoreographyActivity.this);
-
-                final PopupWindow popupWindow = new PopupWindow(contentView, dp80, dp80, true);
-                popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                popupWindow.setOutsideTouchable(true);
-                popupWindow.showAsDropDown(view);
-
-                contentView.getLayoutParams().height = 0;
-                contentView.getLayoutParams().width = 0;
-                ((FrameLayout.LayoutParams) contentView.getLayoutParams()).gravity = Gravity.BOTTOM;
-
-                contentView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
-                    @Override
-                    public boolean onPreDraw() {
-                        contentView.getViewTreeObserver().removeOnPreDrawListener(this);
-
-                        TransitionManager.beginDelayedTransition(contentView, new ChangeBounds()
-                                .setInterpolator(new FastOutSlowInInterpolator()));
-
-                        contentView.getLayoutParams().height = dp80;
-                        contentView.getLayoutParams().width = dp80;
-
-                        return false;
-                    }
-                });
-
-            }
-        });
+        setupChoreographingSurfaces();
     }
 
 
@@ -225,6 +186,65 @@ public class ChoreographyActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    private void setupCreation() {
+        findViewById(R.id.new_surface).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+
+                final CardView contentView = new CardView(ChoreographyActivity.this);
+
+                contentView.setUseCompatPadding(true);
+                final TextView textView = new TextView(ChoreographyActivity.this);
+                textView.setText("test");
+                contentView.addView(textView);
+
+                int dp8 = (int) ScreenUtil.dp2px(8, ChoreographyActivity.this);
+                ((CardView.LayoutParams) textView.getLayoutParams()).setMargins(dp8, dp8, dp8, dp8);
+                final int dp80 = (int) ScreenUtil.dp2px(80, ChoreographyActivity.this);
+
+                final PopupWindow popupWindow = new PopupWindow(contentView, dp80, dp80, true);
+                popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                popupWindow.setOutsideTouchable(true);
+                popupWindow.showAsDropDown(view);
+
+                contentView.getLayoutParams().height = 0;
+                contentView.getLayoutParams().width = 0;
+
+                ((FrameLayout.LayoutParams) contentView.getLayoutParams()).gravity = Gravity.TOP;
+
+                contentView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+                    @Override
+                    public boolean onPreDraw() {
+                        contentView.getViewTreeObserver().removeOnPreDrawListener(this);
+
+                        TransitionManager.beginDelayedTransition(contentView, new ChangeBounds()
+                                .setInterpolator(new LinearOutSlowInInterpolator()));
+
+                        contentView.getLayoutParams().height = dp80;
+                        contentView.getLayoutParams().width = dp80;
+
+                        return false;
+                    }
+                });
+
+            }
+        });
+    }
+
+
+    private void setupChoreographingSurfaces() {
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        Button button = (Button) findViewById(R.id.start_choreographing_surfaces_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recyclerView.setAdapter(new AnimateRecyclerAdapter());
+            }
+        });
+    }
+
 
 
     @Override

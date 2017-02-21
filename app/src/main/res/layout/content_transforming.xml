@@ -16,20 +16,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/spacing_normal"
-            android:layout_marginLeft="@dimen/spacing_normal"
-            android:layout_marginRight="@dimen/spacing_normal"
-            android:layout_marginStart="@dimen/spacing_normal"
-            android:layout_marginTop="@dimen/spacing_normal"
+            android:layout_marginEnd="@dimen/spacing_normal_8dp"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginRight="@dimen/spacing_normal_8dp"
+            android:layout_marginStart="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_normal_8dp"
             android:text="Material can make surfaces feel alive by multiplying and dividing them, and changing their shape and size."
             android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/spacing_normal"
-            android:layout_marginRight="@dimen/spacing_normal"
-            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginRight="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_large_32dp"
             android:text="Rectangular transformation"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:textColor="?colorPrimary" />
@@ -37,9 +37,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/spacing_normal"
-            android:layout_marginRight="@dimen/spacing_normal"
-            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginRight="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_large_32dp"
             android:text="Transforming width and height"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
@@ -47,8 +47,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/spacing_normal"
-            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_large_32dp"
             android:text="Asymmetric transformations"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -62,7 +62,7 @@
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_centerInParent="true"
-                android:layout_margin="@dimen/spacing_large" />
+                android:layout_margin="@dimen/spacing_large_32dp" />
 
         </RelativeLayout>
 
@@ -70,8 +70,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/spacing_normal"
-            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_large_32dp"
             android:text="Symmetrical transformations"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -85,7 +85,7 @@
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_centerInParent="true"
-                android:layout_margin="@dimen/spacing_large" />
+                android:layout_margin="@dimen/spacing_large_32dp" />
 
         </RelativeLayout>
     </LinearLayout>

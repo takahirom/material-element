@@ -53,12 +53,12 @@
         android:layout_width="match_parent"
         android:layout_height="128dp"
         android:layout_gravity="bottom"
-        android:layout_margin="@dimen/spacing_normal"
+        android:layout_margin="@dimen/spacing_normal_8dp"
         android:translationY="128dp"
         app:layout_insetEdge="bottom">
 
         <TextView
-            android:layout_margin="@dimen/spacing_normal"
+            android:layout_margin="@dimen/spacing_normal_8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="This animation uses standard curve" />

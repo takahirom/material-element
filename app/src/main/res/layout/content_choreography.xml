@@ -16,11 +16,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/spacing_normal"
-            android:layout_marginLeft="@dimen/spacing_normal"
-            android:layout_marginRight="@dimen/spacing_normal"
-            android:layout_marginStart="@dimen/spacing_normal"
-            android:layout_marginTop="@dimen/spacing_normal"
+            android:layout_marginEnd="@dimen/spacing_normal_8dp"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginRight="@dimen/spacing_normal_8dp"
+            android:layout_marginStart="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_normal_8dp"
             android:text="Material in motion guides the user’s focus through interactions by sharing elements across transitions."
             android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
@@ -28,9 +28,9 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/spacing_normal"
-            android:layout_marginRight="@dimen/spacing_normal"
-            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginRight="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_large_32dp"
             android:text="Continuity"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textColor="?colorPrimary" />
@@ -38,26 +38,26 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/spacing_normal"
-            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_large_32dp"
             android:text="All content elements are shared"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="176dp"
-            android:layout_marginBottom="@dimen/spacing_normal"
-            android:layout_marginTop="@dimen/spacing_normal">
+            android:layout_marginBottom="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_normal_8dp">
 
             <android.support.v7.widget.CardView
                 android:id="@+id/all_element_share_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginEnd="@dimen/spacing_normal"
-                android:layout_marginLeft="@dimen/spacing_normal"
-                android:layout_marginRight="@dimen/spacing_normal"
-                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal_8dp"
+                android:layout_marginLeft="@dimen/spacing_normal_8dp"
+                android:layout_marginRight="@dimen/spacing_normal_8dp"
+                android:layout_marginStart="@dimen/spacing_normal_8dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:stateListAnimator="@animator/raise">
@@ -69,26 +69,26 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/spacing_normal"
-            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_large_32dp"
             android:text="Few or no content elements are shared"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="248dp"
-            android:layout_marginBottom="@dimen/spacing_normal"
-            android:layout_marginTop="@dimen/spacing_normal">
+            android:layout_marginBottom="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_normal_8dp">
 
             <android.support.v7.widget.CardView
                 android:id="@+id/few_element_share_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|right"
-                android:layout_marginEnd="@dimen/spacing_normal"
-                android:layout_marginLeft="@dimen/spacing_normal"
-                android:layout_marginRight="@dimen/spacing_normal"
-                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal_8dp"
+                android:layout_marginLeft="@dimen/spacing_normal_8dp"
+                android:layout_marginRight="@dimen/spacing_normal_8dp"
+                android:layout_marginStart="@dimen/spacing_normal_8dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:stateListAnimator="@animator/raise">
@@ -100,9 +100,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/spacing_normal"
-            android:layout_marginRight="@dimen/spacing_normal"
-            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginRight="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_large_32dp"
             android:text="Creation"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textColor="?colorPrimary" />
@@ -111,20 +111,31 @@
             android:id="@+id/new_surface"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/padding_large"
-            android:layout_marginLeft="@dimen/spacing_normal"
-            android:layout_marginStart="@dimen/spacing_large"
+            android:layout_marginBottom="@dimen/padding_large_24dp"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginStart="@dimen/spacing_large_32dp"
             app:srcCompat="@drawable/ic_apps_black_24dp" />
-
-        <Button
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/spacing_normal"
-            android:text="start choreographing surfaces" />
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginRight="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_large_32dp"
+            android:text="start choreographing surfaces"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="?colorPrimary" />
+
+        <Button
+            android:id="@+id/start_choreographing_surfaces_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal_8dp"
+            android:text="start" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="380dp" />
+            android:layout_height="380dp"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
