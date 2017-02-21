@@ -1,28 +1,46 @@
 package com.github.takahirom.material_design_animation_playground.choreography;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
+import android.support.v4.widget.PopupWindowCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.ListPopupWindow;
 import android.support.v7.widget.Toolbar;
+import android.transition.ChangeBounds;
 import android.transition.Scene;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.transition.TransitionManager;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.WindowManager;
+import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.github.takahirom.material_design_animation_playground.ListItem;
+import com.github.takahirom.material_design_animation_playground.MainActivity;
 import com.github.takahirom.material_design_animation_playground.R;
+import com.github.takahirom.material_design_animation_playground.ScreenUtil;
+
+import static com.github.takahirom.material_design_animation_playground.R.id.view;
 
 public class ChoreographyActivity extends AppCompatActivity {
 
@@ -104,6 +122,52 @@ public class ChoreographyActivity extends AppCompatActivity {
         setupAllElemenShared(allShareRowImage);
 
         setupFewElementsAreShared(fewShareImage);
+
+        setupCreation();
+    }
+
+    private void setupCreation() {
+        findViewById(R.id.new_surface).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+
+                final CardView contentView = new CardView(ChoreographyActivity.this);
+
+                contentView.setUseCompatPadding(true);
+                final TextView textView = new TextView(ChoreographyActivity.this);
+                textView.setText("test");
+                contentView.addView(textView);
+
+                int dp8 = (int) ScreenUtil.dp2px(8, ChoreographyActivity.this);
+                ((CardView.LayoutParams) textView.getLayoutParams()).setMargins(dp8,dp8,dp8,dp8);
+                final int dp80 = (int) ScreenUtil.dp2px(80, ChoreographyActivity.this);
+
+                final PopupWindow popupWindow = new PopupWindow(contentView, dp80, dp80, true);
+                popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                popupWindow.setOutsideTouchable(true);
+                popupWindow.showAsDropDown(view);
+
+                contentView.getLayoutParams().height = 0;
+                contentView.getLayoutParams().width = 0;
+                ((FrameLayout.LayoutParams) contentView.getLayoutParams()).gravity = Gravity.BOTTOM;
+
+                contentView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+                    @Override
+                    public boolean onPreDraw() {
+                        contentView.getViewTreeObserver().removeOnPreDrawListener(this);
+
+                        TransitionManager.beginDelayedTransition(contentView, new ChangeBounds()
+                                .setInterpolator(new FastOutSlowInInterpolator()));
+
+                        contentView.getLayoutParams().height = dp80;
+                        contentView.getLayoutParams().width = dp80;
+
+                        return false;
+                    }
+                });
+
+            }
+        });
     }
 
 
