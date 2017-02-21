@@ -65,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
                 if (parent.getChildViewHolder(view).getAdapterPosition() % 2 == 0) {
-                    outRect.set((int)spaceSize, (int)spaceSize, ((int) (spaceSize / 2)), 0);
-                }else{
-                    outRect.set(((int) (spaceSize / 2)), (int)spaceSize, (int)spaceSize, 0);
+                    outRect.set((int) spaceSize, (int) spaceSize, ((int) (spaceSize / 2)), 0);
+                } else {
+                    outRect.set(((int) (spaceSize / 2)), (int) spaceSize, (int) spaceSize, 0);
                 }
             }
         });

@@ -92,9 +92,11 @@
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:stateListAnimator="@animator/raise">
+
                 <include layout="@layout/few_element_share_scene1" />
             </android.support.v7.widget.CardView>
         </FrameLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,13 +106,25 @@
             android:text="Creation"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textColor="?colorPrimary" />
+
         <ImageView
             android:id="@+id/new_surface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_large"
             android:layout_marginLeft="@dimen/spacing_normal"
             android:layout_marginStart="@dimen/spacing_large"
-            app:srcCompat="@drawable/ic_apps_black_24dp"
-            android:layout_marginBottom="@dimen/padding_large"
+            app:srcCompat="@drawable/ic_apps_black_24dp" />
+
+        <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="start choreographing surfaces" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="380dp" />
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

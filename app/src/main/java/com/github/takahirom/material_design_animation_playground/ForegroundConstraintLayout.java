@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 
-public class ForegroundConstraintLayout extends ConstraintLayout{
+public class ForegroundConstraintLayout extends ConstraintLayout {
     public ForegroundConstraintLayout(Context context) {
         super(context);
     }

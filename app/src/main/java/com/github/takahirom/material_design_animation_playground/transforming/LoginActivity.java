@@ -19,7 +19,7 @@ public class LoginActivity extends Activity {
     }
 
 
-    public void dismiss(View view){
+    public void dismiss(View view) {
         ActivityCompat.finishAfterTransition(this);
     }
 }

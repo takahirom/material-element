@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright 2015 Google Inc.
 
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,8 +47,7 @@
             android:id="@+id/username_float_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_micro"
-            >
+            android:layout_marginStart="@dimen/spacing_micro">
 
             <AutoCompleteTextView
                 android:id="@+id/username"
@@ -64,8 +62,7 @@
             android:id="@+id/permission_primer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_normal"
-            />
+            android:layout_marginStart="@dimen/spacing_normal" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/password_float_label"

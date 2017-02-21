@@ -106,7 +106,7 @@ public class FabTransform extends Transition {
     public Animator createAnimator(final ViewGroup sceneRoot,
                                    final TransitionValues startValues,
                                    final TransitionValues endValues) {
-        if (startValues == null || endValues == null)  return null;
+        if (startValues == null || endValues == null) return null;
 
         final Rect startBounds = (Rect) startValues.values.get(PROP_BOUNDS);
         final Rect endBounds = (Rect) endValues.values.get(PROP_BOUNDS);

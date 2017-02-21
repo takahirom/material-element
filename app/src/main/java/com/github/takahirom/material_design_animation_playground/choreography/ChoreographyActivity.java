@@ -139,7 +139,7 @@ public class ChoreographyActivity extends AppCompatActivity {
                 contentView.addView(textView);
 
                 int dp8 = (int) ScreenUtil.dp2px(8, ChoreographyActivity.this);
-                ((CardView.LayoutParams) textView.getLayoutParams()).setMargins(dp8,dp8,dp8,dp8);
+                ((CardView.LayoutParams) textView.getLayoutParams()).setMargins(dp8, dp8, dp8, dp8);
                 final int dp80 = (int) ScreenUtil.dp2px(80, ChoreographyActivity.this);
 
                 final PopupWindow popupWindow = new PopupWindow(contentView, dp80, dp80, true);

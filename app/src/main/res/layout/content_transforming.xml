@@ -41,8 +41,7 @@
             android:layout_marginRight="@dimen/spacing_normal"
             android:layout_marginTop="@dimen/spacing_large"
             android:text="Transforming width and height"
-            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-             />
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
 
         <TextView

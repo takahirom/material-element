@@ -35,7 +35,8 @@ import java.util.ArrayList;
  */
 public class AnimatorUtils {
 
-    private AnimatorUtils() { }
+    private AnimatorUtils() {
+    }
 
 
     /**

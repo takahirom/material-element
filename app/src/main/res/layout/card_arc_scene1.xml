@@ -3,12 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="320dp"
     android:id="@+id/scene_container"
-    android:padding="@dimen/spacing_normal"
-    >
+    android:padding="@dimen/spacing_normal">
+
     <android.support.v7.widget.CardView
         android:id="@+id/move_bounds_card"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:layout_marginTop="200dp"
-        />
+        android:layout_marginTop="200dp" />
 </RelativeLayout>

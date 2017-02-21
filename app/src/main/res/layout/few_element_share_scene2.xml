@@ -5,8 +5,7 @@
     android:id="@+id/few_content_element_all_layout"
     android:transitionName="few_element_share"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/few_element_share_image"
