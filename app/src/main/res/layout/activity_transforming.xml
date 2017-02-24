@@ -16,6 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="@color/colorPrimary"
             app:titleEnabled="false">
             <!-- This ImageView should 3:2 aspect ratio, but It is difficult to animate shared element transition. -->
             <!-- https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-ratio-keylines -->
