@@ -41,7 +41,7 @@ public class ImplementationAdapter extends RecyclerView.Adapter<ImplementationAd
         );
         listItems.add(
                 new ListItem(
-                        2,
+                        3,
                         "Transforming material",
                         "https://storage.googleapis.com/material-design/publish/material_v_10/assets/0BybB4JO78tNpNHFEd2JvRXlqRlU/03-transforming-material.png",
                         TransformingActivity.class
@@ -49,7 +49,7 @@ public class ImplementationAdapter extends RecyclerView.Adapter<ImplementationAd
         );
         listItems.add(
                 new ListItem(
-                        3,
+                        4,
                         "Choreography",
                         "https://storage.googleapis.com/material-design/publish/material_v_10/assets/0BybB4JO78tNpaEZJZ0E2ODQ1blE/04-choreography.png",
                         ChoreographyActivity.class
