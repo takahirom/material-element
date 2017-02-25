@@ -1,21 +1,22 @@
-package com.github.takahirom.material_design_animation_playground;
+package com.github.takahirom.material_design_animation_playground.main;
 
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.github.takahirom.material_design_animation_playground.R;
+import com.github.takahirom.material_design_animation_playground.ScreenUtil;
 import com.github.takahirom.material_design_animation_playground.durationeasing.DurationAndEasingActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,31 +32,44 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        setupRecyclerView();
+    }
+
+    private void setupRecyclerView() {
         implementationRecyclerView = (RecyclerView) findViewById(R.id.implementation_list);
         final GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         implementationRecyclerView.setLayoutManager(gridLayoutManager);
-        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+        adapter = new ImplementationAdapter(this, new ImplementationAdapter.OnItemClickListener() {
             @Override
-            public int getSpanSize(int position) {
-                return 1;
-            }
-        });
-        adapter = new ImplementationAdapter(new ImplementationAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(ImageView fromImageView, ListItem item) {
+            public void onItemClick(ImageView fromImageView, ImplementationItem item) {
                 final Intent intent = new Intent(MainActivity.this, item.getActivityClass());
                 intent.putExtra(DurationAndEasingActivity.INTENT_EXTRA_ITEM, item);
                 final Bundle options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, fromImageView, "shared_element").toBundle();
                 ActivityCompat.startActivityForResult(MainActivity.this, intent, REQUEST_ID_DETAIL, options);
             }
         });
+        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                int itemViewType = adapter.getItemViewType(position);
+                return itemViewType == ImplementationAdapter.VIEW_TYPE_HEADER ? 2 : 1;
+            }
+        });
+
         implementationRecyclerView.setAdapter(adapter);
 
-        final float spaceSize = ScreenUtil.dp2px(1, this);
+        final float spaceSize = ScreenUtil.dp2px(4, this);
         implementationRecyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
             @Override
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-                if (parent.getChildViewHolder(view).getAdapterPosition() % 2 == 0) {
+                int adapterPosition = parent.getChildViewHolder(view).getAdapterPosition();
+                GridLayoutManager.SpanSizeLookup spanSizeLookup = gridLayoutManager.getSpanSizeLookup();
+                int spanSize = spanSizeLookup.getSpanSize(adapterPosition);
+                if (spanSize == 2) {
+                    return;
+                }
+                int spanIndex = spanSizeLookup.getSpanIndex(adapterPosition, gridLayoutManager.getSpanCount());
+                if (spanIndex == 0) {
                     outRect.set((int) spaceSize, (int) spaceSize, ((int) (spaceSize / 2)), 0);
                 } else {
                     outRect.set(((int) (spaceSize / 2)), (int) spaceSize, (int) spaceSize, 0);

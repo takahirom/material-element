@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.github.takahirom.material_design_animation_playground.ForegroundConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.github.takahirom.material_design_animation_playground.view.ForegroundConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:foreground="?attr/selectableItemBackground"
-    android:orientation="vertical"
     android:background="@color/colorPrimary"
     android:elevation="@dimen/elevation_card"
+    android:foreground="?attr/selectableItemBackground"
+    android:orientation="vertical"
     android:stateListAnimator="@animator/raise">
 
     <ImageView
@@ -26,7 +26,7 @@
         android:id="@+id/view"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/spacing_xlarge_48dp"
-        android:background="#7F000000"
+        android:background="#8f455964"
         app:layout_constraintBottom_toBottomOf="@+id/implementation_imge"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -42,4 +42,4 @@
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintLeft_toLeftOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view" />
-</com.github.takahirom.material_design_animation_playground.ForegroundConstraintLayout>
+</com.github.takahirom.material_design_animation_playground.view.ForegroundConstraintLayout>

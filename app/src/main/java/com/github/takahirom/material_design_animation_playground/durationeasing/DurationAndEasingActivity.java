@@ -11,7 +11,6 @@ import android.support.v4.view.animation.PathInterpolatorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.transition.Transition;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.animation.Interpolator;
@@ -20,7 +19,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
-import com.github.takahirom.material_design_animation_playground.ListItem;
+import com.github.takahirom.material_design_animation_playground.main.ImplementationItem;
 import com.github.takahirom.material_design_animation_playground.R;
 import com.github.takahirom.material_design_animation_playground.ScreenUtil;
 
@@ -28,7 +27,7 @@ public class DurationAndEasingActivity extends AppCompatActivity {
 
     public final static String RESULT_EXTRA_ITEM_ID = "RESULT_EXTRA_ITEM_ID";
     public static final String INTENT_EXTRA_ITEM = "item";
-    private ListItem item;
+    private ImplementationItem item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

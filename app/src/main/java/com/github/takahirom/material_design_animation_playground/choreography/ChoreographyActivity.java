@@ -2,7 +2,6 @@ package com.github.takahirom.material_design_animation_playground.choreography;
 
 import android.animation.Animator;
 import android.content.Intent;
-import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -12,13 +11,10 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
-import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v4.view.animation.LinearOutSlowInInterpolator;
-import android.support.v4.widget.PopupWindowCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.ListPopupWindow;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.transition.ChangeBounds;
@@ -32,9 +28,6 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.view.WindowManager;
-import android.view.animation.AnimationUtils;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -43,20 +36,16 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
-import com.github.takahirom.material_design_animation_playground.ListItem;
-import com.github.takahirom.material_design_animation_playground.MainActivity;
+import com.github.takahirom.material_design_animation_playground.main.ImplementationItem;
 import com.github.takahirom.material_design_animation_playground.R;
 import com.github.takahirom.material_design_animation_playground.ScreenUtil;
-import com.github.takahirom.material_design_animation_playground.animation.transition.AnimatorUtils;
-
-import static com.github.takahirom.material_design_animation_playground.R.id.view;
 
 public class ChoreographyActivity extends AppCompatActivity {
 
 
     public final static String RESULT_EXTRA_ITEM_ID = "RESULT_EXTRA_ITEM_ID";
     public static final String INTENT_EXTRA_ITEM = "item";
-    private ListItem item;
+    private ImplementationItem item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

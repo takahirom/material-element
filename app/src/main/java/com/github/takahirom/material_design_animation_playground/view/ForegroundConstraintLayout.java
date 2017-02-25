@@ -1,4 +1,4 @@
-package com.github.takahirom.material_design_animation_playground;
+package com.github.takahirom.material_design_animation_playground.view;
 
 import android.content.Context;
 import android.support.constraint.ConstraintLayout;
