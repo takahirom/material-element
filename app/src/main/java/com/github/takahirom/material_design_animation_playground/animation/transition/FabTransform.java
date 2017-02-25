@@ -102,6 +102,14 @@ public class FabTransform extends Transition {
         captureValues(transitionValues);
     }
 
+    private void captureValues(TransitionValues transitionValues) {
+        final View view = transitionValues.view;
+        if (view == null || view.getWidth() <= 0 || view.getHeight() <= 0) return;
+
+        transitionValues.values.put(PROP_BOUNDS, new Rect(view.getLeft(), view.getTop(),
+                view.getRight(), view.getBottom()));
+    }
+
     @Override
     public Animator createAnimator(final ViewGroup sceneRoot,
                                    final TransitionValues startValues,
@@ -258,11 +266,4 @@ public class FabTransform extends Transition {
         return new AnimatorUtils.NoPauseAnimator(transition);
     }
 
-    private void captureValues(TransitionValues transitionValues) {
-        final View view = transitionValues.view;
-        if (view == null || view.getWidth() <= 0 || view.getHeight() <= 0) return;
-
-        transitionValues.values.put(PROP_BOUNDS, new Rect(view.getLeft(), view.getTop(),
-                view.getRight(), view.getBottom()));
-    }
 }

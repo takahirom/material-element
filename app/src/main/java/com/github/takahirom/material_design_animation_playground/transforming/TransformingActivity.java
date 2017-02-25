@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
@@ -141,10 +142,17 @@ public class TransformingActivity extends AppCompatActivity {
         findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Intent intent = new Intent(TransformingActivity.this, LoginActivity.class);
-                final ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(TransformingActivity.this, v, getString(R.string.transition_name_login));
-                FabTransform.addExtras(intent, getColor(R.color.colorAccent), R.drawable.ic_add_white_24dp);
-                ActivityCompat.startActivity(TransformingActivity.this, intent, optionsCompat.toBundle());
+                Intent intent = new Intent(TransformingActivity.this, LoginActivity.class);
+                int color = ContextCompat.getColor(TransformingActivity.this, R.color.colorAccent);
+                FabTransform.addExtras(intent, color, R.drawable.ic_add_white_24dp);
+
+                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat
+                        .makeSceneTransitionAnimation(TransformingActivity.this,
+                                v,
+                                getString(R.string.transition_name_login));
+                ActivityCompat.startActivity(TransformingActivity.this,
+                        intent,
+                        optionsCompat.toBundle());
             }
         });
 

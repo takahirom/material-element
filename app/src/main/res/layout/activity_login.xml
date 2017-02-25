@@ -32,7 +32,8 @@
         android:orientation="vertical"
         android:padding="@dimen/spacing_large_32dp"
         android:paddingTop="@dimen/spacing_xlarge_48dp"
-        android:transitionName="@string/transition_name_login">
+        android:transitionName="@string/transition_name_login"
+        tools:targetApi="lollipop">
 
         <TextView
             android:id="@+id/dialog_title"
