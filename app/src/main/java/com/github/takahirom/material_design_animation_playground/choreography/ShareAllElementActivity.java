@@ -24,6 +24,7 @@ public class ShareAllElementActivity extends AppCompatActivity {
         Bitmap bitmap = ResourceUtil.getBitmap(this, R.drawable.ic_choreography);
         RoundedBitmapDrawable circularBitmapDrawable =
                 RoundedBitmapDrawableFactory.create(getResources(), bitmap);
+        circularBitmapDrawable.setCircular(true);
         final ImageView rowImage = (ImageView) findViewById(R.id.all_element_share_image);
         rowImage.setImageDrawable(circularBitmapDrawable);
     }
