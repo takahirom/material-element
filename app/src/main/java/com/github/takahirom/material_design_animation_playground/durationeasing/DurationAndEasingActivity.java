@@ -45,24 +45,25 @@ public class DurationAndEasingActivity extends AppCompatActivity {
         final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
 
         final ImageView imageView = (ImageView) findViewById(R.id.detail_image);
-        ActivityCompat.postponeEnterTransition(this);
 //        collapsingToolbarLayout.setExpandedTitleColor(ContextCompat.getColor(DurationAndEasingActivity.this, android.R.color.white));
-
-        Glide.with(this).load(item.imageUrl).into(new GlideDrawableImageViewTarget(imageView) {
-            @Override
-            protected void setResource(GlideDrawable resource) {
-                super.setResource(resource);
-
-                imageView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
-                    @Override
-                    public boolean onPreDraw() {
-                        ActivityCompat.startPostponedEnterTransition(DurationAndEasingActivity.this);
-                        imageView.getViewTreeObserver().removeOnPreDrawListener(this);
-                        return true;
-                    }
-                });
-            }
-        });
+        imageView.setImageResource(item.imageRes);
+        // If you want to load async, you can use this code
+        //        ActivityCompat.postponeEnterTransition(this);
+//        Glide.with(this).load(item.imageUrl).into(new GlideDrawableImageViewTarget(imageView) {
+//            @Override
+//            protected void setResource(GlideDrawable resource) {
+//                super.setResource(resource);
+//
+//                imageView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+//                    @Override
+//                    public boolean onPreDraw() {
+//                        ActivityCompat.startPostponedEnterTransition(DurationAndEasingActivity.this);
+//                        imageView.getViewTreeObserver().removeOnPreDrawListener(this);
+//                        return true;
+//                    }
+//                });
+//            }
+//        });
         getWindow().getSharedElementEnterTransition().addListener(new Transition.TransitionListener() {
             @Override
             public void onTransitionStart(Transition transition) {

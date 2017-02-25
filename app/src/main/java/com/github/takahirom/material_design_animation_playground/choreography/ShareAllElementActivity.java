@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.github.takahirom.material_design_animation_playground.R;
+import com.github.takahirom.material_design_animation_playground.view.ResourceUtil;
 
 public class ShareAllElementActivity extends AppCompatActivity {
 
@@ -20,25 +21,10 @@ public class ShareAllElementActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.all_element_share_scene2);
 
-        ActivityCompat.postponeEnterTransition(this);
-        final ImageView rowImage = (ImageView) findViewById(R.id.all_element_share_image);
-        Glide.with(this).load(R.drawable.choreography).asBitmap().into(new BitmapImageViewTarget(rowImage) {
-            @Override
-            protected void setResource(Bitmap resource) {
-                RoundedBitmapDrawable circularBitmapDrawable =
-                        RoundedBitmapDrawableFactory.create(getResources(), resource);
-                circularBitmapDrawable.setCircular(true);
-                rowImage.setImageDrawable(circularBitmapDrawable);
-                rowImage.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
-                    @Override
-                    public boolean onPreDraw() {
-                        ActivityCompat.startPostponedEnterTransition(ShareAllElementActivity.this);
-                        rowImage.getViewTreeObserver().removeOnPreDrawListener(this);
-                        return true;
-                    }
-                });
-
-            }
-        });
+        Bitmap bitmap = ResourceUtil.getBitmap(this, R.drawable.ic_choreography);
+        RoundedBitmapDrawable circularBitmapDrawable =
+                RoundedBitmapDrawableFactory.create(getResources(), bitmap);
+        final ImageView rowImage = (ImageView) findViewById(R.id.few_element_share_image);
+        rowImage.setImageDrawable(circularBitmapDrawable);
     }
 }

@@ -3,12 +3,15 @@ package com.github.takahirom.material_design_animation_playground.choreography;
 import android.animation.Animator;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v4.view.animation.LinearOutSlowInInterpolator;
@@ -39,6 +42,7 @@ import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.github.takahirom.material_design_animation_playground.main.ImplementationItem;
 import com.github.takahirom.material_design_animation_playground.R;
 import com.github.takahirom.material_design_animation_playground.ScreenUtil;
+import com.github.takahirom.material_design_animation_playground.view.ResourceUtil;
 
 public class ChoreographyActivity extends AppCompatActivity {
 
@@ -68,26 +72,24 @@ public class ChoreographyActivity extends AppCompatActivity {
 
         final ImageView allShareRowImage = (ImageView) findViewById(R.id.all_element_share_image);
         final ImageView fewShareImage = (ImageView) findViewById(R.id.few_element_share_image);
-        Glide.with(this).load(R.drawable.choreography).asBitmap().into(new BitmapImageViewTarget(imageView) {
-            @Override
-            protected void setResource(Bitmap resource) {
-                imageView.setImageBitmap(resource);
-                imageView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
-                    @Override
-                    public boolean onPreDraw() {
-                        ActivityCompat.startPostponedEnterTransition(ChoreographyActivity.this);
-                        imageView.getViewTreeObserver().removeOnPreDrawListener(this);
-                        return true;
-                    }
-                });
 
-                RoundedBitmapDrawable circularBitmapDrawable =
-                        RoundedBitmapDrawableFactory.create(getResources(), resource);
-                circularBitmapDrawable.setCircular(true);
-                allShareRowImage.setImageDrawable(circularBitmapDrawable);
-                fewShareImage.setImageDrawable(circularBitmapDrawable);
+        imageView.setImageResource(item.imageRes);
+        imageView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            @Override
+            public boolean onPreDraw() {
+                ActivityCompat.startPostponedEnterTransition(ChoreographyActivity.this);
+                imageView.getViewTreeObserver().removeOnPreDrawListener(this);
+                return true;
             }
         });
+
+
+        Bitmap bitmap = ResourceUtil.getBitmap(this, item.imageRes);
+        RoundedBitmapDrawable circularBitmapDrawable =
+                RoundedBitmapDrawableFactory.create(getResources(), bitmap);
+        circularBitmapDrawable.setCircular(true);
+        allShareRowImage.setImageDrawable(circularBitmapDrawable);
+        fewShareImage.setImageDrawable(circularBitmapDrawable);
         getWindow().getSharedElementEnterTransition().addListener(new Transition.TransitionListener() {
             @Override
             public void onTransitionStart(Transition transition) {
@@ -128,6 +130,8 @@ public class ChoreographyActivity extends AppCompatActivity {
         setupRadicalReaction();
     }
 
+
+
     private void setupRadicalReaction() {
         final CardView cardView = (CardView) findViewById(R.id.radical_reaction_card);
         cardView.setOnTouchListener(new View.OnTouchListener() {
@@ -135,7 +139,7 @@ public class ChoreographyActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 int endRadius = (int) (1.41421 * v.getWidth());
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    if (cardView.getChildCount() > 1){
+                    if (cardView.getChildCount() > 1) {
                         cardView.removeViewAt(0);
                     }
                     View view = new View(ChoreographyActivity.this);
@@ -254,9 +258,9 @@ public class ChoreographyActivity extends AppCompatActivity {
 
     private void setupChoreographingSurfaces() {
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this){
-                @Override
-                public boolean canScrollVertically() {
+        recyclerView.setLayoutManager(new LinearLayoutManager(this) {
+            @Override
+            public boolean canScrollVertically() {
                 return false;
             }
         });
@@ -268,7 +272,6 @@ public class ChoreographyActivity extends AppCompatActivity {
             }
         });
     }
-
 
 
     @Override

@@ -1,7 +1,6 @@
 package com.github.takahirom.material_design_animation_playground.main;
 
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,7 +34,7 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 new ImplementationItem(
                         1,
                         "Duration & easing",
-                        "https://storage.googleapis.com/material-design/publish/material_v_10/assets/0BybB4JO78tNpRlY1eHJ4LTh4ZjQ/01-duration-and-easing.png",
+                        R.drawable.ic_duration_easing,
                         DurationAndEasingActivity.class
                 )
         );
@@ -43,7 +42,7 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 new ImplementationItem(
                         2,
                         "Movement",
-                        "https://storage.googleapis.com/material-design/publish/material_v_10/assets/0BybB4JO78tNpWnRtS1RnaVk3Sjg/02-movement.png",
+                        R.drawable.ic_movement,
                         MovementActivity.class
                 )
         );
@@ -51,7 +50,7 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 new ImplementationItem(
                         3,
                         "Transforming material",
-                        "https://storage.googleapis.com/material-design/publish/material_v_10/assets/0BybB4JO78tNpNHFEd2JvRXlqRlU/03-transforming-material.png",
+                        R.drawable.ic_transforming_material,
                         TransformingActivity.class
                 )
         );
@@ -59,20 +58,10 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 new ImplementationItem(
                         4,
                         "Choreography",
-                        "https://storage.googleapis.com/material-design/publish/material_v_10/assets/0BybB4JO78tNpaEZJZ0E2ODQ1blE/04-choreography.png",
+                        R.drawable.ic_choreography,
                         ChoreographyActivity.class
                 )
         );
-        for (int i = 10; i < 30; i++) {
-            listItems.add(
-                    new ImplementationItem(
-                            i,
-                            "Duration & easing" + i,
-                            "https://storage.googleapis.com/material-design/publish/material_v_10/assets/0BybB4JO78tNpRlY1eHJ4LTh4ZjQ/01-duration-and-easing.png",
-                            DurationAndEasingActivity.class
-                    )
-            );
-        }
 
     }
 
@@ -136,7 +125,7 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
 
         void bind(final ImplementationItem item, final OnItemClickListener itemClickListener) {
-            Glide.with(itemView.getContext()).load(item.imageUrl).into(imageView);
+            imageView.setImageResource(item.imageRes);
             titleView.setText(item.title);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

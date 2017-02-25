@@ -5,27 +5,27 @@ import android.os.Parcelable;
 
 public class ImplementationItem extends ListItem implements Parcelable {
     public final String title;
-    public final String imageUrl;
+    public final int imageRes;
     private final String activityClassName;
 
-    ImplementationItem(int itemId, String title, String imageUrl, Class<?> clazz) {
+    ImplementationItem(int itemId, String title, int imageRes, Class<?> clazz) {
         super(ImplementationAdapter.VIEW_TYPE_IMPLEMENTATION, itemId);
 
         this.title = title;
-        this.imageUrl = imageUrl;
+        this.imageRes = imageRes;
         this.activityClassName = clazz.getName();
     }
 
     protected ImplementationItem(Parcel in) {
         title = in.readString();
-        imageUrl = in.readString();
+        imageRes = in.readInt();
         activityClassName = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(title);
-        dest.writeString(imageUrl);
+        dest.writeInt(imageRes);
         dest.writeString(activityClassName);
     }
 

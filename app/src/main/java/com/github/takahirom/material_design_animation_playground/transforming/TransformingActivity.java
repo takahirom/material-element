@@ -44,24 +44,9 @@ public class TransformingActivity extends AppCompatActivity {
         final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
 
         final ImageView imageView = (ImageView) findViewById(R.id.detail_image);
-        ActivityCompat.postponeEnterTransition(this);
 //        collapsingToolbarLayout.setExpandedTitleColor(ContextCompat.getColor(TransformingActivity.this, android.R.color.white));
+        imageView.setImageResource(item.imageRes);
 
-        Glide.with(this).load(item.imageUrl).into(new GlideDrawableImageViewTarget(imageView) {
-            @Override
-            protected void setResource(GlideDrawable resource) {
-                super.setResource(resource);
-
-                imageView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
-                    @Override
-                    public boolean onPreDraw() {
-                        ActivityCompat.startPostponedEnterTransition(TransformingActivity.this);
-                        imageView.getViewTreeObserver().removeOnPreDrawListener(this);
-                        return true;
-                    }
-                });
-            }
-        });
         getWindow().getSharedElementEnterTransition().addListener(new Transition.TransitionListener() {
             @Override
             public void onTransitionStart(Transition transition) {
