@@ -14,7 +14,6 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_normal_8dp"
@@ -26,7 +25,6 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
         <TextView
-            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
@@ -37,7 +35,6 @@
             android:textColor="?colorPrimary" />
 
         <TextView
-            android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
@@ -46,7 +43,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/dynamic_duration_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
@@ -57,7 +54,6 @@
             android:textColor="?colorPrimary" />
 
         <TextView
-            android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
@@ -76,7 +72,6 @@
             app:srcCompat="@android:color/transparent" />
 
         <TextView
-            android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
@@ -97,7 +92,7 @@
             app:srcCompat="@android:color/transparent" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/easing_carve_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
@@ -108,12 +103,11 @@
             android:textColor="?colorPrimary" />
 
         <TextView
-            android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
             android:layout_marginStart="@dimen/spacing_normal_8dp"
-            android:layout_marginTop="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_large_32dp"
             android:text="Standard curve"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -129,7 +123,6 @@
             app:srcCompat="@android:color/transparent" />
 
         <TextView
-            android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
@@ -150,7 +143,6 @@
             app:srcCompat="@android:color/transparent" />
 
         <TextView
-            android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
@@ -171,7 +163,6 @@
             app:srcCompat="@android:color/transparent" />
 
         <TextView
-            android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_normal_8dp"

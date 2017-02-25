@@ -11,6 +11,7 @@ import android.support.v4.view.animation.PathInterpolatorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.transition.Transition;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.animation.Interpolator;
@@ -95,7 +96,21 @@ public class DurationAndEasingActivity extends AppCompatActivity {
     }
 
     private void setupNaturalCurve() {
-        findViewById(R.id.curve_standard_fab).setOnClickListener(new View.OnClickListener() {
+        final View standardFab = findViewById(R.id.curve_standard_fab);
+        final View decelerationFab = findViewById(R.id.curve_deceleration_fab);
+        final View accelerationFab = findViewById(R.id.curve_acceleration_fab);
+        final View sharpFab = findViewById(R.id.curve_sharp_fab);
+
+        findViewById(R.id.easing_carve_text).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                standardFab.performClick();
+                decelerationFab.performClick();
+                accelerationFab.performClick();
+                sharpFab.performClick();
+            }
+        });
+        standardFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (v.getTranslationX() > 0) {
@@ -115,7 +130,7 @@ public class DurationAndEasingActivity extends AppCompatActivity {
                 }
             }
         });
-        findViewById(R.id.curve_deceleration_fab).setOnClickListener(new View.OnClickListener() {
+        decelerationFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (v.getTranslationX() > 0) {
@@ -136,7 +151,7 @@ public class DurationAndEasingActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.curve_acceleration_fab).setOnClickListener(new View.OnClickListener() {
+        accelerationFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (v.getTranslationX() > 0) {
@@ -158,7 +173,7 @@ public class DurationAndEasingActivity extends AppCompatActivity {
         });
 
         final Interpolator sharpInterpolator = PathInterpolatorCompat.create(0.4f, 0, 0.6f, 1);
-        findViewById(R.id.curve_sharp_fab).setOnClickListener(new View.OnClickListener() {
+        sharpFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (v.getTranslationX() > 0) {
@@ -181,7 +196,18 @@ public class DurationAndEasingActivity extends AppCompatActivity {
     }
 
     private void setupCustomDuration() {
-        findViewById(R.id.duration_fab1).setOnClickListener(new View.OnClickListener() {
+        final View dynamicDurationLongFab = findViewById(R.id.duration_fab1);
+        final View dynamicDurationShortFab = findViewById(R.id.duration_fab2);
+
+        findViewById(R.id.dynamic_duration_text).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dynamicDurationLongFab.performClick();
+                dynamicDurationShortFab.performClick();
+            }
+        });
+
+        dynamicDurationLongFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (view.getTranslationX() > 0) {
@@ -192,7 +218,7 @@ public class DurationAndEasingActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.duration_fab2).setOnClickListener(new View.OnClickListener() {
+        dynamicDurationShortFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (view.getTranslationX() > 0) {
