@@ -155,6 +155,7 @@
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
             android:layout_marginRight="@dimen/spacing_normal_8dp"
             android:layout_marginTop="@dimen/spacing_large_32dp"
+            android:layout_marginBottom="@dimen/padding_normal_16dp"
             android:text="Radial reaction"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textColor="?colorPrimary" />

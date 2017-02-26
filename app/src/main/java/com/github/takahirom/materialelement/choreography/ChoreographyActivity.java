@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v4.util.Pair;
@@ -130,16 +131,18 @@ public class ChoreographyActivity extends AppCompatActivity {
     private void setupRadicalReaction() {
         final CardView cardView = (CardView) findViewById(R.id.radical_reaction_card);
         cardView.setOnTouchListener(new View.OnTouchListener() {
+            int colorIndex = 0;
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 int endRadius = (int) (1.41421 * v.getWidth());
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    if (cardView.getChildCount() > 1) {
+                    if (cardView.getChildCount() > 2) {
                         cardView.removeViewAt(0);
                     }
                     View view = new View(ChoreographyActivity.this);
                     cardView.addView(view, new CardView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-                    view.setBackgroundColor(Color.RED);
+                    int colors[] = new int[]{R.color.colorAccent, R.color.colorPrimary, R.color.colorPrimaryDark};
+                    view.setBackgroundColor(ContextCompat.getColor(ChoreographyActivity.this, colors[(colorIndex++)%colors.length]));
                     Animator circularReveal = ViewAnimationUtils.createCircularReveal(view, (int) event.getX(), (int) event.getY(), 0, endRadius);
                     circularReveal.start();
                 }
