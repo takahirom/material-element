@@ -1,6 +1,7 @@
 package com.github.takahirom.materialelement.creative;
 
 import android.content.Intent;
+import android.graphics.drawable.Animatable;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ActivityCompat;
@@ -28,7 +29,7 @@ public class CreativeCustomizationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dynamic_durations);
+        setContentView(R.layout.activity_creative_customization);
         item = getIntent().getParcelableExtra(INTENT_EXTRA_ITEM);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -87,6 +88,13 @@ public class CreativeCustomizationActivity extends AppCompatActivity {
             }
         });
 
+        final ImageView systemIconImageView = (ImageView) findViewById(R.id.system_icon);
+        systemIconImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((Animatable) systemIconImageView.getDrawable()).start();
+            }
+        });
     }
 
     @Override
