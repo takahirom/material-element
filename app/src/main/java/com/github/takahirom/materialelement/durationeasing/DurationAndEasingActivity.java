@@ -55,7 +55,7 @@ public class DurationAndEasingActivity extends AppCompatActivity {
 //                    public boolean onPreDraw() {
 //                        ActivityCompat.startPostponedEnterTransition(DurationAndEasingActivity.this);
 //                        imageView.getViewTreeObserver().removeOnPreDrawListener(this);
-//                        return true;
+//                        window_return true;
 //                    }
 //                });
 //            }

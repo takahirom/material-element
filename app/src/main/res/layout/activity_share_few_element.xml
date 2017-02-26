@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/few_element_share_card"
-    android:transitionName="few_element_share"
+    android:transitionName="@string/transition_name_few_element_share"
     android:background="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
     <ImageView
+        android:transitionName="@string/transition_name_few_element_share_image"
         android:id="@+id/few_element_share_image"
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -35,6 +36,7 @@
         android:background="@android:drawable/divider_horizontal_bright" />
 
     <TextView
+        android:id="@+id/all_element_share_no_share_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/divider"

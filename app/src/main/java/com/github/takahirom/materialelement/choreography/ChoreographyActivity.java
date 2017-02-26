@@ -11,6 +11,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+import android.support.v4.util.Pair;
 import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -126,7 +127,6 @@ public class ChoreographyActivity extends AppCompatActivity {
     }
 
 
-
     private void setupRadicalReaction() {
         final CardView cardView = (CardView) findViewById(R.id.radical_reaction_card);
         cardView.setOnTouchListener(new View.OnTouchListener() {
@@ -155,17 +155,17 @@ public class ChoreographyActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                View view = cardView.getChildAt(0);
 
                 final Intent intent = new Intent(ChoreographyActivity.this, ShareAllElementActivity.class);
                 final ActivityOptionsCompat optionsCompat =
-                        ActivityOptionsCompat.makeSceneTransitionAnimation(ChoreographyActivity.this, view, getString(R.string.transition_name_all_element_share));
+                        ActivityOptionsCompat.makeSceneTransitionAnimation(ChoreographyActivity.this, cardView, getString(R.string.transition_name_all_element_share));
                 ActivityCompat.startActivity(ChoreographyActivity.this, intent, optionsCompat.toBundle());
 
             }
         });
         cardView.setOnLongClickListener(new View.OnLongClickListener() {
             boolean isScene1 = true;
+
             @Override
             public boolean onLongClick(View v) {
                 final Scene scene = Scene.getSceneForLayout(cardView, isScene1 ? R.layout.all_element_share_scene2 : R.layout.all_element_share_scene1, ChoreographyActivity.this);
@@ -187,7 +187,10 @@ public class ChoreographyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final Intent intent = new Intent(ChoreographyActivity.this, ShareFewElementActivity.class);
-                final ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(ChoreographyActivity.this, cardView.getChildAt(0), "few_element_share");
+                final ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(ChoreographyActivity.this,
+                        new Pair<View, String>(cardView, getString(R.string.transition_name_few_element_share)),
+                        new Pair<>(cardView.findViewById(R.id.few_element_share_image), getString(R.string.transition_name_few_element_share_image))
+                );
                 ActivityCompat.startActivity(ChoreographyActivity.this, intent, optionsCompat.toBundle());
             }
         });

@@ -8,9 +8,10 @@
     <changeBounds />
     <fade
         android:duration="150"
+        android:fadingMode="fade_in"
         android:startDelay="75">
         <targets>
-            <target android:targetName="all_content_element_nonshare_text" />
+            <target android:targetId="@id/all_element_share_no_share_text" />
         </targets>
     </fade>
     <transition

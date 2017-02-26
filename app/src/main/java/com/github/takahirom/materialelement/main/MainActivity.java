@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(ImageView fromImageView, ImplementationItem item) {
                 final Intent intent = new Intent(MainActivity.this, item.getActivityClass());
                 intent.putExtra(DurationAndEasingActivity.INTENT_EXTRA_ITEM, item);
-                final Bundle options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, fromImageView, "shared_element").toBundle();
+                String sharedElementName = getString(R.string.transition_name_implementation_image);
+                final Bundle options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, fromImageView, sharedElementName).toBundle();
                 ActivityCompat.startActivityForResult(MainActivity.this, intent, REQUEST_ID_DETAIL, options);
             }
         });

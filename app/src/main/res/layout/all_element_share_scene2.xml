@@ -36,11 +36,12 @@
         android:background="@android:drawable/divider_horizontal_bright" />
 
     <TextView
+        android:id="@+id/all_element_share_no_share_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/divider"
         android:layout_margin="@dimen/spacing_normal_8dp"
         android:layout_marginLeft="@dimen/spacing_normal_8dp"
         android:text="While a surface is expanding, a significant number of elements should remain visible during the transition.\n\nComplex transitions should keep a single element visible."
-        android:transitionName="all_content_element_nonshare_text" />
+         />
 </RelativeLayout>

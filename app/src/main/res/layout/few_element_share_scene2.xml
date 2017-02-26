@@ -8,6 +8,7 @@
     android:layout_height="match_parent">
 
     <ImageView
+        android:transitionName="@string/transition_name_few_element_share_image"
         android:id="@+id/few_element_share_image"
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -35,6 +36,7 @@
         android:background="@android:drawable/divider_horizontal_bright" />
 
     <TextView
+        android:id="@+id/all_element_share_no_share_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/divider"

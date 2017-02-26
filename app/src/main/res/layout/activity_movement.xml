@@ -6,39 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.github.takahirom.materialelement.movement.MovementActivity">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/collapsing_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:contentScrim="@color/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:titleEnabled="false">
-            <!-- This ImageView should 3:2 aspect ratio, but It is difficult to animate shared element transition. -->
-            <!-- https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-ratio-keylines -->
-            <ImageView
-                android:id="@+id/detail_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/implementation_image"
-                android:transitionName="shared_element"
-                tools:src="@mipmap/ic_launcher" />
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
-        </android.support.design.widget.CollapsingToolbarLayout>
-
-
-    </android.support.design.widget.AppBarLayout>
+    <include layout="@layout/implementation_appbar_layout" />
 
     <include layout="@layout/content_movement" />
 

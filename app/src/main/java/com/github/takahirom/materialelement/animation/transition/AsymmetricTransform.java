@@ -62,7 +62,7 @@ public class AsymmetricTransform extends Transition {
         final Rect startBounds = (Rect) startValues.values.get(PROP_BOUNDS);
         final Rect endBounds = (Rect) endValues.values.get(PROP_BOUNDS);
 
-        final boolean expand = endBounds.width() > startBounds.width();
+        final boolean expand = startBounds.top > endBounds.top;
         final View view = endValues.view;
 
         int startLeft = startBounds.left;
