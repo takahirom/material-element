@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.github.takahirom.material_design_animation_playground"
+        applicationId "com.github.takahirom.materialelement"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1

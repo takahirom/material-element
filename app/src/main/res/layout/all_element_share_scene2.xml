@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@android:color/white"
     android:id="@+id/all_content_element_all_layout"
-    android:transitionName="all_element_share"
+    android:transitionName="@string/transition_name_all_element_share"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:showIn="@layout/content_choreography">
+    tools:showIn="@layout/content_choreography"
+    tools:targetApi="lollipop">
 
     <ImageView
         android:id="@+id/all_element_share_image"

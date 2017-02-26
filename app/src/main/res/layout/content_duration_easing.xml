@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.github.takahirom.material_design_animation_playground.durationeasing.DurationAndEasingActivity">
+    tools:context="com.github.takahirom.materialelement.durationeasing.DurationAndEasingActivity">
     <!-- tools:showIn="@layout/activity_dynamic_durations" -->
     <LinearLayout
         android:layout_width="match_parent"

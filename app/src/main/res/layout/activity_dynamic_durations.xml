@@ -5,7 +5,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.github.takahirom.material_design_animation_playground.durationeasing.DurationAndEasingActivity">
+    tools:context="com.github.takahirom.materialelement.durationeasing.DurationAndEasingActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

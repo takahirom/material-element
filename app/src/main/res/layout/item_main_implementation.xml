@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.github.takahirom.material_design_animation_playground.view.ForegroundConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.github.takahirom.materialelement.view.ForegroundConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -42,4 +42,4 @@
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintLeft_toLeftOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view" />
-</com.github.takahirom.material_design_animation_playground.view.ForegroundConstraintLayout>
+</com.github.takahirom.materialelement.view.ForegroundConstraintLayout>

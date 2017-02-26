@@ -14,6 +14,6 @@
         </targets>
     </fade>
     <transition
-        class="com.github.takahirom.material_design_animation_playground.animation.transition.LiftOff"
+        class="com.github.takahirom.materialelement.animation.transition.LiftOff"
         app:initialElevation="@dimen/touch_raise" />
 </transitionSet>

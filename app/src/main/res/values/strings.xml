@@ -11,4 +11,5 @@
     <string name="transition_name_login" translatable="false">login</string>
     <string name="login_title">Log in to My Service</string>
     <string name="title_activity_choreography">ChoreographyActivity</string>
+    <string name="transition_name_all_element_share">all_element_share</string>
 </resources>

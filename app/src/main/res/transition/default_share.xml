@@ -11,5 +11,5 @@
             <target android:targetId="@id/detail_image" />
         </targets>
     </transition>
-    <pathMotion class="com.github.takahirom.material_design_animation_playground.animation.motion.GravityArcMotion" />
+    <pathMotion class="com.github.takahirom.materialelement.animation.motion.GravityArcMotion" />
 </transitionSet>

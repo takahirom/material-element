@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.github.takahirom.material_design_animation_playground.movement.MovementActivity">
+    tools:context="com.github.takahirom.materialelement.movement.MovementActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

@@ -6,7 +6,7 @@
     <fade
         android:duration="150"
         android:startDelay="75" />
-    <transition class="com.github.takahirom.material_design_animation_playground.animation.transition.AsymmetricTransform">
+    <transition class="com.github.takahirom.materialelement.animation.transition.AsymmetricTransform">
         <targets>
             <target android:targetId="@id/few_element_share_card" />
         </targets>
