@@ -29,6 +29,8 @@
             android:name=".movement.MovementActivity"
             android:label="@string/title_activity_movement"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
+
+
         <activity
             android:name=".transforming.TransformingActivity"
             android:label="@string/title_activity_transforming"
@@ -36,16 +38,24 @@
         <activity
             android:name=".transforming.LoginActivity"
             android:theme="@style/AppTheme.Translucent.Login" />
+
+
         <activity
             android:name=".choreography.ChoreographyActivity"
             android:label="@string/title_activity_choreography"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
-        <activity android:name=".choreography.ShareAllElementActivity"
-            android:theme="@style/AppTheme.NoActionBar.ChoreographyShare"
-            />
-        <activity android:name=".choreography.ShareFewElementActivity"
-            android:theme="@style/AppTheme.NoActionBar.ChoreographyFewShare"
-            />
+        <activity
+            android:name=".choreography.ShareAllElementActivity"
+            android:theme="@style/AppTheme.NoActionBar.ChoreographyShare" />
+        <activity
+            android:name=".choreography.ShareFewElementActivity"
+            android:theme="@style/AppTheme.NoActionBar.ChoreographyFewShare" />
+
+        <activity
+            android:name=".creative.CreativeCustomizationActivity"
+            android:label="@string/title_activity_movement"
+            android:theme="@style/AppTheme.NoActionBar.Detail" />
+
     </application>
 
 </manifest>

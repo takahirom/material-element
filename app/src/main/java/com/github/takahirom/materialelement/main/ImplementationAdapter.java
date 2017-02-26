@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.github.takahirom.materialelement.R;
 import com.github.takahirom.materialelement.choreography.ChoreographyActivity;
+import com.github.takahirom.materialelement.creative.CreativeCustomizationActivity;
 import com.github.takahirom.materialelement.durationeasing.DurationAndEasingActivity;
 import com.github.takahirom.materialelement.movement.MovementActivity;
 import com.github.takahirom.materialelement.transforming.TransformingActivity;
@@ -59,6 +60,14 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                         "Choreography",
                         R.drawable.ic_choreography,
                         ChoreographyActivity.class
+                )
+        );
+        listItems.add(
+                new ImplementationItem(
+                        5,
+                        "Creative Customization",
+                        R.drawable.ic_choreography,
+                        CreativeCustomizationActivity.class
                 )
         );
 
