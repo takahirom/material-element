@@ -6,7 +6,8 @@
     <string name="title_activity_movement">MovementActivity</string>
     <string name="title_activity_transforming">TransformingActivity</string>
 
-    <string name="motion">Motion</string>
+    <string name="header_motion">Motion</string>
+    <string name="header_pattern">Patterns</string>
 
     <string name="transition_name_login" translatable="false">login</string>
     <string name="login_title">Log in to My Service</string>

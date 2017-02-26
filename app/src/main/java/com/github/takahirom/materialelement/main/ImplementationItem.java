@@ -17,6 +17,7 @@ public class ImplementationItem extends ListItem implements Parcelable {
     }
 
     protected ImplementationItem(Parcel in) {
+        super(in);
         title = in.readString();
         imageRes = in.readInt();
         activityClassName = in.readString();
@@ -24,6 +25,7 @@ public class ImplementationItem extends ListItem implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
         dest.writeString(title);
         dest.writeInt(imageRes);
         dest.writeString(activityClassName);

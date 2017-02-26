@@ -19,8 +19,8 @@ import java.util.ArrayList;
 
 class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    public static final int VIEW_TYPE_HEADER = 0;
-    public static final int VIEW_TYPE_IMPLEMENTATION = 1;
+    static final int VIEW_TYPE_HEADER = 0;
+    static final int VIEW_TYPE_IMPLEMENTATION = 1;
 
 
     private final ArrayList<ListItem> listItems;
@@ -29,7 +29,7 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     ImplementationAdapter(Context context, OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
         listItems = new ArrayList<>();
-        listItems.add(new HeaderItem(0, VIEW_TYPE_HEADER, context.getString(R.string.motion)));
+        listItems.add(new HeaderItem(VIEW_TYPE_HEADER, 0, context.getString(R.string.header_motion)));
         listItems.add(
                 new ImplementationItem(
                         1,
@@ -62,6 +62,16 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                         ChoreographyActivity.class
                 )
         );
+        listItems.add(
+                new ImplementationItem(
+                        5,
+                        "Creative Customization",
+                        R.drawable.ic_choreography,
+                        CreativeCustomizationActivity.class
+                )
+        );
+        listItems.add(new HeaderItem(VIEW_TYPE_HEADER, 6, context.getString(R.string.header_pattern)));
+
         listItems.add(
                 new ImplementationItem(
                         5,
