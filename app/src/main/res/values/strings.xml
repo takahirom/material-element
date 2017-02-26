@@ -17,4 +17,5 @@
     <string name="transition_name_few_element_share_image">few_element_share_image</string>
 
     <string name="transition_name_implementation_image">shared_element</string>
+    <string name="main_not_enabled_developer_mode">Please enable developer mode in settings</string>
 </resources>

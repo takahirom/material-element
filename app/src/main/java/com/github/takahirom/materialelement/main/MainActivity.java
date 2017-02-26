@@ -3,6 +3,8 @@ package com.github.takahirom.materialelement.main;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -124,6 +126,15 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            boolean isEnable = Settings.Secure.getInt(this.getContentResolver(),
+                    Settings.Global.DEVELOPMENT_SETTINGS_ENABLED , 0) == 1;
+
+            if (isEnable) {
+                Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS);
+                startActivity(intent);
+            } else {
+                Snackbar.make(implementationRecyclerView, R.string.main_not_enabled_developer_mode , Snackbar.LENGTH_SHORT).show();
+            }
             return true;
         }
 
