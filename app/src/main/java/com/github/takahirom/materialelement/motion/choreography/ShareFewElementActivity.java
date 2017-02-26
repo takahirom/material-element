@@ -1,4 +1,4 @@
-package com.github.takahirom.materialelement.choreography;
+package com.github.takahirom.materialelement.motion.choreography;
 
 import android.content.Intent;
 import android.graphics.Bitmap;

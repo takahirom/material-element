@@ -1,23 +1,17 @@
-package com.github.takahirom.materialelement.creative;
+package com.github.takahirom.materialelement.motion.creative;
 
 import android.content.Intent;
 import android.graphics.drawable.Animatable;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.view.animation.FastOutLinearInInterpolator;
-import android.support.v4.view.animation.FastOutSlowInInterpolator;
-import android.support.v4.view.animation.LinearOutSlowInInterpolator;
-import android.support.v4.view.animation.PathInterpolatorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.transition.Transition;
 import android.view.View;
-import android.view.animation.Interpolator;
 import android.widget.ImageView;
 
 import com.github.takahirom.materialelement.R;
-import com.github.takahirom.materialelement.ScreenUtil;
 import com.github.takahirom.materialelement.main.ImplementationItem;
 
 public class CreativeCustomizationActivity extends AppCompatActivity {
@@ -43,24 +37,8 @@ public class CreativeCustomizationActivity extends AppCompatActivity {
 
         final ImageView imageView = (ImageView) findViewById(R.id.detail_image);
 //        collapsingToolbarLayout.setExpandedTitleColor(ContextCompat.getColor(DurationAndEasingActivity.this, android.R.color.white));
+
         imageView.setImageResource(item.imageRes);
-        // If you want to load async, you can use this code
-        //        ActivityCompat.postponeEnterTransition(this);
-//        Glide.with(this).load(item.imageUrl).into(new GlideDrawableImageViewTarget(imageView) {
-//            @Override
-//            protected void setResource(GlideDrawable resource) {
-//                super.setResource(resource);
-//
-//                imageView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
-//                    @Override
-//                    public boolean onPreDraw() {
-//                        ActivityCompat.startPostponedEnterTransition(DurationAndEasingActivity.this);
-//                        imageView.getViewTreeObserver().removeOnPreDrawListener(this);
-//                        window_return true;
-//                    }
-//                });
-//            }
-//        });
         getWindow().getSharedElementEnterTransition().addListener(new Transition.TransitionListener() {
             @Override
             public void onTransitionStart(Transition transition) {

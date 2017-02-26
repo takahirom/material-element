@@ -1,4 +1,4 @@
-package com.github.takahirom.materialelement.choreography;
+package com.github.takahirom.materialelement.main;
 
 import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.support.v7.widget.RecyclerView;

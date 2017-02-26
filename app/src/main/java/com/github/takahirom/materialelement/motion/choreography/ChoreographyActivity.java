@@ -1,4 +1,4 @@
-package com.github.takahirom.materialelement.choreography;
+package com.github.takahirom.materialelement.motion.choreography;
 
 import android.animation.Animator;
 import android.content.Intent;
@@ -36,6 +36,7 @@ import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import com.github.takahirom.materialelement.main.AnimateRecyclerAdapter;
 import com.github.takahirom.materialelement.main.ImplementationItem;
 import com.github.takahirom.materialelement.R;
 import com.github.takahirom.materialelement.ScreenUtil;

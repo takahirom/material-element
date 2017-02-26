@@ -5,7 +5,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.github.takahirom.materialelement.durationeasing.DurationAndEasingActivity">
+    tools:context="com.github.takahirom.materialelement.motion.durationeasing.DurationAndEasingActivity">
 
     <include layout="@layout/implementation_appbar_layout" />
 

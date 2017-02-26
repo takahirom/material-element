@@ -1,4 +1,4 @@
-package com.github.takahirom.materialelement.durationeasing;
+package com.github.takahirom.materialelement.motion.durationeasing;
 
 import android.content.Intent;
 import android.os.Bundle;

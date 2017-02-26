@@ -1,4 +1,4 @@
-package com.github.takahirom.materialelement.movement;
+package com.github.takahirom.materialelement.motion.movement;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.github.takahirom.materialelement.choreography;
+package com.github.takahirom.materialelement.motion.choreography;
 
 import android.graphics.Bitmap;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;

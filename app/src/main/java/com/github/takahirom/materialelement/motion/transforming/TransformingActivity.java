@@ -1,4 +1,4 @@
-package com.github.takahirom.materialelement.transforming;
+package com.github.takahirom.materialelement.motion.transforming;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -9,11 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.takahirom.materialelement.R;
-import com.github.takahirom.materialelement.choreography.ChoreographyActivity;
-import com.github.takahirom.materialelement.creative.CreativeCustomizationActivity;
-import com.github.takahirom.materialelement.durationeasing.DurationAndEasingActivity;
-import com.github.takahirom.materialelement.movement.MovementActivity;
-import com.github.takahirom.materialelement.transforming.TransformingActivity;
+import com.github.takahirom.materialelement.motion.choreography.ChoreographyActivity;
+import com.github.takahirom.materialelement.motion.creative.CreativeCustomizationActivity;
+import com.github.takahirom.materialelement.motion.durationeasing.DurationAndEasingActivity;
+import com.github.takahirom.materialelement.motion.movement.MovementActivity;
+import com.github.takahirom.materialelement.motion.transforming.TransformingActivity;
 
 import java.util.ArrayList;
 

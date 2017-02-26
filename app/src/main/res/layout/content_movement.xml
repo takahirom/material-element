@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.github.takahirom.materialelement.movement.MovementActivity">
+    tools:context=".motion.movement.MovementActivity">
     <!-- tools:showIn="@layout/activity_movement" -->
     <LinearLayout
         android:layout_width="match_parent"

@@ -22,37 +22,37 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".durationeasing.DurationAndEasingActivity"
+            android:name="com.github.takahirom.materialelement.motion.durationeasing.DurationAndEasingActivity"
             android:label="@string/title_activity_dynamic_durations"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
         <activity
-            android:name=".movement.MovementActivity"
+            android:name=".motion.movement.MovementActivity"
             android:label="@string/title_activity_movement"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
 
 
         <activity
-            android:name=".transforming.TransformingActivity"
+            android:name=".motion.transforming.TransformingActivity"
             android:label="@string/title_activity_transforming"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
         <activity
-            android:name=".transforming.LoginActivity"
+            android:name=".motion.transforming.LoginActivity"
             android:theme="@style/AppTheme.Translucent.Login" />
 
 
         <activity
-            android:name=".choreography.ChoreographyActivity"
+            android:name="com.github.takahirom.materialelement.motion.choreography.ChoreographyActivity"
             android:label="@string/title_activity_choreography"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
         <activity
-            android:name=".choreography.ShareAllElementActivity"
+            android:name="com.github.takahirom.materialelement.motion.choreography.ShareAllElementActivity"
             android:theme="@style/AppTheme.NoActionBar.ChoreographyShare" />
         <activity
-            android:name=".choreography.ShareFewElementActivity"
+            android:name="com.github.takahirom.materialelement.motion.choreography.ShareFewElementActivity"
             android:theme="@style/AppTheme.NoActionBar.ChoreographyFewShare" />
 
         <activity
-            android:name=".creative.CreativeCustomizationActivity"
+            android:name="com.github.takahirom.materialelement.motion.creative.CreativeCustomizationActivity"
             android:label="@string/title_activity_movement"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
 
