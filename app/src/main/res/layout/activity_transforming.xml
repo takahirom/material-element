@@ -8,6 +8,8 @@
 
     <include layout="@layout/implementation_appbar_layout" />
 
+    <include layout="@layout/content_transforming" />
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -16,5 +18,4 @@
         app:srcCompat="@drawable/ic_add_white_24dp"
         android:layout_margin="@dimen/fab_margin" />
 
-    <include layout="@layout/content_transforming" />
 </android.support.design.widget.CoordinatorLayout>

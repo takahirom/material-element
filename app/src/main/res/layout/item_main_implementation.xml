@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/scrim"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/spacing_xlarge_48dp"
         android:background="#8f455964"
@@ -39,7 +39,7 @@
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
         android:textColor="#ffffff"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintLeft_toLeftOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintBottom_toBottomOf="@+id/scrim"
+        app:layout_constraintLeft_toLeftOf="@+id/scrim"
+        app:layout_constraintTop_toTopOf="@+id/scrim" />
 </com.github.takahirom.materialelement.view.ForegroundConstraintLayout>

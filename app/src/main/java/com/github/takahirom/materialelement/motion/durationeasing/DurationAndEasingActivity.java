@@ -88,6 +88,8 @@ public class DurationAndEasingActivity extends AppCompatActivity {
                 sharpFab.performClick();
             }
         });
+        final float transitionXPx = ScreenUtil.dp2px(280, DurationAndEasingActivity.this);
+
         standardFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,14 +97,14 @@ public class DurationAndEasingActivity extends AppCompatActivity {
                     v
                             .animate()
                             .translationX(0)
-                            .setDuration(290)
+                            .setDuration(280)
                             .setInterpolator(new FastOutSlowInInterpolator())
                             .start();
                 } else {
                     v
                             .animate()
-                            .translationX(ScreenUtil.dp2px(300, DurationAndEasingActivity.this))
-                            .setDuration(290)
+                            .translationX(transitionXPx)
+                            .setDuration(280)
                             .setInterpolator(new FastOutSlowInInterpolator())
                             .start();
                 }
@@ -115,14 +117,14 @@ public class DurationAndEasingActivity extends AppCompatActivity {
                     v
                             .animate()
                             .translationX(0)
-                            .setDuration(290)
+                            .setDuration(280)
                             .setInterpolator(new LinearOutSlowInInterpolator())
                             .start();
                 } else {
                     v
                             .animate()
-                            .translationX(ScreenUtil.dp2px(300, DurationAndEasingActivity.this))
-                            .setDuration(290)
+                            .translationX(transitionXPx)
+                            .setDuration(280)
                             .setInterpolator(new LinearOutSlowInInterpolator())
                             .start();
                 }
@@ -136,14 +138,14 @@ public class DurationAndEasingActivity extends AppCompatActivity {
                     v
                             .animate()
                             .translationX(0)
-                            .setDuration(290)
+                            .setDuration(280)
                             .setInterpolator(new FastOutLinearInInterpolator())
                             .start();
                 } else {
                     v
                             .animate()
-                            .translationX(ScreenUtil.dp2px(300, DurationAndEasingActivity.this))
-                            .setDuration(290)
+                            .translationX(transitionXPx)
+                            .setDuration(280)
                             .setInterpolator(new FastOutLinearInInterpolator())
                             .start();
                 }
@@ -164,7 +166,7 @@ public class DurationAndEasingActivity extends AppCompatActivity {
                 } else {
                     v
                             .animate()
-                            .translationX(ScreenUtil.dp2px(300, DurationAndEasingActivity.this))
+                            .translationX(transitionXPx)
                             .setDuration(290)
                             .setInterpolator(sharpInterpolator)
                             .start();

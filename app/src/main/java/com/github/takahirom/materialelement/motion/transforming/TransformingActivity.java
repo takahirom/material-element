@@ -19,6 +19,7 @@ import com.github.takahirom.materialelement.animation.transition.TransitionUtils
 import com.github.takahirom.materialelement.main.ImplementationItem;
 import com.github.takahirom.materialelement.R;
 import com.github.takahirom.materialelement.animation.transition.FabTransform;
+import com.github.takahirom.materialelement.util.AndroidVersionUtil;
 
 public class TransformingActivity extends AppCompatActivity {
 
@@ -120,8 +121,9 @@ public class TransformingActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TransformingActivity.this, LoginActivity.class);
                 int color = ContextCompat.getColor(TransformingActivity.this, R.color.colorAccent);
-                FabTransform.addExtras(intent, color, R.drawable.ic_add_white_24dp);
-
+                if(AndroidVersionUtil.isGreaterThanL()) {
+                    FabTransform.addExtras(intent, color, R.drawable.ic_add_white_24dp);
+                }
                 ActivityOptionsCompat optionsCompat = ActivityOptionsCompat
                         .makeSceneTransitionAnimation(TransformingActivity.this,
                                 v,

@@ -20,4 +20,5 @@
     <string name="main_not_enabled_developer_mode">Please enable developer mode in settings</string>
     <string name="title_activity_child">ChildActivity</string>
     <string name="transition_name_navigational_transition">content_root</string>
+    <string name="not_support_os_version">Your Android OS version does not support this feature.</string>
 </resources>

@@ -37,7 +37,7 @@ public class ResourceUtil {
     }
 
     public static Bitmap getBitmap(Context context, @DrawableRes int drawableResId) {
-        Drawable drawable = ContextCompat.getDrawable(context, drawableResId);
+        Drawable drawable = VectorDrawableCompat.create(context.getResources(), drawableResId, context.getTheme());
         if (drawable instanceof BitmapDrawable) {
             return ((BitmapDrawable) drawable).getBitmap();
         } else if (drawable instanceof VectorDrawableCompat) {

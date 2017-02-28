@@ -1,6 +1,8 @@
 package com.github.takahirom.materialelement.motion.movement;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ActivityCompat;
@@ -15,10 +17,12 @@ import android.transition.TransitionManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.github.takahirom.materialelement.animation.transition.TransitionUtils;
 import com.github.takahirom.materialelement.main.ImplementationItem;
 import com.github.takahirom.materialelement.R;
+import com.github.takahirom.materialelement.util.AndroidVersionUtil;
 
 public class MovementActivity extends AppCompatActivity {
 
@@ -89,44 +93,61 @@ public class MovementActivity extends AppCompatActivity {
     }
 
     private void setupArcMotion() {
-
         final RelativeLayout sceneRoot = (RelativeLayout) findViewById(R.id.arc_scene_root);
-        arcScene1 = Scene.getSceneForLayout(sceneRoot, R.layout.card_arc_scene1, this);
-        arcScene2 = Scene.getSceneForLayout(sceneRoot, R.layout.card_arc_scene2, this);
-        sceneRoot.setOnClickListener(new View.OnClickListener() {
-            boolean isScene2 = false;
+        if (AndroidVersionUtil.isGreaterThanL()) {
+            arcScene1 = Scene.getSceneForLayout(sceneRoot, R.layout.card_arc_scene1, this);
+            arcScene2 = Scene.getSceneForLayout(sceneRoot, R.layout.card_arc_scene2, this);
+            sceneRoot.setOnClickListener(new View.OnClickListener() {
+                boolean isScene2 = false;
 
-            @Override
-            public void onClick(View v) {
-                final Transition transition = TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.movement_change_bounds_arc);
-                if (isScene2) {
-                    TransitionManager.go(arcScene1, transition);
-                } else {
-                    TransitionManager.go(arcScene2, transition);
+                @Override
+                public void onClick(View v) {
+                    final Transition transition = TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.movement_change_bounds_arc);
+                    if (isScene2) {
+                        TransitionManager.go(arcScene1, transition);
+                    } else {
+                        TransitionManager.go(arcScene2, transition);
+                    }
+                    isScene2 = !isScene2;
                 }
-                isScene2 = !isScene2;
-            }
-        });
+            });
+        } else {
+            sceneRoot.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MovementActivity.this, R.string.not_support_os_version, Toast.LENGTH_LONG).show();
+                }
+            });
+        }
     }
 
 
     private void setupNotArcMotion() {
         final RelativeLayout sceneRoot = (RelativeLayout) findViewById(R.id.not_arc_scene_root);
-        notArcScene1 = Scene.getSceneForLayout(sceneRoot, R.layout.card_not_arc_scene1, this);
-        notArcScene2 = Scene.getSceneForLayout(sceneRoot, R.layout.card_not_arc_scene2, this);
-        sceneRoot.setOnClickListener(new View.OnClickListener() {
-            boolean isScene2 = false;
+        if (AndroidVersionUtil.isGreaterThanL()) {
+            notArcScene1 = Scene.getSceneForLayout(sceneRoot, R.layout.card_not_arc_scene1, this);
+            notArcScene2 = Scene.getSceneForLayout(sceneRoot, R.layout.card_not_arc_scene2, this);
+            sceneRoot.setOnClickListener(new View.OnClickListener() {
+                boolean isScene2 = false;
 
-            @Override
-            public void onClick(View v) {
-                if (isScene2) {
-                    TransitionManager.go(notArcScene1, TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.movement_change_bounds_arc));
-                } else {
-                    TransitionManager.go(notArcScene2, TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.movement_change_bounds_arc));
+                @Override
+                public void onClick(View v) {
+                    if (isScene2) {
+                        TransitionManager.go(notArcScene1, TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.movement_change_bounds_arc));
+                    } else {
+                        TransitionManager.go(notArcScene2, TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.movement_change_bounds_arc));
+                    }
+                    isScene2 = !isScene2;
                 }
-                isScene2 = !isScene2;
-            }
-        });
+            });
+        } else {
+            sceneRoot.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MovementActivity.this, R.string.not_support_os_version, Toast.LENGTH_LONG).show();
+                }
+            });
+        }
     }
 
 

@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.github.takahirom.materialelement.R;
 import com.github.takahirom.materialelement.animation.transition.FabTransform;
+import com.github.takahirom.materialelement.util.AndroidVersionUtil;
 
 
 public class LoginActivity extends Activity {
@@ -15,7 +16,9 @@ public class LoginActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        FabTransform.setup(this, findViewById(R.id.container));
+        if (AndroidVersionUtil.isGreaterThanL()) {
+            FabTransform.setup(this, findViewById(R.id.container));
+        }
     }
 
 

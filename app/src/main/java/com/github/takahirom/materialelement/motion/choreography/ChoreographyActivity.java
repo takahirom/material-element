@@ -35,11 +35,14 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.takahirom.materialelement.animation.transition.TransitionUtils;
 import com.github.takahirom.materialelement.main.AnimateRecyclerAdapter;
 import com.github.takahirom.materialelement.main.ImplementationItem;
 import com.github.takahirom.materialelement.R;
+import com.github.takahirom.materialelement.motion.movement.MovementActivity;
+import com.github.takahirom.materialelement.util.AndroidVersionUtil;
 import com.github.takahirom.materialelement.util.ScreenUtil;
 import com.github.takahirom.materialelement.view.ResourceUtil;
 
@@ -117,6 +120,11 @@ public class ChoreographyActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 int endRadius = (int) (1.41421 * v.getWidth());
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    if (!AndroidVersionUtil.isGreaterThanL()) {
+                        Toast.makeText(ChoreographyActivity.this, R.string.not_support_os_version, Toast.LENGTH_LONG).show();
+                        return false;
+                    }
+
                     if (cardView.getChildCount() > 2) {
                         cardView.removeViewAt(0);
                     }
@@ -152,13 +160,17 @@ public class ChoreographyActivity extends AppCompatActivity {
 
             @Override
             public boolean onLongClick(View v) {
-                final Scene scene = Scene.getSceneForLayout(cardView, isScene1 ? R.layout.all_element_share_scene2 : R.layout.all_element_share_scene1, ChoreographyActivity.this);
-                final Transition transition = TransitionInflater.from(ChoreographyActivity.this).inflateTransition(isScene1 ? R.transition.choreography_all_elemnet_share_enter : R.transition.choreography_all_element_share_return);
-                TransitionManager.go(scene, transition);
+                if (AndroidVersionUtil.isGreaterThanL()) {
+                    final Scene scene = Scene.getSceneForLayout(cardView, isScene1 ? R.layout.all_element_share_scene2 : R.layout.all_element_share_scene1, ChoreographyActivity.this);
+                    final Transition transition = TransitionInflater.from(ChoreographyActivity.this).inflateTransition(isScene1 ? R.transition.choreography_all_elemnet_share_enter : R.transition.choreography_all_element_share_return);
+                    TransitionManager.go(scene, transition);
 
-                ((ImageView) scene.getSceneRoot().findViewById(R.id.all_element_share_image)).setImageDrawable(rowImage.getDrawable());
+                    ((ImageView) scene.getSceneRoot().findViewById(R.id.all_element_share_image)).setImageDrawable(rowImage.getDrawable());
 
-                isScene1 = !isScene1;
+                    isScene1 = !isScene1;
+                } else {
+                    Toast.makeText(ChoreographyActivity.this, R.string.not_support_os_version, Toast.LENGTH_LONG).show();
+                }
                 return true;
             }
         });
@@ -172,8 +184,8 @@ public class ChoreographyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final Intent intent = new Intent(ChoreographyActivity.this, ShareFewElementActivity.class);
                 final ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(ChoreographyActivity.this,
-                        new Pair<View, String>(cardView, getString(R.string.transition_name_few_element_share)),
-                        new Pair<>(cardView.findViewById(R.id.few_element_share_image), getString(R.string.transition_name_few_element_share_image))
+                        Pair.create((View)cardView, getString(R.string.transition_name_few_element_share)),
+                        Pair.create(cardView.findViewById(R.id.few_element_share_image), getString(R.string.transition_name_few_element_share_image))
                 );
                 ActivityCompat.startActivity(ChoreographyActivity.this, intent, optionsCompat.toBundle());
             }
@@ -184,12 +196,16 @@ public class ChoreographyActivity extends AppCompatActivity {
 
             @Override
             public boolean onLongClick(View v) {
-                final Scene scene = Scene.getSceneForLayout(cardView, isScene1 ? R.layout.few_element_share_scene2 : R.layout.few_element_share_scene1, ChoreographyActivity.this);
-                final Transition transition = TransitionInflater.from(ChoreographyActivity.this).inflateTransition(R.transition.choreography_few_elemnet_share_enter);
-                TransitionManager.go(scene, transition);
+                if (AndroidVersionUtil.isGreaterThanL()) {
+                    final Scene scene = Scene.getSceneForLayout(cardView, isScene1 ? R.layout.few_element_share_scene2 : R.layout.few_element_share_scene1, ChoreographyActivity.this);
+                    final Transition transition = TransitionInflater.from(ChoreographyActivity.this).inflateTransition(R.transition.choreography_few_elemnet_share_enter);
+                    TransitionManager.go(scene, transition);
 
-                ((ImageView) scene.getSceneRoot().findViewById(R.id.few_element_share_image)).setImageDrawable(fewShareImage.getDrawable());
+                    ((ImageView) scene.getSceneRoot().findViewById(R.id.few_element_share_image)).setImageDrawable(fewShareImage.getDrawable());
+                }else{
+                    Toast.makeText(ChoreographyActivity.this, R.string.not_support_os_version, Toast.LENGTH_LONG).show();
 
+                }
                 isScene1 = !isScene1;
                 return true;
             }
@@ -228,7 +244,7 @@ public class ChoreographyActivity extends AppCompatActivity {
                     public boolean onPreDraw() {
                         contentView.getViewTreeObserver().removeOnPreDrawListener(this);
 
-                        TransitionManager.beginDelayedTransition(contentView, new ChangeBounds()
+                        android.support.transition.TransitionManager.beginDelayedTransition(contentView, new android.support.transition.ChangeBounds()
                                 .setInterpolator(new LinearOutSlowInInterpolator()));
 
                         contentView.getLayoutParams().height = dp80;
