@@ -14,6 +14,7 @@ import com.github.takahirom.materialelement.motion.creative.CreativeCustomizatio
 import com.github.takahirom.materialelement.motion.durationeasing.DurationAndEasingActivity;
 import com.github.takahirom.materialelement.motion.movement.MovementActivity;
 import com.github.takahirom.materialelement.motion.transforming.TransformingActivity;
+import com.github.takahirom.materialelement.pattern.loadingimages.LoadingImagesActivity;
 
 import java.util.ArrayList;
 
@@ -74,10 +75,10 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         listItems.add(
                 new ImplementationItem(
-                        5,
+                        7,
                         "Creative Customization",
                         R.drawable.ic_choreography,
-                        CreativeCustomizationActivity.class
+                        LoadingImagesActivity.class
                 )
         );
 

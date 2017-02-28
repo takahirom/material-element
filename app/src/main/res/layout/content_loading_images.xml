@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_dynamic_durations"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.github.takahirom.materialelement.motion.durationeasing.DurationAndEasingActivity">
+    <!-- tools:showIn="@layout/activity_dynamic_durations" -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_normal_8dp"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginRight="@dimen/spacing_normal_8dp"
+            android:layout_marginStart="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_normal_8dp"
+            android:text="Illustrations and photographs may load and transition in three phases by staggering opacity, exposure, and saturation levels."
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_normal_8dp"
+            android:layout_marginRight="@dimen/spacing_normal_8dp"
+            android:layout_marginTop="@dimen/spacing_large_32dp"
+            android:layout_marginBottom="@dimen/spacing_normal_8dp"
+            android:text="Usage"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="?colorPrimary" />
+
+        <ImageView
+            android:layout_margin="@dimen/spacing_normal_8dp"
+            android:id="@+id/loading_image"
+            android:layout_width="128dp"
+            android:layout_height="128dp" />
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

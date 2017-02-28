@@ -13,7 +13,6 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".main.MainActivity"
-            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,17 +22,14 @@
         </activity>
         <activity
             android:name="com.github.takahirom.materialelement.motion.durationeasing.DurationAndEasingActivity"
-            android:label="@string/title_activity_dynamic_durations"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
         <activity
             android:name=".motion.movement.MovementActivity"
-            android:label="@string/title_activity_movement"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
 
 
         <activity
             android:name=".motion.transforming.TransformingActivity"
-            android:label="@string/title_activity_transforming"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
         <activity
             android:name=".motion.transforming.LoginActivity"
@@ -42,7 +38,6 @@
 
         <activity
             android:name="com.github.takahirom.materialelement.motion.choreography.ChoreographyActivity"
-            android:label="@string/title_activity_choreography"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
         <activity
             android:name="com.github.takahirom.materialelement.motion.choreography.ShareAllElementActivity"
@@ -53,7 +48,10 @@
 
         <activity
             android:name="com.github.takahirom.materialelement.motion.creative.CreativeCustomizationActivity"
-            android:label="@string/title_activity_movement"
+            android:theme="@style/AppTheme.NoActionBar.Detail" />
+
+        <activity
+            android:name="com.github.takahirom.materialelement.pattern.loadingimages.LoadingImagesActivity"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
 
     </application>
