@@ -5,6 +5,8 @@ import android.app.ActivityManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v4.content.ContextCompat;
+import android.transition.Transition;
+import android.view.Window;
 
 import com.github.takahirom.materialelement.R;
 
@@ -18,4 +20,5 @@ public class ThemeUtil {
             activity.setTaskDescription(taskDesc);
         }
     }
+
 }

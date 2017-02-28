@@ -24,6 +24,9 @@ import android.transition.TransitionSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
+import android.view.Window;
+
+import com.github.takahirom.materialelement.util.AndroidVersionUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -98,6 +101,23 @@ public class TransitionUtils {
         if (parent != null && parent instanceof ViewGroup) {
             restoreAncestralClipping((ViewGroup) parent, was);
         }
+    }
+
+
+    public static void setSharedElementEnterTransitionEndListenerCompat(Window window, final OnSharedElementEnterTransitionEndListener listener){
+        if (!AndroidVersionUtil.isGreaterThanL()){
+            return;
+        }
+        window.getSharedElementEnterTransition().addListener(new TransitionListenerAdapter() {
+            @Override
+            public void onTransitionEnd(Transition transition) {
+                listener.onEnd(transition);
+            }
+        });
+    }
+
+    public interface OnSharedElementEnterTransitionEndListener {
+        void onEnd(Transition transition);
     }
 
     public static class TransitionListenerAdapter implements Transition.TransitionListener {

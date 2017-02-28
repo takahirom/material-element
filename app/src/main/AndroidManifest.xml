@@ -54,6 +54,10 @@
             android:name="com.github.takahirom.materialelement.pattern.loadingimages.LoadingImagesActivity"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
 
+        <activity
+            android:name="com.github.takahirom.materialelement.pattern.transition.NavigationalTransitionActivity"
+            android:theme="@style/AppTheme.NoActionBar.Detail" />
+
     </application>
 
 </manifest>

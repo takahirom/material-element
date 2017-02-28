@@ -1,21 +1,32 @@
-package com.github.takahirom.materialelement.motion.creative;
+package com.github.takahirom.materialelement.pattern.transition;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Intent;
-import android.graphics.drawable.Animatable;
+import android.graphics.ColorMatrixColorFilter;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.view.ViewCompat;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.transition.Transition;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.github.takahirom.materialelement.R;
+import com.github.takahirom.materialelement.animation.ObservableColorMatrix;
 import com.github.takahirom.materialelement.animation.transition.TransitionUtils;
 import com.github.takahirom.materialelement.main.ImplementationItem;
+import com.github.takahirom.materialelement.util.ThemeUtil;
 
-public class CreativeCustomizationActivity extends AppCompatActivity {
+public class NavigationalTransitionActivity extends AppCompatActivity {
 
     public final static String RESULT_EXTRA_ITEM_ID = "RESULT_EXTRA_ITEM_ID";
     public static final String INTENT_EXTRA_ITEM = "item";
@@ -24,7 +35,7 @@ public class CreativeCustomizationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_creative_customization);
+        setContentView(R.layout.activity_navigational_transition);
         item = getIntent().getParcelableExtra(INTENT_EXTRA_ITEM);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -35,11 +46,6 @@ public class CreativeCustomizationActivity extends AppCompatActivity {
 
     public void setupViews() {
         final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-
-        final ImageView imageView = (ImageView) findViewById(R.id.detail_image);
-//        collapsingToolbarLayout.setExpandedTitleColor(ContextCompat.getColor(DurationAndEasingActivity.this, android.R.color.white));
-
-        imageView.setImageResource(item.imageRes);
         TransitionUtils.setSharedElementEnterTransitionEndListenerCompat(getWindow(), new TransitionUtils.OnSharedElementEnterTransitionEndListener() {
             @Override
             public void onEnd(Transition transition) {
@@ -47,14 +53,27 @@ public class CreativeCustomizationActivity extends AppCompatActivity {
                 collapsingToolbarLayout.setTitle(item.title);
             }
         });
-        final ImageView systemIconImageView = (ImageView) findViewById(R.id.system_icon);
-        systemIconImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((Animatable) systemIconImageView.getDrawable()).start();
-            }
-        });
+
+        final ImageView imageView = (ImageView) findViewById(R.id.detail_image);
+//        collapsingToolbarLayout.setExpandedTitleColor(ContextCompat.getColor(DurationAndEasingActivity.this, android.R.color.white));
+
+        imageView.setImageResource(item.imageRes);
+
+        setupRecyclerView();
     }
+
+    private void setupRecyclerView() {
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new RecyclerViewAdapter(new RecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(int position, View view) {
+
+            }
+        }));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+    }
+
 
     @Override
     public void onBackPressed() {

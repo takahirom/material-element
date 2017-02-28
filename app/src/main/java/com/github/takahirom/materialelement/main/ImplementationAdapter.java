@@ -15,6 +15,7 @@ import com.github.takahirom.materialelement.motion.durationeasing.DurationAndEas
 import com.github.takahirom.materialelement.motion.movement.MovementActivity;
 import com.github.takahirom.materialelement.motion.transforming.TransformingActivity;
 import com.github.takahirom.materialelement.pattern.loadingimages.LoadingImagesActivity;
+import com.github.takahirom.materialelement.pattern.transition.NavigationalTransitionActivity;
 
 import java.util.ArrayList;
 
@@ -82,6 +83,15 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 )
         );
 
+
+        listItems.add(
+                new ImplementationItem(
+                        8,
+                        "Creative Customization",
+                        R.drawable.ic_choreography,
+                        NavigationalTransitionActivity.class
+                )
+        );
     }
 
     @Override

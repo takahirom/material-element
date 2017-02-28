@@ -20,6 +20,7 @@ import android.widget.ImageView;
 
 import com.github.takahirom.materialelement.R;
 import com.github.takahirom.materialelement.animation.ObservableColorMatrix;
+import com.github.takahirom.materialelement.animation.transition.TransitionUtils;
 import com.github.takahirom.materialelement.main.ImplementationItem;
 
 public class LoadingImagesActivity extends AppCompatActivity {
@@ -47,30 +48,11 @@ public class LoadingImagesActivity extends AppCompatActivity {
 //        collapsingToolbarLayout.setExpandedTitleColor(ContextCompat.getColor(DurationAndEasingActivity.this, android.R.color.white));
 
         imageView.setImageResource(item.imageRes);
-        getWindow().getSharedElementEnterTransition().addListener(new Transition.TransitionListener() {
+        TransitionUtils.setSharedElementEnterTransitionEndListenerCompat(getWindow(), new TransitionUtils.OnSharedElementEnterTransitionEndListener() {
             @Override
-            public void onTransitionStart(Transition transition) {
-            }
-
-            @Override
-            public void onTransitionEnd(Transition transition) {
+            public void onEnd(Transition transition) {
                 collapsingToolbarLayout.setTitleEnabled(true);
                 collapsingToolbarLayout.setTitle(item.title);
-            }
-
-            @Override
-            public void onTransitionCancel(Transition transition) {
-
-            }
-
-            @Override
-            public void onTransitionPause(Transition transition) {
-
-            }
-
-            @Override
-            public void onTransitionResume(Transition transition) {
-
             }
         });
 

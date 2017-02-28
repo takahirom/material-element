@@ -36,6 +36,7 @@ import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import com.github.takahirom.materialelement.animation.transition.TransitionUtils;
 import com.github.takahirom.materialelement.main.AnimateRecyclerAdapter;
 import com.github.takahirom.materialelement.main.ImplementationItem;
 import com.github.takahirom.materialelement.R;
@@ -88,32 +89,11 @@ public class ChoreographyActivity extends AppCompatActivity {
         circularBitmapDrawable.setCircular(true);
         allShareRowImage.setImageDrawable(circularBitmapDrawable);
         fewShareImage.setImageDrawable(circularBitmapDrawable);
-        getWindow().getSharedElementEnterTransition().addListener(new Transition.TransitionListener() {
+        TransitionUtils.setSharedElementEnterTransitionEndListenerCompat(getWindow(), new TransitionUtils.OnSharedElementEnterTransitionEndListener() {
             @Override
-            public void onTransitionStart(Transition transition) {
-            }
-
-            @Override
-            public void onTransitionEnd(Transition transition) {
+            public void onEnd(Transition transition) {
                 collapsingToolbarLayout.setTitleEnabled(true);
                 collapsingToolbarLayout.setTitle(item.title);
-
-                getWindow().getEnterTransition().removeListener(this);
-            }
-
-            @Override
-            public void onTransitionCancel(Transition transition) {
-
-            }
-
-            @Override
-            public void onTransitionPause(Transition transition) {
-
-            }
-
-            @Override
-            public void onTransitionResume(Transition transition) {
-
             }
         });
 
