@@ -98,7 +98,7 @@ public class MovementActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                final Transition transition = TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.change_bounds_arc);
+                final Transition transition = TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.movement_change_bounds_arc);
                 if (isScene2) {
                     TransitionManager.go(arcScene1, transition);
                 } else {
@@ -120,9 +120,9 @@ public class MovementActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (isScene2) {
-                    TransitionManager.go(notArcScene1, TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.change_bounds_arc));
+                    TransitionManager.go(notArcScene1, TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.movement_change_bounds_arc));
                 } else {
-                    TransitionManager.go(notArcScene2, TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.change_bounds_arc));
+                    TransitionManager.go(notArcScene2, TransitionInflater.from(MovementActivity.this).inflateTransition(R.transition.movement_change_bounds_arc));
                 }
                 isScene2 = !isScene2;
             }

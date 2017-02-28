@@ -38,7 +38,7 @@ import java.util.List;
 /**
  * An alternative to {@link android.transition.Slide} which staggers elements by <b>distance</b>
  * rather than using start delays. That is elements start from/end at a progressively increasing
- * displacement such that they come together/move apart over the same duration as they window_enter/exit.
+ * displacement such that they come together/move apart over the same duration as they default_window_enter/exit.
  * This can produce more cohesive choreography. The displacement factor can be controlled by the
  * {@code spread} attribute.
  * <p>

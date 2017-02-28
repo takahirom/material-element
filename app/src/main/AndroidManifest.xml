@@ -21,43 +21,39 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.github.takahirom.materialelement.motion.durationeasing.DurationAndEasingActivity"
+            android:name=".motion.durationeasing.DurationAndEasingActivity"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
         <activity
             android:name=".motion.movement.MovementActivity"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
-
-
         <activity
             android:name=".motion.transforming.TransformingActivity"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
         <activity
             android:name=".motion.transforming.LoginActivity"
             android:theme="@style/AppTheme.Translucent.Login" />
-
-
         <activity
-            android:name="com.github.takahirom.materialelement.motion.choreography.ChoreographyActivity"
+            android:name=".motion.choreography.ChoreographyActivity"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
         <activity
-            android:name="com.github.takahirom.materialelement.motion.choreography.ShareAllElementActivity"
+            android:name=".motion.choreography.ShareAllElementActivity"
             android:theme="@style/AppTheme.NoActionBar.ChoreographyShare" />
         <activity
-            android:name="com.github.takahirom.materialelement.motion.choreography.ShareFewElementActivity"
+            android:name=".motion.choreography.ShareFewElementActivity"
             android:theme="@style/AppTheme.NoActionBar.ChoreographyFewShare" />
-
         <activity
-            android:name="com.github.takahirom.materialelement.motion.creative.CreativeCustomizationActivity"
+            android:name=".motion.creative.CreativeCustomizationActivity"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
-
         <activity
-            android:name="com.github.takahirom.materialelement.pattern.loadingimages.LoadingImagesActivity"
+            android:name=".pattern.loadingimages.LoadingImagesActivity"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
-
         <activity
-            android:name="com.github.takahirom.materialelement.pattern.transition.NavigationalTransitionActivity"
+            android:name=".pattern.transition.NavigationalTransitionActivity"
             android:theme="@style/AppTheme.NoActionBar.Detail" />
-
+        <activity
+            android:name=".pattern.transition.ChildActivity"
+            android:label="@string/title_activity_child"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -18,4 +18,6 @@
 
     <string name="transition_name_implementation_image">shared_element</string>
     <string name="main_not_enabled_developer_mode">Please enable developer mode in settings</string>
+    <string name="title_activity_child">ChildActivity</string>
+    <string name="transition_name_navigational_transition">content_root</string>
 </resources>

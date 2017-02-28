@@ -153,7 +153,7 @@ public class ChoreographyActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 final Scene scene = Scene.getSceneForLayout(cardView, isScene1 ? R.layout.all_element_share_scene2 : R.layout.all_element_share_scene1, ChoreographyActivity.this);
-                final Transition transition = TransitionInflater.from(ChoreographyActivity.this).inflateTransition(isScene1 ? R.transition.all_elemnet_share_enter : R.transition.all_element_share_return);
+                final Transition transition = TransitionInflater.from(ChoreographyActivity.this).inflateTransition(isScene1 ? R.transition.choreography_all_elemnet_share_enter : R.transition.choreography_all_element_share_return);
                 TransitionManager.go(scene, transition);
 
                 ((ImageView) scene.getSceneRoot().findViewById(R.id.all_element_share_image)).setImageDrawable(rowImage.getDrawable());
@@ -185,7 +185,7 @@ public class ChoreographyActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 final Scene scene = Scene.getSceneForLayout(cardView, isScene1 ? R.layout.few_element_share_scene2 : R.layout.few_element_share_scene1, ChoreographyActivity.this);
-                final Transition transition = TransitionInflater.from(ChoreographyActivity.this).inflateTransition(R.transition.few_elemnet_share_enter);
+                final Transition transition = TransitionInflater.from(ChoreographyActivity.this).inflateTransition(R.transition.choreography_few_elemnet_share_enter);
                 TransitionManager.go(scene, transition);
 
                 ((ImageView) scene.getSceneRoot().findViewById(R.id.few_element_share_image)).setImageDrawable(fewShareImage.getDrawable());

@@ -9,6 +9,7 @@ import android.graphics.ColorMatrixColorFilter;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
@@ -68,6 +69,9 @@ public class NavigationalTransitionActivity extends AppCompatActivity {
         recyclerView.setAdapter(new RecyclerViewAdapter(new RecyclerViewAdapter.OnItemClickListener() {
             @Override
             public void onClick(int position, View view) {
+                Intent intent = new Intent(NavigationalTransitionActivity.this, ChildActivity.class);
+                ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(NavigationalTransitionActivity.this, view, getString(R.string.transition_name_navigational_transition));
+                startActivity(intent, activityOptionsCompat.toBundle());
 
             }
         }));

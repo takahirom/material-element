@@ -69,7 +69,7 @@ public class FabTransform extends Transition {
 
     /**
      * Create a {@link FabTransform} from the supplied {@code activity} extras and set as its
-     * shared element window_enter/window_return transition.
+     * shared element default_window_enter/default_window_return transition.
      */
     public static boolean setup(@NonNull Activity activity, @Nullable View target) {
         final Intent intent = activity.getIntent();
@@ -239,7 +239,7 @@ public class FabTransform extends Transition {
         colorFade.setInterpolator(fastOutSlowInInterpolator);
         iconFade.setInterpolator(fastOutSlowInInterpolator);
 
-        // Work around issue with elevation shadows. At the end of the window_return transition the shared
+        // Work around issue with elevation shadows. At the end of the default_window_return transition the shared
         // element's shadow is drawn twice (by each activity) which is jarring. This workaround
         // still causes the shadow to snap, but it's better than seeing it double drawn.
         Animator elevation = null;

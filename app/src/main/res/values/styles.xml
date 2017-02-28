@@ -11,26 +11,30 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:windowEnterTransition" tools:targetApi="lollipop">@transition/window_enter</item>
-        <item name="android:windowReturnTransition" tools:targetApi="lollipop">@transition/window_return</item>
+        <item name="android:windowEnterTransition" tools:targetApi="lollipop">@transition/default_window_enter</item>
+        <item name="android:windowReturnTransition" tools:targetApi="lollipop">@transition/default_window_return</item>
     </style>
-
 
 
     <style name="AppTheme.NoActionBar.ChoreographyShare">
-        <item name="android:windowSharedElementEnterTransition">@transition/all_elemnet_share_enter</item>
-        <item name="android:windowSharedElementReturnTransition">@transition/all_element_share_return</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/choreography_all_elemnet_share_enter</item>
+        <item name="android:windowSharedElementReturnTransition">@transition/choreography_all_element_share_return</item>
     </style>
 
     <style name="AppTheme.NoActionBar.ChoreographyFewShare">
-        <item name="android:windowSharedElementEnterTransition">@transition/few_elemnet_share_enter</item>
-        <item name="android:windowSharedElementReturnTransition">@transition/few_elemnet_share_return</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/choreography_few_elemnet_share_enter</item>
+        <item name="android:windowSharedElementReturnTransition">@transition/choreography_few_elemnet_share_return</item>
     </style>
 
 
     <style name="AppTheme.NoActionBar.Detail">
         <item name="android:windowSharedElementEnterTransition">@transition/default_share</item>
         <item name="android:windowSharedElementReturnTransition">@transition/default_share</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.NavigationalTransition">
+        <item name="android:windowSharedElementEnterTransition">@transition/movement_change_bounds_arc</item>
+        <item name="android:windowSharedElementReturnTransition">@transition/movement_change_bounds_arc</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
