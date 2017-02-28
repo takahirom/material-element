@@ -1,12 +1,17 @@
 package com.github.takahirom.materialelement.main;
 
+import android.app.ActivityManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,8 +22,10 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.github.takahirom.materialelement.R;
-import com.github.takahirom.materialelement.ScreenUtil;
+import com.github.takahirom.materialelement.util.AndroidVersionUtil;
+import com.github.takahirom.materialelement.util.ScreenUtil;
 import com.github.takahirom.materialelement.motion.durationeasing.DurationAndEasingActivity;
+import com.github.takahirom.materialelement.util.ThemeUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,10 +36,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ThemeUtil.setTaskDescriptionColor(this);
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        ActionBar supportActionBar = getSupportActionBar();
+        if (supportActionBar != null) {
+            supportActionBar.setDisplayShowTitleEnabled(false);
+        }
         setupRecyclerView();
     }
 
@@ -127,13 +139,13 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             boolean isEnable = Settings.Secure.getInt(this.getContentResolver(),
-                    Settings.Global.DEVELOPMENT_SETTINGS_ENABLED , 0) == 1;
+                    Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) == 1;
 
             if (isEnable) {
                 Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS);
                 startActivity(intent);
             } else {
-                Snackbar.make(implementationRecyclerView, R.string.main_not_enabled_developer_mode , Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(implementationRecyclerView, R.string.main_not_enabled_developer_mode, Snackbar.LENGTH_SHORT).show();
             }
             return true;
         }

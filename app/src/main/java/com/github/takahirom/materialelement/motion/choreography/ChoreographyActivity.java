@@ -39,7 +39,7 @@ import android.widget.TextView;
 import com.github.takahirom.materialelement.main.AnimateRecyclerAdapter;
 import com.github.takahirom.materialelement.main.ImplementationItem;
 import com.github.takahirom.materialelement.R;
-import com.github.takahirom.materialelement.ScreenUtil;
+import com.github.takahirom.materialelement.util.ScreenUtil;
 import com.github.takahirom.materialelement.view.ResourceUtil;
 
 public class ChoreographyActivity extends AppCompatActivity {

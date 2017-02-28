@@ -1,4 +1,4 @@
-package com.github.takahirom.materialelement;
+package com.github.takahirom.materialelement.util;
 
 import android.content.Context;
 

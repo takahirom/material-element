@@ -17,7 +17,7 @@ import android.widget.ImageView;
 
 import com.github.takahirom.materialelement.main.ImplementationItem;
 import com.github.takahirom.materialelement.R;
-import com.github.takahirom.materialelement.ScreenUtil;
+import com.github.takahirom.materialelement.util.ScreenUtil;
 
 public class DurationAndEasingActivity extends AppCompatActivity {
 

@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.takahirom.materialelement.R;
-import com.github.takahirom.materialelement.ScreenUtil;
+import com.github.takahirom.materialelement.util.ScreenUtil;
 
 public class AnimateRecyclerAdapter extends RecyclerView.Adapter{
     int animatedRow = -1;
