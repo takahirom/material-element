@@ -21,7 +21,7 @@
             android:layout_marginRight="@dimen/spacing_normal_8dp"
             android:layout_marginStart="@dimen/spacing_normal_8dp"
             android:layout_marginTop="@dimen/spacing_normal_8dp"
-            android:text="Material in motion is responsive and natural. Use these easing curves and duration patterns to create smooth and consistent motion."
+            android:text="@string/duration_easing_abstract"
             android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
         <TextView
@@ -31,7 +31,7 @@
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
             android:layout_marginRight="@dimen/spacing_normal_8dp"
             android:layout_marginTop="@dimen/spacing_normal_8dp"
-            android:text="Dynamic durations"
+            android:text="@string/duration_easing_duration_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textColor="?colorPrimary" />
 
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
             android:layout_marginTop="@dimen/spacing_large_32dp"
-            android:text="300dp 290ms"
+            android:text="@string/duration_easing_duration_long"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <android.support.design.widget.FloatingActionButton
@@ -59,7 +59,7 @@
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
             android:layout_marginStart="@dimen/spacing_normal_8dp"
             android:layout_marginTop="@dimen/spacing_normal_8dp"
-            android:text="120dp 225ms"
+            android:text="@string/duration_easing_duration_short"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <android.support.design.widget.FloatingActionButton
@@ -80,7 +80,7 @@
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
             android:layout_marginRight="@dimen/spacing_normal_8dp"
             android:layout_marginTop="@dimen/spacing_large_32dp"
-            android:text="Natural easing curves"
+            android:text="@string/duration_easing_easing_curves_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textColor="?colorPrimary" />
 
@@ -90,7 +90,7 @@
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
             android:layout_marginStart="@dimen/spacing_normal_8dp"
             android:layout_marginTop="@dimen/spacing_large_32dp"
-            android:text="Standard curve"
+            android:text="@string/standard_curve_standard_curve"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <android.support.design.widget.FloatingActionButton
@@ -110,7 +110,7 @@
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
             android:layout_marginStart="@dimen/spacing_normal_8dp"
             android:layout_marginTop="@dimen/spacing_normal_8dp"
-            android:text="Deceleration curve"
+            android:text="@string/duration_easing_deceleration_curve"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <android.support.design.widget.FloatingActionButton
@@ -130,7 +130,7 @@
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
             android:layout_marginStart="@dimen/spacing_normal_8dp"
             android:layout_marginTop="@dimen/spacing_normal_8dp"
-            android:text="Acceleration curve"
+            android:text="@string/duration_easing_acceleration_curve"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <android.support.design.widget.FloatingActionButton
@@ -150,7 +150,7 @@
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
             android:layout_marginStart="@dimen/spacing_normal_8dp"
             android:layout_marginTop="@dimen/spacing_normal_8dp"
-            android:text="Sharp curve"
+            android:text="@string/duration_easing_sharp_curve"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <android.support.design.widget.FloatingActionButton

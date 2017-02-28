@@ -18,5 +18,14 @@
     <string name="main_content_description_implementation_image">implementation image</string>
 
     <string name="transforming_login_title">Log in to My Service</string>
+    <string name="duration_easing_abstract">Material in motion is responsive and natural. Use these easing curves and duration patterns to create smooth and consistent motion.</string>
+    <string name="duration_easing_duration_title">Dynamic durations</string>
+    <string name="duration_easing_duration_long">300dp 290ms</string>
+    <string name="duration_easing_duration_short">120dp 225ms</string>
+    <string name="duration_easing_easing_curves_title">Natural easing curves</string>
+    <string name="standard_curve_standard_curve">Standard curve</string>
+    <string name="duration_easing_deceleration_curve">Deceleration curve</string>
+    <string name="duration_easing_acceleration_curve">Acceleration curve</string>
+    <string name="duration_easing_sharp_curve">Sharp curve</string>
 
 </resources>
