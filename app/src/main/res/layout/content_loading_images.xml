@@ -31,15 +31,16 @@
             android:layout_marginRight="@dimen/spacing_normal_8dp"
             android:layout_marginTop="@dimen/spacing_large_32dp"
             android:layout_marginBottom="@dimen/spacing_normal_8dp"
-            android:text="Usage"
+            android:text="Progressive fade-in"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textColor="?colorPrimary" />
 
         <ImageView
             android:layout_margin="@dimen/spacing_normal_8dp"
             android:id="@+id/loading_image"
-            android:layout_width="128dp"
-            android:layout_height="128dp" />
+            android:adjustViewBounds="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

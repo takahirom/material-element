@@ -74,15 +74,12 @@ public class LoadingImagesActivity extends AppCompatActivity {
         // Saturation
         ViewCompat.setHasTransientState(loadingImageImageView, true);
         final ObservableColorMatrix cm = new ObservableColorMatrix();
-        final ObjectAnimator saturation = ObjectAnimator.ofFloat(
+        ObjectAnimator saturation = ObjectAnimator.ofFloat(
                 cm, ObservableColorMatrix.SATURATION, 0f, 1f);
         saturation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener
                 () {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                // just animating the color matrix does not invalidate the
-                // drawable so need this update listener.  Also have to create a
-                // new CMCF as the matrix is immutable :(
                 loadingImageImageView.setColorFilter(new ColorMatrixColorFilter(cm));
             }
         });
