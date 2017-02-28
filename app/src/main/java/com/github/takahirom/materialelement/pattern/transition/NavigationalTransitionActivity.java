@@ -70,9 +70,9 @@ public class NavigationalTransitionActivity extends AppCompatActivity {
             @Override
             public void onClick(int position, View view) {
                 Intent intent = new Intent(NavigationalTransitionActivity.this, ChildActivity.class);
-                ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(NavigationalTransitionActivity.this, view, getString(R.string.transition_name_navigational_transition));
+                String elementName = getString(R.string.transition_name_navigational_transition);
+                ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(NavigationalTransitionActivity.this, view, elementName);
                 startActivity(intent, activityOptionsCompat.toBundle());
-
             }
         }));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));

@@ -2,11 +2,12 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:transitionName="@string/transition_name_navigational_transition"
+    android:background="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.github.takahirom.materialelement.pattern.transition.ChildActivity"
-    tools:showIn="@layout/activity_child">
+    tools:showIn="@layout/activity_child"
+    tools:targetApi="lollipop">
 
 </android.support.constraint.ConstraintLayout>

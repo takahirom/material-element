@@ -5,6 +5,7 @@
     android:foreground="?selectableItemBackground"
     android:background="@android:color/white"
     android:clickable="true"
+    android:stateListAnimator="@animator/raise"
     android:layout_width="match_parent"
     android:layout_height="72dp" >
 
@@ -19,5 +20,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.512" />
+        app:layout_constraintVertical_bias="0" />
 </com.github.takahirom.materialelement.view.ForegroundConstraintLayout>
