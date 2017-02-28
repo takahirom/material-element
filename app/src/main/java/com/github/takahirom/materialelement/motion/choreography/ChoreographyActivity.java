@@ -19,7 +19,6 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.transition.ChangeBounds;
 import android.transition.Scene;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
@@ -41,7 +40,6 @@ import com.github.takahirom.materialelement.animation.transition.TransitionUtils
 import com.github.takahirom.materialelement.main.AnimateRecyclerAdapter;
 import com.github.takahirom.materialelement.main.ImplementationItem;
 import com.github.takahirom.materialelement.R;
-import com.github.takahirom.materialelement.motion.movement.MovementActivity;
 import com.github.takahirom.materialelement.util.AndroidVersionUtil;
 import com.github.takahirom.materialelement.util.ScreenUtil;
 import com.github.takahirom.materialelement.view.ResourceUtil;
@@ -121,7 +119,7 @@ public class ChoreographyActivity extends AppCompatActivity {
                 int endRadius = (int) (1.41421 * v.getWidth());
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     if (!AndroidVersionUtil.isGreaterThanL()) {
-                        Toast.makeText(ChoreographyActivity.this, R.string.not_support_os_version, Toast.LENGTH_LONG).show();
+                        Toast.makeText(ChoreographyActivity.this, R.string.all_not_support_os_version, Toast.LENGTH_LONG).show();
                         return false;
                     }
 
@@ -169,7 +167,7 @@ public class ChoreographyActivity extends AppCompatActivity {
 
                     isScene1 = !isScene1;
                 } else {
-                    Toast.makeText(ChoreographyActivity.this, R.string.not_support_os_version, Toast.LENGTH_LONG).show();
+                    Toast.makeText(ChoreographyActivity.this, R.string.all_not_support_os_version, Toast.LENGTH_LONG).show();
                 }
                 return true;
             }
@@ -203,7 +201,7 @@ public class ChoreographyActivity extends AppCompatActivity {
 
                     ((ImageView) scene.getSceneRoot().findViewById(R.id.few_element_share_image)).setImageDrawable(fewShareImage.getDrawable());
                 }else{
-                    Toast.makeText(ChoreographyActivity.this, R.string.not_support_os_version, Toast.LENGTH_LONG).show();
+                    Toast.makeText(ChoreographyActivity.this, R.string.all_not_support_os_version, Toast.LENGTH_LONG).show();
 
                 }
                 isScene1 = !isScene1;
@@ -222,7 +220,7 @@ public class ChoreographyActivity extends AppCompatActivity {
 
                 contentView.setUseCompatPadding(true);
                 final TextView textView = new TextView(ChoreographyActivity.this);
-                textView.setText("test");
+                textView.setText("sample");
                 contentView.addView(textView);
 
                 int dp8 = (int) ScreenUtil.dp2px(8, ChoreographyActivity.this);

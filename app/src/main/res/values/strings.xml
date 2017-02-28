@@ -1,24 +1,22 @@
 <resources>
+    <!-- naming rule where_what -->
     <string name="app_name">ELEMENT</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_dynamic_durations">DynamicDurationsActivity</string>
-    <string name="implementation_image">implementation image</string>
-    <string name="title_activity_movement">MovementActivity</string>
-    <string name="title_activity_transforming">TransformingActivity</string>
-
-    <string name="header_motion">Motion</string>
-    <string name="header_pattern">Patterns</string>
 
     <string name="transition_name_login" translatable="false">login</string>
-    <string name="login_title">Log in to My Service</string>
-    <string name="title_activity_choreography">ChoreographyActivity</string>
-    <string name="transition_name_all_element_share">all_element_share</string>
-    <string name="transition_name_few_element_share">few_element_share</string>
-    <string name="transition_name_few_element_share_image">few_element_share_image</string>
+    <string name="transition_name_implementation_image" translatable="false">shared_element</string>
+    <string name="transition_name_all_element_share" translatable="false">all_element_share</string>
+    <string name="transition_name_few_element_share" translatable="false">few_element_share</string>
+    <string name="transition_name_few_element_share_image" translatable="false">few_element_share_image</string>
+    <string name="transition_name_navigational_transition" translatable="false">content_root</string>
 
-    <string name="transition_name_implementation_image">shared_element</string>
+    <string name="all_not_support_os_version">Your Android OS version does not support this feature.</string>
+
+    <string name="main_header_motion">Motion</string>
+    <string name="main_header_pattern">Patterns</string>
     <string name="main_not_enabled_developer_mode">Please enable developer mode in settings</string>
-    <string name="title_activity_child">ChildActivity</string>
-    <string name="transition_name_navigational_transition">content_root</string>
-    <string name="not_support_os_version">Your Android OS version does not support this feature.</string>
+    <string name="main_action_settings">Settings</string>
+    <string name="main_content_description_implementation_image">implementation image</string>
+
+    <string name="transforming_login_title">Log in to My Service</string>
+
 </resources>

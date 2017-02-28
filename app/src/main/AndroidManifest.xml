@@ -52,7 +52,6 @@
             android:theme="@style/AppTheme.NoActionBar.Detail" />
         <activity
             android:name=".pattern.transition.ChildActivity"
-            android:label="@string/title_activity_child"
             android:theme="@style/AppTheme.NoActionBar.NavigationalTransition" />
     </application>
 

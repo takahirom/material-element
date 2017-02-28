@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_normal_8dp"
             android:layout_marginBottom="@dimen/dialog_title_spacing_20dp"
-            android:text="@string/login_title"
+            android:text="@string/transforming_login_title"
             style="@style/TextAppearance.AppCompat.Title" />
 
         <android.support.design.widget.TextInputLayout

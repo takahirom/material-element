@@ -21,26 +21,8 @@
             android:layout_marginRight="@dimen/spacing_normal_8dp"
             android:layout_marginStart="@dimen/spacing_normal_8dp"
             android:layout_marginTop="@dimen/spacing_normal_8dp"
-            android:text="Material in motion is responsive and natural. Use these easing curves and duration patterns to create smooth and consistent motion.  "
+            android:text="Material in motion is responsive and natural. Use these easing curves and duration patterns to create smooth and consistent motion."
             android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/spacing_normal_8dp"
-            android:layout_marginRight="@dimen/spacing_normal_8dp"
-            android:layout_marginTop="@dimen/spacing_large_32dp"
-            android:text="Speed"
-            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-            android:textColor="?colorPrimary" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/spacing_normal_8dp"
-            android:layout_marginTop="@dimen/spacing_large_32dp"
-            android:text="TBD"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <TextView
             android:id="@+id/dynamic_duration_text"
