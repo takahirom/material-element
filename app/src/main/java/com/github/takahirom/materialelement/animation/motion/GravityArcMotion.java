@@ -138,20 +138,7 @@ public class GravityArcMotion extends ArcMotion {
             ey = (startY + endY) / 2;
         } else {
             float deltaX = endX - startX;
-
-            /**
-             * This is the only change to ArcMotion
-             */
-            float deltaY;
-            if (endY < startY) {
-                deltaY = startY - endY; // Y is inverted compared to diagram above.
-            } else {
-                deltaY = endY - startY;
-            }
-            /**
-             * End changes
-             */
-
+            float deltaY = endY - startY;
             // hypotenuse squared.
             float h2 = deltaX * deltaX + deltaY * deltaY;
 
@@ -164,23 +151,45 @@ public class GravityArcMotion extends ArcMotion {
 
             float minimumArcDist2 = 0;
 
-            if (Math.abs(deltaX) <= Math.abs(deltaY)) {
+            if ((Math.abs(deltaX) < Math.abs(deltaY))) {
                 // Similar triangles bfa and bde mean that (ab/fb = eb/bd)
                 // Therefore, eb = ab * bd / fb
                 // ab = hypotenuse
                 // bd = hypotenuse/2
                 // fb = deltaY
-                float eDistY = h2 / (2 * deltaY);
-                ey = endY + eDistY;
-                ex = endX;
+                float eDistY = Math.abs(h2 / (2 * deltaY));
+                if (deltaY > 0) {
+                    // down
+                    ey = startY + eDistY;
+                    ex = startX;
+                } else {
+                    // up
+                    ey = endY + eDistY;
+                    ex = endX;
+                }
 
                 minimumArcDist2 = midDist2 * mMinimumVerticalTangent
                         * mMinimumVerticalTangent;
             } else {
                 // Same as above, but flip X & Y
-                float eDistX = h2 / (2 * deltaX);
-                ex = endX + eDistX;
-                ey = endY;
+                float eDistX = Math.abs(h2 / (2 * deltaX));
+                if (deltaY > 0 && deltaX > 0) {
+                    // right down
+                    ex = endX - eDistX;
+                    ey = endY;
+                } else if (deltaY < 0 && deltaX < 0) {
+                    // left up
+                    ex = startX - eDistX;
+                    ey = startY;
+                } else if(deltaY > 0 && deltaX < 0){
+                    // left down
+                    ex = endX + eDistX;
+                    ey = endY;
+                } else {
+                    // right up
+                    ex = startX + eDistX;
+                    ey = startY;
+                }
 
                 minimumArcDist2 = midDist2 * mMinimumHorizontalTangent
                         * mMinimumHorizontalTangent;
