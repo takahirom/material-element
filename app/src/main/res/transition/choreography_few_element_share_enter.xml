@@ -2,16 +2,17 @@
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:duration="375"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:targetApi="LOLLIPOP"
     android:interpolator="@android:interpolator/fast_out_slow_in">
-    <fade
-        android:duration="150"
-        android:startDelay="75" />
-    <transition class="com.github.takahirom.materialelement.animation.transition.AsymmetricTransform">
+
+    <transitionSet>
         <targets>
             <target android:targetId="@id/few_element_share_card" />
             <target android:targetId="@id/few_element_share_image" />
         </targets>
-    </transition>
+        <transition class="com.github.takahirom.materialelement.animation.transition.AsymmetricTransform" />
+    </transitionSet>
     <!--<transition-->
     <!--class="com.github.takahirom.material_design_animation_playground.animation.transition.LiftOff"-->
     <!--app:initialElevation="@dimen/touch_raise">-->

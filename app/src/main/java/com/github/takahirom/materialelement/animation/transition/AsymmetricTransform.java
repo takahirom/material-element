@@ -133,13 +133,16 @@ public class AsymmetricTransform extends Transition {
         }
         ObjectAnimator heightAnim = ObjectAnimator.ofPropertyValuesHolder(view, pvhHeight);
 
-
         AnimatorSet animatorSet = new AnimatorSet();
         if (expand) {
+            widthAnim.setDuration(275);
             heightAnim.setStartDelay(30);
+            heightAnim.setDuration(345);
             animatorSet.playTogether(widthAnim, heightAnim);
         } else {
+            widthAnim.setDuration(325);
             widthAnim.setStartDelay(50);
+            heightAnim.setDuration(325);
             animatorSet.playTogether(heightAnim, widthAnim);
         }
         animatorSet.setInterpolator(new FastOutSlowInInterpolator());

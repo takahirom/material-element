@@ -18,19 +18,20 @@
 
 
     <style name="AppTheme.NoActionBar.ChoreographyShare">
-        <item name="android:windowSharedElementEnterTransition">@transition/choreography_all_elemnet_share_enter</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/choreography_all_element_share_enter</item>
         <item name="android:windowSharedElementReturnTransition">@transition/choreography_all_element_share_return</item>
     </style>
 
     <style name="AppTheme.NoActionBar.ChoreographyFewShare">
-        <item name="android:windowSharedElementEnterTransition">@transition/choreography_few_elemnet_share_enter</item>
-        <item name="android:windowSharedElementReturnTransition">@transition/choreography_few_elemnet_share_return</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/choreography_few_element_share_enter</item>
+        <item name="android:windowSharedElementReturnTransition">@transition/choreography_few_element_share_return</item>
     </style>
 
 
     <style name="AppTheme.NoActionBar.Detail">
         <item name="android:windowSharedElementEnterTransition">@transition/default_share</item>
         <item name="android:windowSharedElementReturnTransition">@transition/default_share</item>
+
     </style>
 
     <style name="AppTheme.NoActionBar.NavigationalTransition">
