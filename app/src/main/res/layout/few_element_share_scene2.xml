@@ -42,6 +42,6 @@
         android:layout_below="@id/divider"
         android:layout_margin="@dimen/spacing_normal_8dp"
         android:layout_marginLeft="@dimen/spacing_normal_8dp"
-        android:text="While a surface is expanding, a significant number of elements should remain visible during the transition.\n\nComplex transitions should keep a single element visible."
+        android:text="While expanding a surface, if only a single element will be present after the transition, that element should be the focal point of the transition, controlling all other elements."
         android:transitionName="all_content_element_nonshare_text" />
 </RelativeLayout>
