@@ -13,16 +13,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <com.github.takahirom.materialelement.view.QuoteLayout
+            android:text="@string/loading_images_abstract"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/spacing_normal_8dp"
-            android:layout_marginLeft="@dimen/spacing_normal_8dp"
-            android:layout_marginRight="@dimen/spacing_normal_8dp"
-            android:layout_marginStart="@dimen/spacing_normal_8dp"
-            android:layout_marginTop="@dimen/spacing_normal_8dp"
-            android:text="Illustrations and photographs may load and transition in three phases by staggering opacity, exposure, and saturation levels."
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            android:layout_width="match_parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:listDivider" />
 
         <TextView
             android:layout_width="wrap_content"

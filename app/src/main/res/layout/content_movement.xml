@@ -14,16 +14,15 @@
         android:orientation="vertical">
 
 
-        <TextView
-            android:layout_width="wrap_content"
+        <com.github.takahirom.materialelement.view.QuoteLayout
+            android:text="@string/movement_abstract"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/spacing_normal_8dp"
-            android:layout_marginLeft="@dimen/spacing_normal_8dp"
-            android:layout_marginRight="@dimen/spacing_normal_8dp"
-            android:layout_marginStart="@dimen/spacing_normal_8dp"
-            android:layout_marginTop="@dimen/spacing_normal_8dp"
-            android:text="Material in motion abides by forces similar to those of the real world, like gravity."
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            android:layout_width="match_parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:listDivider" />
 
         <TextView
             android:layout_width="wrap_content"

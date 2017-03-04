@@ -12,17 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <com.github.takahirom.materialelement.view.QuoteLayout
+            android:text="@string/navigational_transition_abstract"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/spacing_normal_8dp"
-            android:layout_marginLeft="@dimen/spacing_normal_8dp"
-            android:layout_marginRight="@dimen/spacing_normal_8dp"
-            android:layout_marginStart="@dimen/spacing_normal_8dp"
-            android:layout_marginTop="@dimen/spacing_normal_8dp"
-            android:text="Navigational transitions are movements between states in an app, such as from a high-level view to a detailed view."
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            android:layout_width="match_parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:listDivider" />
 
         <TextView
             android:layout_width="wrap_content"

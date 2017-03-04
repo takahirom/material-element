@@ -13,16 +13,16 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
+
+        <com.github.takahirom.materialelement.view.QuoteLayout
+            android:text="@string/transforming_abstract"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/spacing_normal_8dp"
-            android:layout_marginLeft="@dimen/spacing_normal_8dp"
-            android:layout_marginRight="@dimen/spacing_normal_8dp"
-            android:layout_marginStart="@dimen/spacing_normal_8dp"
-            android:layout_marginTop="@dimen/spacing_normal_8dp"
-            android:text="Material can make surfaces feel alive by multiplying and dividing them, and changing their shape and size."
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            android:layout_width="match_parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:listDivider" />
 
         <TextView
             android:layout_width="wrap_content"
