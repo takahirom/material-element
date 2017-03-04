@@ -1,16 +1,12 @@
 package com.github.takahirom.materialelement.main;
 
-import android.app.ActivityManager;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -22,14 +18,13 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.github.takahirom.materialelement.R;
-import com.github.takahirom.materialelement.util.AndroidVersionUtil;
 import com.github.takahirom.materialelement.util.ScreenUtil;
 import com.github.takahirom.materialelement.motion.durationeasing.DurationAndEasingActivity;
 import com.github.takahirom.materialelement.util.ThemeUtil;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView implementationRecyclerView;
+    private RecyclerView recyclerView;
     private static final int REQUEST_ID_DETAIL = 2;
     private ImplementationAdapter adapter;
 
@@ -49,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView() {
-        implementationRecyclerView = (RecyclerView) findViewById(R.id.implementation_list);
+        recyclerView = (RecyclerView) findViewById(R.id.implementation_list);
         final GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
-        implementationRecyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView.setLayoutManager(gridLayoutManager);
         adapter = new ImplementationAdapter(this, new ImplementationAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(ImageView fromImageView, ImplementationItem item) {
@@ -70,10 +65,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        implementationRecyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
 
+        // Calc grid space
         final float spaceSize = ScreenUtil.dp2px(4, this);
-        implementationRecyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
             @Override
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
                 int adapterPosition = parent.getChildViewHolder(view).getAdapterPosition();
@@ -110,21 +106,21 @@ public class MainActivity extends AppCompatActivity {
         final int itemId = data.getIntExtra(DurationAndEasingActivity.RESULT_EXTRA_ITEM_ID, -1);
         if (itemId != -1                                             // returning from a shot
                 && adapter.getItemCount() > 0                           // grid populated
-                && implementationRecyclerView.findViewHolderForItemId(itemId) == null) {    // view not attached
+                && recyclerView.findViewHolderForItemId(itemId) == null) {    // view not attached
             final int position = adapter.getItemPosition(itemId);
             if (position == RecyclerView.NO_POSITION) return;
 
             // delay the transition until our shared element is on-screen i.e. has been laid out
             ActivityCompat.postponeEnterTransition(this);
-            implementationRecyclerView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            recyclerView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
                 @Override
                 public void onLayoutChange(View v, int l, int t, int r, int b,
                                            int oL, int oT, int oR, int oB) {
-                    implementationRecyclerView.removeOnLayoutChangeListener(this);
+                    recyclerView.removeOnLayoutChangeListener(this);
                     ActivityCompat.startPostponedEnterTransition(MainActivity.this);
                 }
             });
-            implementationRecyclerView.scrollToPosition(position);
+            recyclerView.scrollToPosition(position);
         }
     }
 
@@ -145,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS);
                 startActivity(intent);
             } else {
-                Snackbar.make(implementationRecyclerView, R.string.main_not_enabled_developer_mode, Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(recyclerView, R.string.main_not_enabled_developer_mode, Snackbar.LENGTH_SHORT).show();
             }
             return true;
         }

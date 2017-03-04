@@ -36,9 +36,11 @@ import java.util.List;
  */
 public class TransitionUtils {
 
-    private TransitionUtils() { }
+    private TransitionUtils() {
+    }
 
-    public static @Nullable
+    public static
+    @Nullable
     Transition findTransition(
             @NonNull TransitionSet set, @NonNull Class<? extends Transition> clazz) {
         for (int i = 0; i < set.getTransitionCount(); i++) {
@@ -54,7 +56,8 @@ public class TransitionUtils {
         return null;
     }
 
-    public static @Nullable
+    public static
+    @Nullable
     Transition findTransition(
             @NonNull TransitionSet set,
             @NonNull Class<? extends Transition> clazz,
@@ -104,8 +107,8 @@ public class TransitionUtils {
     }
 
 
-    public static void setSharedElementEnterTransitionEndListenerCompat(Window window, final OnSharedElementEnterTransitionEndListener listener){
-        if (!AndroidVersionUtil.isGreaterThanL()){
+    public static void setSharedElementEnterTransitionEndListenerCompat(Window window, final OnSharedElementEnterTransitionEndListener listener) {
+        if (!AndroidVersionUtil.isGreaterThanL()) {
             return;
         }
         window.getSharedElementEnterTransition().addListener(new TransitionListenerAdapter() {
@@ -122,14 +125,24 @@ public class TransitionUtils {
 
     public static class TransitionListenerAdapter implements Transition.TransitionListener {
 
-        @Override public void onTransitionStart(Transition transition) { }
+        @Override
+        public void onTransitionStart(Transition transition) {
+        }
 
-        @Override public void onTransitionEnd(Transition transition) { }
+        @Override
+        public void onTransitionEnd(Transition transition) {
+        }
 
-        @Override public void onTransitionCancel(Transition transition) { }
+        @Override
+        public void onTransitionCancel(Transition transition) {
+        }
 
-        @Override public void onTransitionPause(Transition transition) { }
+        @Override
+        public void onTransitionPause(Transition transition) {
+        }
 
-        @Override public void onTransitionResume(Transition transition) { }
+        @Override
+        public void onTransitionResume(Transition transition) {
+        }
     }
 }

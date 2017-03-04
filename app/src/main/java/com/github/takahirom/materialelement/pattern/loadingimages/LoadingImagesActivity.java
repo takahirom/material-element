@@ -1,16 +1,9 @@
 package com.github.takahirom.materialelement.pattern.loadingimages;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.content.Intent;
-import android.graphics.ColorMatrixColorFilter;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.transition.Transition;
@@ -18,7 +11,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.github.takahirom.materialelement.R;
-import com.github.takahirom.materialelement.animation.ObservableColorMatrix;
 import com.github.takahirom.materialelement.animation.transition.AnimatorUtils;
 import com.github.takahirom.materialelement.animation.transition.TransitionUtils;
 import com.github.takahirom.materialelement.main.ImplementationItem;
@@ -61,7 +53,7 @@ public class LoadingImagesActivity extends AppCompatActivity {
         loadingImageImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AnimatorUtils.startLoadingImagesAnimation(loadingImageImageView);
+                AnimatorUtils.startLoadingAnimation(loadingImageImageView);
             }
         });
     }

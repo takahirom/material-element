@@ -4,7 +4,7 @@ import android.app.Application;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
-public class ElementApplication extends Application{
+public class ElementApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();

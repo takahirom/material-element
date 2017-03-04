@@ -19,7 +19,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_navigational_transition, parent, false);
-        return new RecyclerView.ViewHolder(view) {};
+        return new RecyclerView.ViewHolder(view) {
+        };
     }
 
     @Override
@@ -37,7 +38,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         return 5;
     }
 
-    interface OnItemClickListener{
+    interface OnItemClickListener {
         void onClick(int position, View view);
     }
 

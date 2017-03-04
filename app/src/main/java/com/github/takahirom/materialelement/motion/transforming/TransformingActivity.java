@@ -121,7 +121,7 @@ public class TransformingActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TransformingActivity.this, LoginActivity.class);
                 int color = ContextCompat.getColor(TransformingActivity.this, R.color.colorAccent);
-                if(AndroidVersionUtil.isGreaterThanL()) {
+                if (AndroidVersionUtil.isGreaterThanL()) {
                     FabTransform.addExtras(intent, color, R.drawable.ic_add_white_24dp);
                 }
                 ActivityOptionsCompat optionsCompat = ActivityOptionsCompat

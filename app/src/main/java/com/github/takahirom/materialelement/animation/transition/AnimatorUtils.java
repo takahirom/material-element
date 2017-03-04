@@ -201,7 +201,7 @@ public class AnimatorUtils {
         }
     }
 
-    public static void startLoadingImagesAnimation(final ImageView loadingImageImageView) {
+    public static void startLoadingAnimation(final ImageView loadingImageImageView) {
         // Alpha
         loadingImageImageView.setAlpha(0F);
         loadingImageImageView.animate().setDuration(1000L).alpha(1F);

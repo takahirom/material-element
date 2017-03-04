@@ -23,6 +23,7 @@ import android.widget.ImageView;
 
 import com.github.takahirom.materialelement.R;
 import com.github.takahirom.materialelement.animation.ObservableColorMatrix;
+import com.github.takahirom.materialelement.animation.OnetimeViewTreeObserver;
 import com.github.takahirom.materialelement.animation.transition.TransitionUtils;
 import com.github.takahirom.materialelement.main.ImplementationItem;
 import com.github.takahirom.materialelement.util.ThemeUtil;
@@ -52,6 +53,9 @@ public class NavigationalTransitionActivity extends AppCompatActivity {
             public void onEnd(Transition transition) {
                 collapsingToolbarLayout.setTitleEnabled(true);
                 collapsingToolbarLayout.setTitle(item.title);
+
+                // FIXME: recycler view breaks AppbarLayout
+                setupRecyclerView();
             }
         });
 
@@ -60,11 +64,11 @@ public class NavigationalTransitionActivity extends AppCompatActivity {
 
         imageView.setImageResource(item.imageRes);
 
-        setupRecyclerView();
     }
 
     private void setupRecyclerView() {
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setVisibility(View.VISIBLE);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new RecyclerViewAdapter(new RecyclerViewAdapter.OnItemClickListener() {
             @Override

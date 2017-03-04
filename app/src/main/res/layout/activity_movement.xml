@@ -23,13 +23,23 @@
         android:layout_height="128dp"
         android:layout_gravity="bottom"
         android:layout_margin="@dimen/spacing_normal_8dp"
-        android:translationY="128dp"
+        app:cardUseCompatPadding="true"
         app:layout_insetEdge="bottom">
+        <FrameLayout
+            android:padding="@dimen/padding_normal_16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Relative movement"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead" />
 
-        <TextView
-            android:layout_margin="@dimen/spacing_normal_8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="This animation uses standard curve" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large_32dp"
+                android:text="This animation uses standard curve" />
+        </FrameLayout>
     </android.support.v7.widget.CardView>
 </android.support.design.widget.CoordinatorLayout>

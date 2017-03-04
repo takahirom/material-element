@@ -36,6 +36,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.takahirom.materialelement.animation.OnetimeViewTreeObserver;
 import com.github.takahirom.materialelement.animation.transition.TransitionUtils;
 import com.github.takahirom.materialelement.main.AnimateRecyclerAdapter;
 import com.github.takahirom.materialelement.main.ImplementationItem;
@@ -67,22 +68,12 @@ public class ChoreographyActivity extends AppCompatActivity {
         final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
 
         final ImageView imageView = (ImageView) findViewById(R.id.detail_image);
-        ActivityCompat.postponeEnterTransition(this);
 //        collapsingToolbarLayout.setExpandedTitleColor(ContextCompat.ChoreographyActivity.this, android.R.color.white));
 
         final ImageView allShareRowImage = (ImageView) findViewById(R.id.all_element_share_image);
         final ImageView fewShareImage = (ImageView) findViewById(R.id.few_element_share_image);
 
         imageView.setImageResource(item.imageRes);
-        imageView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
-            @Override
-            public boolean onPreDraw() {
-                ActivityCompat.startPostponedEnterTransition(ChoreographyActivity.this);
-                imageView.getViewTreeObserver().removeOnPreDrawListener(this);
-                return true;
-            }
-        });
-
 
         Bitmap bitmap = ResourceUtil.getBitmap(this, item.imageRes);
         RoundedBitmapDrawable circularBitmapDrawable =
@@ -114,6 +105,7 @@ public class ChoreographyActivity extends AppCompatActivity {
         final CardView cardView = (CardView) findViewById(R.id.radical_reaction_card);
         cardView.setOnTouchListener(new View.OnTouchListener() {
             int colorIndex = 0;
+
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 int endRadius = (int) (1.41421 * v.getWidth());
@@ -129,7 +121,7 @@ public class ChoreographyActivity extends AppCompatActivity {
                     View view = new View(ChoreographyActivity.this);
                     cardView.addView(view, new CardView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
                     int colors[] = new int[]{R.color.colorAccent, R.color.colorPrimary, R.color.colorPrimaryDark};
-                    view.setBackgroundColor(ContextCompat.getColor(ChoreographyActivity.this, colors[(colorIndex++)%colors.length]));
+                    view.setBackgroundColor(ContextCompat.getColor(ChoreographyActivity.this, colors[(colorIndex++) % colors.length]));
                     Animator circularReveal = ViewAnimationUtils.createCircularReveal(view, (int) event.getX(), (int) event.getY(), 0, endRadius);
                     circularReveal.start();
                 }
@@ -182,7 +174,7 @@ public class ChoreographyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final Intent intent = new Intent(ChoreographyActivity.this, ShareFewElementActivity.class);
                 final ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(ChoreographyActivity.this,
-                        Pair.create((View)cardView, getString(R.string.transition_name_few_element_share)),
+                        Pair.create((View) cardView, getString(R.string.transition_name_few_element_share)),
                         Pair.create(cardView.findViewById(R.id.few_element_share_image), getString(R.string.transition_name_few_element_share_image))
                 );
                 ActivityCompat.startActivity(ChoreographyActivity.this, intent, optionsCompat.toBundle());
@@ -200,7 +192,7 @@ public class ChoreographyActivity extends AppCompatActivity {
                     TransitionManager.go(scene, transition);
 
                     ((ImageView) scene.getSceneRoot().findViewById(R.id.few_element_share_image)).setImageDrawable(fewShareImage.getDrawable());
-                }else{
+                } else {
                     Toast.makeText(ChoreographyActivity.this, R.string.all_not_support_os_version, Toast.LENGTH_LONG).show();
 
                 }
@@ -237,18 +229,14 @@ public class ChoreographyActivity extends AppCompatActivity {
 
                 ((FrameLayout.LayoutParams) contentView.getLayoutParams()).gravity = Gravity.TOP;
 
-                contentView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+                OnetimeViewTreeObserver.addOnPreDrawListener(contentView, new OnetimeViewTreeObserver.OnPreDrawListener() {
                     @Override
-                    public boolean onPreDraw() {
-                        contentView.getViewTreeObserver().removeOnPreDrawListener(this);
-
+                    public void onPreDraw() {
                         android.support.transition.TransitionManager.beginDelayedTransition(contentView, new android.support.transition.ChangeBounds()
                                 .setInterpolator(new LinearOutSlowInInterpolator()));
 
                         contentView.getLayoutParams().height = dp80;
                         contentView.getLayoutParams().width = dp80;
-
-                        return false;
                     }
                 });
 

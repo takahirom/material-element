@@ -13,6 +13,7 @@
             <target android:excludeId="@android:id/statusBarBackground" />
             <!--<target android:excludeId="@id/background" />-->
             <target android:excludeId="@id/appbarlayout" />
+            <target android:excludeId="@id/inset_card" />
             <target android:excludeId="@id/fab" />
         </targets>
         <transition

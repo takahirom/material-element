@@ -11,7 +11,7 @@ import android.view.Window;
 import com.github.takahirom.materialelement.R;
 
 public class ThemeUtil {
-    public static void setTaskDescriptionColor(Activity activity){
+    public static void setTaskDescriptionColor(Activity activity) {
         if (AndroidVersionUtil.isGreaterThanL()) {
             Bitmap bm = BitmapFactory.decodeResource(activity.getResources(), R.mipmap.element_icon);
             String name = activity.getString(R.string.app_name);

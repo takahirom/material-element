@@ -181,7 +181,7 @@ public class GravityArcMotion extends ArcMotion {
                     // left up
                     ex = startX - eDistX;
                     ey = startY;
-                } else if(deltaY > 0 && deltaX < 0){
+                } else if (deltaY > 0 && deltaX < 0) {
                     // left down
                     ex = endX + eDistX;
                     ey = endY;

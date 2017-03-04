@@ -28,8 +28,8 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     private final ArrayList<ListItem> listItems;
     private OnItemClickListener onItemClickListener;
-    private int mLastAnimatedPosition = -1;
-    private boolean mLockAnimation = false;
+    private int lastAnimatedPosition = -1;
+    private boolean lockAnimation = false;
 
     ImplementationAdapter(Context context, OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
@@ -118,12 +118,12 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 ItemViewHolder viewHolder = (ItemViewHolder) holder;
                 viewHolder.bind((ImplementationItem) listItems.get(position), onItemClickListener);
 
-                if (position < mLastAnimatedPosition) {
-                    mLockAnimation = true;
+                if (position < lastAnimatedPosition) {
+                    lockAnimation = true;
                 }
-                if (!mLockAnimation) {
-                    mLastAnimatedPosition = position;
-                    AnimatorUtils.startLoadingImagesAnimation(viewHolder.imageView);
+                if (!lockAnimation) {
+                    lastAnimatedPosition = position;
+                    AnimatorUtils.startLoadingAnimation(viewHolder.imageView);
                 }
                 break;
         }

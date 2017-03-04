@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.ViewTreeObserver;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.github.takahirom.materialelement.animation.OnetimeViewTreeObserver;
 import com.github.takahirom.materialelement.main.MainActivity;
 
 public class ProductIconActivity extends AppCompatActivity {
@@ -16,11 +17,9 @@ public class ProductIconActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_icon);
         final LottieAnimationView animationView = (LottieAnimationView) findViewById(R.id.animation_view);
-        animationView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+        OnetimeViewTreeObserver.addOnPreDrawListener(animationView, new OnetimeViewTreeObserver.OnPreDrawListener() {
             @Override
-            public boolean onPreDraw() {
-                animationView.getViewTreeObserver().removeOnPreDrawListener(this);
-
+            public void onPreDraw() {
                 // wait for start animation
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -30,7 +29,6 @@ public class ProductIconActivity extends AppCompatActivity {
                         overridePendingTransition(0, 0);
                     }
                 }, animationView.getDuration());
-                return false;
             }
         });
 

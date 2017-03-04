@@ -9,12 +9,14 @@ import android.view.ViewGroup;
 import com.github.takahirom.materialelement.R;
 import com.github.takahirom.materialelement.util.ScreenUtil;
 
-public class AnimateRecyclerAdapter extends RecyclerView.Adapter{
+public class AnimateRecyclerAdapter extends RecyclerView.Adapter {
     int animatedRow = -1;
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_row_card, parent, false);
-        return new RecyclerView.ViewHolder(view) {};
+        return new RecyclerView.ViewHolder(view) {
+        };
     }
 
     @Override
