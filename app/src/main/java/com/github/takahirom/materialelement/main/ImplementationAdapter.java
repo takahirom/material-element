@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.takahirom.materialelement.R;
+import com.github.takahirom.materialelement.animation.transition.AnimatorUtils;
 import com.github.takahirom.materialelement.motion.choreography.ChoreographyActivity;
 import com.github.takahirom.materialelement.motion.creative.CreativeCustomizationActivity;
 import com.github.takahirom.materialelement.motion.durationeasing.DurationAndEasingActivity;
@@ -27,6 +28,8 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     private final ArrayList<ListItem> listItems;
     private OnItemClickListener onItemClickListener;
+    private int mLastAnimatedPosition = -1;
+    private boolean mLockAnimation = false;
 
     ImplementationAdapter(Context context, OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
@@ -112,7 +115,16 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 ((HeaderViewHolder) holder).bind((HeaderItem) listItems.get(position));
                 break;
             case VIEW_TYPE_IMPLEMENTATION:
-                ((ItemViewHolder) holder).bind((ImplementationItem) listItems.get(position), onItemClickListener);
+                ItemViewHolder viewHolder = (ItemViewHolder) holder;
+                viewHolder.bind((ImplementationItem) listItems.get(position), onItemClickListener);
+
+                if (position < mLastAnimatedPosition) {
+                    mLockAnimation = true;
+                }
+                if (!mLockAnimation) {
+                    mLastAnimatedPosition = position;
+                    AnimatorUtils.startLoadingImagesAnimation(viewHolder.imageView);
+                }
                 break;
         }
     }
@@ -162,6 +174,7 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     itemClickListener.onItemClick(imageView, item);
                 }
             });
+
         }
     }
 

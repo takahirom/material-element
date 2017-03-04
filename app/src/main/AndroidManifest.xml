@@ -14,11 +14,6 @@
         <activity
             android:name=".main.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".motion.durationeasing.DurationAndEasingActivity"
@@ -53,6 +48,15 @@
         <activity
             android:name=".pattern.transition.ChildActivity"
             android:theme="@style/AppTheme.NoActionBar.NavigationalTransition" />
+        <activity android:name=".ProductIconActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

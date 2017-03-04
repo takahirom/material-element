@@ -17,8 +17,17 @@
 package com.github.takahirom.materialelement.animation.transition;
 
 import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.animation.TimeInterpolator;
+import android.animation.ValueAnimator;
+import android.graphics.ColorMatrixColorFilter;
+import android.support.v4.view.ViewCompat;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.util.ArrayMap;
+import android.widget.ImageView;
+
+import com.github.takahirom.materialelement.animation.ObservableColorMatrix;
 
 import java.util.ArrayList;
 
@@ -190,6 +199,35 @@ public class AnimatorUtils {
         public void onAnimationRepeat(Animator animator) {
             mListener.onAnimationRepeat(mAnimator);
         }
+    }
+
+    public static void startLoadingImagesAnimation(final ImageView loadingImageImageView) {
+        // Alpha
+        loadingImageImageView.setAlpha(0F);
+        loadingImageImageView.animate().setDuration(1000L).alpha(1F);
+
+        // Saturation
+        ViewCompat.setHasTransientState(loadingImageImageView, true);
+        final ObservableColorMatrix cm = new ObservableColorMatrix();
+        ObjectAnimator saturation = ObjectAnimator.ofFloat(
+                cm, ObservableColorMatrix.SATURATION, 0f, 1f);
+        saturation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener
+                () {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                loadingImageImageView.setColorFilter(new ColorMatrixColorFilter(cm));
+            }
+        });
+        saturation.setDuration(2000L);
+        saturation.setInterpolator(new FastOutSlowInInterpolator());
+        saturation.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                loadingImageImageView.clearColorFilter();
+                ViewCompat.setHasTransientState(loadingImageImageView, false);
+            }
+        });
+        saturation.start();
     }
 
 }

@@ -6,7 +6,6 @@ import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.graphics.ColorMatrixColorFilter;
-import android.graphics.drawable.Animatable;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ActivityCompat;
@@ -20,6 +19,7 @@ import android.widget.ImageView;
 
 import com.github.takahirom.materialelement.R;
 import com.github.takahirom.materialelement.animation.ObservableColorMatrix;
+import com.github.takahirom.materialelement.animation.transition.AnimatorUtils;
 import com.github.takahirom.materialelement.animation.transition.TransitionUtils;
 import com.github.takahirom.materialelement.main.ImplementationItem;
 
@@ -61,39 +61,11 @@ public class LoadingImagesActivity extends AppCompatActivity {
         loadingImageImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startLaodingImagesAnimation(loadingImageImageView);
+                AnimatorUtils.startLoadingImagesAnimation(loadingImageImageView);
             }
         });
     }
 
-    private void startLaodingImagesAnimation(final ImageView loadingImageImageView) {
-        // Alpha
-        loadingImageImageView.setAlpha(0F);
-        loadingImageImageView.animate().setDuration(1000L).alpha(1F);
-
-        // Saturation
-        ViewCompat.setHasTransientState(loadingImageImageView, true);
-        final ObservableColorMatrix cm = new ObservableColorMatrix();
-        ObjectAnimator saturation = ObjectAnimator.ofFloat(
-                cm, ObservableColorMatrix.SATURATION, 0f, 1f);
-        saturation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener
-                () {
-            @Override
-            public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                loadingImageImageView.setColorFilter(new ColorMatrixColorFilter(cm));
-            }
-        });
-        saturation.setDuration(2000L);
-        saturation.setInterpolator(new FastOutSlowInInterpolator());
-        saturation.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                loadingImageImageView.clearColorFilter();
-                ViewCompat.setHasTransientState(loadingImageImageView, false);
-            }
-        });
-        saturation.start();
-    }
 
     @Override
     public void onBackPressed() {
