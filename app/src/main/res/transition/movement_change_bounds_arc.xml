@@ -3,8 +3,5 @@
     android:duration="350"
     android:interpolator="@android:interpolator/fast_out_slow_in">
     <pathMotion class="com.github.takahirom.materialelement.animation.motion.GravityArcMotion"
-        android:maximumAngle="90"
-        android:minimumHorizontalAngle="0"
-        android:minimumVerticalAngle="0"
         />
 </changeBounds>

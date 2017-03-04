@@ -67,8 +67,8 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         listItems.add(
                 new ImplementationItem(
                         5,
-                        "Creative Customization",
-                        R.drawable.ic_choreography,
+                        "Creative customization",
+                        R.drawable.ic_creative_customize,
                         CreativeCustomizationActivity.class
                 )
         );
@@ -77,8 +77,8 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         listItems.add(
                 new ImplementationItem(
                         7,
-                        "Creative Customization",
-                        R.drawable.ic_choreography,
+                        "Loading images",
+                        R.drawable.ic_loading_image,
                         LoadingImagesActivity.class
                 )
         );
@@ -87,8 +87,8 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         listItems.add(
                 new ImplementationItem(
                         8,
-                        "Creative Customization",
-                        R.drawable.ic_choreography,
+                        "Navigational transition",
+                        R.drawable.ic_navigational_transition,
                         NavigationalTransitionActivity.class
                 )
         );
