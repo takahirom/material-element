@@ -171,7 +171,7 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    itemClickListener.onItemClick(imageView, item);
+                    itemClickListener.onItemClick(itemView, item);
                 }
             });
 
@@ -179,7 +179,7 @@ class ImplementationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     interface OnItemClickListener {
-        void onItemClick(ImageView fromImageView, ImplementationItem item);
+        void onItemClick(View fromView, ImplementationItem item);
     }
 
     @Override

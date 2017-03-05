@@ -15,7 +15,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
 
 import com.github.takahirom.materialelement.R;
 import com.github.takahirom.materialelement.util.ScreenUtil;
@@ -49,11 +48,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(gridLayoutManager);
         adapter = new ImplementationAdapter(this, new ImplementationAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(ImageView fromImageView, ImplementationItem item) {
+            public void onItemClick(View fromView, ImplementationItem item) {
                 final Intent intent = new Intent(MainActivity.this, item.getActivityClass());
                 intent.putExtra(DurationAndEasingActivity.INTENT_EXTRA_ITEM, item);
                 String sharedElementName = getString(R.string.transition_name_implementation_image);
-                final Bundle options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, fromImageView, sharedElementName).toBundle();
+                final Bundle options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, fromView, sharedElementName).toBundle();
                 ActivityCompat.startActivityForResult(MainActivity.this, intent, REQUEST_ID_DETAIL, options);
             }
         });
