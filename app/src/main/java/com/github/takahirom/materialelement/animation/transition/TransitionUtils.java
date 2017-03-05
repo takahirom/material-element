@@ -16,20 +16,27 @@
 
 package com.github.takahirom.materialelement.animation.transition;
 
+import android.app.Notification;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
+import android.support.v7.app.AlertDialog;
 import android.transition.Transition;
 import android.transition.TransitionSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.Window;
+import android.widget.Toast;
 
+import com.github.takahirom.materialelement.R;
 import com.github.takahirom.materialelement.util.AndroidVersionUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Utility methods for working with transitions
@@ -117,6 +124,44 @@ public class TransitionUtils {
                 listener.onEnd(transition);
             }
         });
+    }
+
+    public static void showForDebug(Window window) {
+        if (!AndroidVersionUtil.isGreaterThanL()) {
+            return;
+        }
+        String message = "If you want to disable this dialog, Please restart app." +
+                "windowAnimations:" +
+                window.getContext().getResources().getResourceName(window.getAttributes().windowAnimations) +
+                "\n-----\n" +
+                "SharedElementEnterTransition:" +
+                window.getSharedElementEnterTransition() +
+                "\n-----\n" +
+                "ReturnTransition:" +
+                window.getReturnTransition() +
+                "\n-----\n" +
+                "SharedElementReturnTransition:" +
+                window.getSharedElementReturnTransition() +
+                "\n-----\n" +
+                "ReenterTransition:" +
+                window.getReenterTransition() +
+                "\n-----\n" +
+                "SharedElementReenterTransition:" +
+                window.getSharedElementReenterTransition() +
+                "\n-----\n" +
+                "ExitTransition:" +
+                window.getExitTransition() +
+                "\n-----\n" +
+                "SharedElementExitTransition:" +
+                window.getSharedElementExitTransition();
+        new AlertDialog.Builder(window.getContext())
+                .setMessage(message).show();
+    }
+    private static String toStringForLog(Object object){
+        if (object == null) {
+            return "None";
+        }
+        return object.toString();
     }
 
     public interface OnSharedElementEnterTransitionEndListener {

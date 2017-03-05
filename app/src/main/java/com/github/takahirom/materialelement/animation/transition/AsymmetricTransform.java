@@ -13,6 +13,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ * From ChangeBoundsPort in AOSP
+ */
 public class AsymmetricTransform extends Transition {
     private static final String PROP_BOUNDS = "mdap:fabTransform:bounds";
 
@@ -49,7 +52,6 @@ public class AsymmetricTransform extends Transition {
     private void captureValues(TransitionValues transitionValues) {
         final View view = transitionValues.view;
         if (view == null || view.getWidth() <= 0 || view.getHeight() <= 0) return;
-
         transitionValues.values.put(PROP_BOUNDS, new Rect(view.getLeft(), view.getTop(),
                 view.getRight(), view.getBottom()));
     }

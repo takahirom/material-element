@@ -173,10 +173,19 @@ public class ChoreographyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final Intent intent = new Intent(ChoreographyActivity.this, ShareFewElementActivity.class);
-                final ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(ChoreographyActivity.this,
-                        Pair.create((View) cardView, getString(R.string.transition_name_few_element_share)),
-                        Pair.create(cardView.findViewById(R.id.few_element_share_image), getString(R.string.transition_name_few_element_share_image))
-                );
+                final ActivityOptionsCompat optionsCompat;
+                if (AndroidVersionUtil.isGreaterThanM()) {
+                    optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(ChoreographyActivity.this,
+                            Pair.create((View) cardView, getString(R.string.transition_name_few_element_share)),
+                            Pair.create(cardView.findViewById(R.id.few_element_share_image), getString(R.string.transition_name_few_element_share_image))
+                    );
+                }else{
+                    // FIXME: strange behavior on lollipop when use child shared element
+                    // Probably cant animate child view
+                    optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(ChoreographyActivity.this,
+                            Pair.create((View) cardView, getString(R.string.transition_name_few_element_share))
+                    );
+                }
                 ActivityCompat.startActivity(ChoreographyActivity.this, intent, optionsCompat.toBundle());
             }
         });

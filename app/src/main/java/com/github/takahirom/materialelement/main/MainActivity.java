@@ -1,5 +1,7 @@
 package com.github.takahirom.materialelement.main;
 
+import android.app.Activity;
+import android.app.Application;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -17,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.github.takahirom.materialelement.R;
+import com.github.takahirom.materialelement.animation.transition.TransitionUtils;
 import com.github.takahirom.materialelement.util.ScreenUtil;
 import com.github.takahirom.materialelement.motion.durationeasing.DurationAndEasingActivity;
 import com.github.takahirom.materialelement.util.ThemeUtil;
@@ -143,6 +146,43 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(recyclerView, R.string.main_not_enabled_developer_mode, Snackbar.LENGTH_SHORT).show();
             }
             return true;
+        }else if(id == R.id.action_debug){
+            getApplication().registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
+                @Override
+                public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+
+                }
+
+                @Override
+                public void onActivityStarted(Activity activity) {
+                    TransitionUtils.showForDebug(activity.getWindow());
+                }
+
+                @Override
+                public void onActivityResumed(Activity activity) {
+
+                }
+
+                @Override
+                public void onActivityPaused(Activity activity) {
+
+                }
+
+                @Override
+                public void onActivityStopped(Activity activity) {
+
+                }
+
+                @Override
+                public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
+
+                }
+
+                @Override
+                public void onActivityDestroyed(Activity activity) {
+
+                }
+            });
         }
 
         return super.onOptionsItemSelected(item);

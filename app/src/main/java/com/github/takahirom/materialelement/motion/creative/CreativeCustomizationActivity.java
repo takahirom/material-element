@@ -54,6 +54,7 @@ public class CreativeCustomizationActivity extends AppCompatActivity {
                 ((Animatable) systemIconImageView.getDrawable()).start();
             }
         });
+
     }
 
     @Override

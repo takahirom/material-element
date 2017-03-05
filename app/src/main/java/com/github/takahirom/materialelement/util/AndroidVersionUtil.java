@@ -10,4 +10,8 @@ public class AndroidVersionUtil {
     public static boolean isGreaterThanL() {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
     }
+
+    public static boolean isGreaterThanM() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M;
+    }
 }
