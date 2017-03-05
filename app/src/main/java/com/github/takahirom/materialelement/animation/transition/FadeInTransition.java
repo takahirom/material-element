@@ -65,9 +65,10 @@ public class FadeInTransition extends Transition {
         if (startValues == null || endValues == null) return null;
 
         final View view = endValues.view;
+        view.setAlpha(0f);
         ValueAnimator alphaAnim = ObjectAnimator.ofFloat(view, "alpha", 0f, 1f);
         alphaAnim.setDuration(getDuration());
-        alphaAnim.setInterpolator(new LinearOutSlowInInterpolator());
+        alphaAnim.setInterpolator(getInterpolator());
         return alphaAnim;
     }
 

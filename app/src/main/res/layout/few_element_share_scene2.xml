@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@android:color/white"
     android:id="@+id/few_content_element_all_layout"
-    android:transitionName="few_element_share"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:transitionName="few_element_share">
 
     <ImageView
-        android:transitionName="@string/transition_name_few_element_share_image"
         android:id="@+id/few_element_share_image"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="@null"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp" />
-
+        android:transitionName="@string/transition_name_few_element_share_image" />
 
     <TextView
         android:id="@+id/few_element_not_share_text"
@@ -24,6 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/few_element_share_image"
         android:layout_toRightOf="@id/few_element_share_image"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:text="Few content elements are shared"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -41,6 +44,5 @@
         android:layout_below="@id/divider"
         android:layout_margin="@dimen/spacing_normal_8dp"
         android:layout_marginLeft="@dimen/spacing_normal_8dp"
-        android:text="While expanding a surface, if only a single element will be present after the transition, that element should be the focal point of the transition, controlling all other elements."
-        android:transitionName="all_content_element_nonshare_text" />
+        android:text="While expanding a surface, if only a single element will be present after the transition, that element should be the focal point of the transition, controlling all other elements." />
 </RelativeLayout>

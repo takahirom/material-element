@@ -2,7 +2,6 @@
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:interpolator="@android:interpolator/fast_out_slow_in"
     tools:targetApi="LOLLIPOP">
 
     <transitionSet>
@@ -10,13 +9,16 @@
             <target android:targetId="@id/few_element_share_card" />
             <target android:targetId="@id/few_element_share_image" />
         </targets>
-        <transition class="com.github.takahirom.materialelement.animation.transition.AsymmetricTransform" />
+        <transition class="com.github.takahirom.materialelement.animation.transition.AsymmetricTransform"
+            android:interpolator="@android:interpolator/fast_out_slow_in"
+            />
     </transitionSet>
 
     <!-- for activity shared transition -->
     <transition
         class="com.github.takahirom.materialelement.animation.transition.FadeInTransition"
-        android:duration="75"
+        android:duration="150"
+        android:startDelay="75"
         android:interpolator="@android:interpolator/linear_out_slow_in">
         <targets>
             <target android:targetId="@id/all_element_share_no_share_text" />
@@ -26,7 +28,8 @@
 
     <!-- for normal transition -->
     <fade
-        android:duration="75"
+        android:duration="150"
+        android:startDelay="75"
         android:interpolator="@android:interpolator/linear_out_slow_in">
     <targets>
         <target android:targetId="@id/all_element_share_no_share_text" />
