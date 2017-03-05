@@ -3,27 +3,34 @@ package com.github.takahirom.materialelement.animation.transition;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Rect;
+import android.os.Build;
+import android.support.v4.view.animation.LinearOutSlowInInterpolator;
+import android.transition.Transition;
 import android.transition.TransitionValues;
-import android.transition.Visibility;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-@SuppressWarnings("unused")
-public class BlinkVisibilityDebugTransition extends Visibility {
+/**
+ * SharedElementTransition cannot Visibility transition like fade
+ * So I create this transtiion.
+ */
+@TargetApi(Build.VERSION_CODES.KITKAT)
+public class FadeInTransition extends Transition {
     private static final String PROP_BOUNDS = "mdap:fabTransform:bounds";
 
     private static final String[] transitionProperties = {
             PROP_BOUNDS
     };
 
-    public BlinkVisibilityDebugTransition() {
+    public FadeInTransition() {
         super();
     }
 
-    public BlinkVisibilityDebugTransition(Context context, AttributeSet attrs) {
+    public FadeInTransition(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -57,14 +64,10 @@ public class BlinkVisibilityDebugTransition extends Visibility {
                                    TransitionValues endValues) {
         if (startValues == null || endValues == null) return null;
 
-        final Rect startBounds = (Rect) startValues.values.get(PROP_BOUNDS);
-        final Rect endBounds = (Rect) endValues.values.get(PROP_BOUNDS);
-
         final View view = endValues.view;
         ValueAnimator alphaAnim = ObjectAnimator.ofFloat(view, "alpha", 0f, 1f);
-        alphaAnim.setDuration(5);
-        alphaAnim.setRepeatCount(ValueAnimator.INFINITE);
-        alphaAnim.setRepeatMode(ValueAnimator.REVERSE);
+        alphaAnim.setDuration(getDuration());
+        alphaAnim.setInterpolator(new LinearOutSlowInInterpolator());
         return alphaAnim;
     }
 

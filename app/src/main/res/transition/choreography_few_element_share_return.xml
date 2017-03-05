@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:duration="375"
     android:interpolator="@android:interpolator/fast_out_slow_in">
-    <fade
-        android:duration="150"
-        android:startDelay="75" />
     <transition class="com.github.takahirom.materialelement.animation.transition.AsymmetricTransform">
         <targets>
             <target android:targetId="@id/few_element_share_card" />
             <target android:targetId="@id/few_element_share_image" />
         </targets>
     </transition>
-    <!--<transition-->
-        <!--class="com.github.takahirom.material_design_animation_playground.animation.transition.LiftOff"-->
-        <!--app:initialElevation="@dimen/touch_raise">-->
-        <!--<targets>-->
-            <!--<target id="@id/few_element_share_card" />-->
-        <!--</targets>-->
-    <!--</transition>-->
+    <!-- for activity transition -->
+    <transition
+        class="com.github.takahirom.materialelement.animation.transition.FadeOutTransition"
+        android:duration="75"
+        android:interpolator="@android:interpolator/fast_out_linear_in">
+        <targets>
+            <target android:targetId="@id/all_element_share_no_share_text" />
+            <target android:targetId="@id/few_element_not_share_text" />
+        </targets>
+    </transition>
+
+    <!-- for normal transition -->
+    <fade
+        android:duration="75"
+        android:interpolator="@android:interpolator/fast_out_linear_in">
+        <targets>
+            <target android:targetId="@id/all_element_share_no_share_text" />
+            <target android:targetId="@id/few_element_not_share_text" />
+        </targets>
+    </fade>
 </transitionSet>

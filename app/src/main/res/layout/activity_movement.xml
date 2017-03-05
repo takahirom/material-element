@@ -21,6 +21,7 @@
         android:id="@+id/inset_card"
         android:layout_width="match_parent"
         android:layout_height="128dp"
+        android:translationY="128dp"
         android:layout_gravity="bottom"
         android:layout_margin="@dimen/spacing_normal_8dp"
         app:cardUseCompatPadding="true"

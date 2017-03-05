@@ -16,7 +16,6 @@
         <item name="android:windowReturnTransition" tools:targetApi="lollipop">@transition/default_window_return</item>
     </style>
 
-
     <style name="AppTheme.NoActionBar.ChoreographyShare">
         <item name="android:windowSharedElementEnterTransition">@transition/choreography_all_element_share_enter</item>
         <item name="android:windowSharedElementReturnTransition">@transition/choreography_all_element_share_return</item>

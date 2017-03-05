@@ -2,20 +2,33 @@
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:duration="375"
     android:transitionOrdering="together"
     android:interpolator="@android:interpolator/fast_out_slow_in"
     tools:targetApi="lollipop">
     <changeBounds />
+    <!-- for activity transition -->
+    <transition
+        class="com.github.takahirom.materialelement.animation.transition.FadeInTransition"
+        android:duration="300"
+        android:interpolator="@android:interpolator/linear_out_slow_in"
+        android:startDelay="75">
+        <targets>
+            <target android:targetId="@id/all_element_share_no_share_text" />
+        </targets>
+    </transition>
+    <!-- for normal transition -->
     <fade
-        android:duration="150"
+        android:duration="300"
         android:fadingMode="fade_in"
+        android:interpolator="@android:interpolator/linear_out_slow_in"
         android:startDelay="75">
         <targets>
             <target android:targetId="@id/all_element_share_no_share_text" />
         </targets>
     </fade>
+
     <transition
+        android:duration="375"
         class="com.github.takahirom.materialelement.animation.transition.LiftOff"
         app:initialElevation="@dimen/touch_raise" />
 </transitionSet>

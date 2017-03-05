@@ -64,13 +64,12 @@ public class BlinkDebugTransition extends Transition {
         final Rect startBounds = (Rect) startValues.values.get(PROP_BOUNDS);
         final Rect endBounds = (Rect) endValues.values.get(PROP_BOUNDS);
 
-        final boolean expand = startBounds.top > endBounds.top;
         final View view = endValues.view;
-        ValueAnimator colorAnim = ObjectAnimator.ofFloat(view, "alpha", 0f, 1f);
-        colorAnim.setDuration(5);
-        colorAnim.setRepeatCount(ValueAnimator.INFINITE);
-        colorAnim.setRepeatMode(ValueAnimator.REVERSE);
-        return colorAnim;
+        ValueAnimator alphaAnim = ObjectAnimator.ofFloat(view, "alpha", 0f, 1f);
+        alphaAnim.setDuration(5);
+        alphaAnim.setRepeatCount(ValueAnimator.INFINITE);
+        alphaAnim.setRepeatMode(ValueAnimator.REVERSE);
+        return alphaAnim;
     }
 
 }
