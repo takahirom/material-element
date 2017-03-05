@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<transitionSet
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
     android:duration="350"
-    android:transitionOrdering="together">
-
-    <transition
-        class="android.transition.ChangeBounds"
-        android:interpolator="@android:interpolator/fast_out_slow_in">
-        <targets>
-            <target android:targetId="@id/detail_image" />
-        </targets>
-    </transition>
+    android:interpolator="@android:interpolator/fast_out_slow_in">
+    <changeBounds/>
     <pathMotion class="com.github.takahirom.materialelement.animation.motion.GravityArcMotion" />
 </transitionSet>
