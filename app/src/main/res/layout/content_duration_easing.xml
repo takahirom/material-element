@@ -91,7 +91,7 @@
             android:layout_marginLeft="@dimen/spacing_normal_8dp"
             android:layout_marginStart="@dimen/spacing_normal_8dp"
             android:layout_marginTop="@dimen/spacing_large_32dp"
-            android:text="@string/standard_curve_standard_curve"
+            android:text="@string/duration_easing_standard_curve"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <android.support.design.widget.FloatingActionButton

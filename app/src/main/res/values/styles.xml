@@ -25,7 +25,7 @@
     <style name="AppTheme.NoActionBar.ChoreographyFewShare">
         <item name="android:windowSharedElementEnterTransition">@transition/choreography_few_element_share_enter</item>
         <item name="android:windowSharedElementReturnTransition">@transition/choreography_few_element_share_return</item>
-    </style>
+    </style>e
 
 
     <style name="AppTheme.NoActionBar.Detail">
