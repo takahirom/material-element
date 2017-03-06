@@ -1,10 +1,10 @@
 # material-element
-
+![logo](https://cloud.githubusercontent.com/assets/1386930/23596654/fa752a92-026f-11e7-8548-fe1256b6edc1.png)
 
 An Android app which provides  example of implementing material design animation.
 
 
-![output_sicle](https://cloud.githubusercontent.com/assets/1386930/23578876/bb3b62d0-0123-11e7-906a-bc5714314f44.gif)
+![screencapture](https://cloud.githubusercontent.com/assets/1386930/23578876/bb3b62d0-0123-11e7-906a-bc5714314f44.gif)
 
 
 ## Designer
