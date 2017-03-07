@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
 import android.graphics.Rect;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.design.widget.Snackbar;
@@ -135,57 +136,70 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            boolean isEnable = Settings.Secure.getInt(this.getContentResolver(),
-                    Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) == 1;
+        if (id == R.id.action_github) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.main_github_url))));
+        } else {
+            if (id == R.id.action_settings) {
+                openDeveloperSettings();
+                return true;
+            } else if (id == R.id.action_debug) {
 
-            if (isEnable) {
-                Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS);
-                startActivity(intent);
-            } else {
-                Snackbar.make(recyclerView, R.string.main_not_enabled_developer_mode, Snackbar.LENGTH_SHORT).show();
+                startTransitionDebug();
             }
-            return true;
-        }else if(id == R.id.action_debug){
-            getApplication().registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
-                @Override
-                public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-
-                }
-
-                @Override
-                public void onActivityStarted(Activity activity) {
-                    TransitionUtils.showForDebug(activity.getWindow());
-                }
-
-                @Override
-                public void onActivityResumed(Activity activity) {
-
-                }
-
-                @Override
-                public void onActivityPaused(Activity activity) {
-
-                }
-
-                @Override
-                public void onActivityStopped(Activity activity) {
-
-                }
-
-                @Override
-                public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-
-                }
-
-                @Override
-                public void onActivityDestroyed(Activity activity) {
-
-                }
-            });
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void startTransitionDebug() {
+        getApplication().registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
+            @Override
+            public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+
+            }
+
+            @Override
+            public void onActivityStarted(Activity activity) {
+                TransitionUtils.showForDebug(activity.getWindow());
+            }
+
+            @Override
+            public void onActivityResumed(Activity activity) {
+
+            }
+
+            @Override
+            public void onActivityPaused(Activity activity) {
+
+            }
+
+            @Override
+            public void onActivityStopped(Activity activity) {
+
+            }
+
+            @Override
+            public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
+
+            }
+
+            @Override
+            public void onActivityDestroyed(Activity activity) {
+
+            }
+        });
+    }
+
+    private void openDeveloperSettings() {
+        boolean isEnable = Settings.Secure.getInt(this.getContentResolver(),
+                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) == 1;
+
+        if (isEnable) {
+            Intent intent = new Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS);
+            startActivity(intent);
+        } else {
+            Snackbar.make(recyclerView, R.string.main_not_enabled_developer_mode, Snackbar.LENGTH_SHORT).show();
+        }
     }
 
 

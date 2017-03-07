@@ -14,8 +14,9 @@
     <string name="main_header_motion">Motion</string>
     <string name="main_header_pattern">Patterns</string>
     <string name="main_not_enabled_developer_mode">Please enable developer mode in settings</string>
-    <string name="main_action_settings">Settings</string>
-    <string name="main_action_debug">Debug</string>
+    <string name="main_action_settings">Developer Settings</string>
+    <string name="main_action_debug">Transition Debug</string>
+    <string name="main_action_github">Open GitHub</string>
 
     <string name="main_content_description_implementation_image">implementation image</string>
 
@@ -41,5 +42,6 @@
     <string name="loading_images_abstract"><b>I</b>llustrations and photographs may load and transition in three phases by staggering opacity, exposure, and saturation levels.</string>
 
     <string name="navigational_transition_abstract"><b>N</b>avigational transitions are movements between states in an app, such as from a high-level view to a detailed view.</string>
+    <string name="main_github_url">http://git.io/element</string>
 
 </resources>
