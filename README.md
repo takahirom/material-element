@@ -3,7 +3,6 @@
 
 An Android app which provides  example of implementing material design animation.
 
-
 ![screencapture](https://cloud.githubusercontent.com/assets/1386930/23578876/bb3b62d0-0123-11e7-906a-bc5714314f44.gif)
 
 
@@ -12,6 +11,8 @@ An Android app which provides  example of implementing material design animation
 
 
 ## Credit
+This app use codes in these project.
+
 [Plaid](https://github.com/nickbutcher/plaid)  
 [Android Open Source Project](https://source.android.com/source/licenses.html)
 
