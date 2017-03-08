@@ -3,8 +3,9 @@
 
 An Android app which provides  example of implementing material design animation.
 
-![screencapture](https://cloud.githubusercontent.com/assets/1386930/23578876/bb3b62d0-0123-11e7-906a-bc5714314f44.gif)
+[<img src="https://dply.me/qke65z/button/large" alt="Try it on your device via DeployGate">](https://dply.me/qke65z#install)
 
+![screencapture](https://cloud.githubusercontent.com/assets/1386930/23578876/bb3b62d0-0123-11e7-906a-bc5714314f44.gif)
 
 ## Designer
 [sorashin](http://github.com/sorashin)
