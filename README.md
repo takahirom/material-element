@@ -12,9 +12,22 @@ An Android app which provides  example of implementing material design animation
 
 ## Examples
 
-| Duration & Easing | Movement | Transforming material | Choreography |
+Choreography
+
+![choreography](https://cloud.githubusercontent.com/assets/1386930/23785409/f064504e-05aa-11e7-95a5-848da6a854aa.gif)
+
+|  | Animation Start | Animation End |
+|---|---|---|
+| Card Width | 0ms | 275ms |
+| Card Height | 30ms | 375ms |
+| SharedElement x position | 0ms | 275ms |
+| SharedElement y position | 30ms | 375ms |
+| Entering View Alpha | 75ms | 225ms |　
+
+| Duration & Easing | Movement | Transforming material |
 |---|---|---|---|
-| ![element_duration_easing](https://cloud.githubusercontent.com/assets/1386930/23667688/0ec91534-03a2-11e7-921a-b753e4ccac6f.gif) | ![element_movement](https://cloud.githubusercontent.com/assets/1386930/23667764/4f5a381c-03a2-11e7-85af-f894aef98eb3.gif) | ![element_transforming](https://cloud.githubusercontent.com/assets/1386930/23667832/831fb87a-03a2-11e7-86bb-a29a258da009.gif) | ![element_choreography](https://cloud.githubusercontent.com/assets/1386930/23667895/b94961bc-03a2-11e7-98fe-3d6431ba5db8.gif) |
+| ![element_duration_easing](https://cloud.githubusercontent.com/assets/1386930/23667688/0ec91534-03a2-11e7-921a-b753e4ccac6f.gif) | ![element_movement](https://cloud.githubusercontent.com/assets/1386930/23667764/4f5a381c-03a2-11e7-85af-f894aef98eb3.gif) | ![element_transforming](https://cloud.githubusercontent.com/assets/1386930/23667832/831fb87a-03a2-11e7-86bb-a29a258da009.gif) |
+
 
 And more..
 
