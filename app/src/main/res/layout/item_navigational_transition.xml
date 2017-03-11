@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.github.takahirom.materialelement.view.ForegroundConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<com.github.takahirom.materialelement.view.ForegroundRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:foreground="?selectableItemBackground"
-    android:background="@android:color/white"
-    android:clickable="true"
-    android:stateListAnimator="@animator/raise"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigational_transition_all_layout"
     android:layout_width="match_parent"
-    android:layout_height="72dp" >
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    tools:targetApi="lollipop">
+
+    <ImageView
+        android:id="@+id/navigational_transition_share_image"
+        app:srcCompat="@drawable/ic_navigational_transition_circle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@null" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/navigational_transition_share_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Sample"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0" />
-</com.github.takahirom.materialelement.view.ForegroundConstraintLayout>
+        android:layout_alignTop="@id/navigational_transition_share_image"
+        android:layout_toRightOf="@id/navigational_transition_share_image"
+        android:text="Parent to child"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+</com.github.takahirom.materialelement.view.ForegroundRelativeLayout>

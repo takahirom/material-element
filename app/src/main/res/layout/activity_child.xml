@@ -1,23 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.github.takahirom.materialelement.view.ForegroundRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:transitionName="@string/transition_name_navigational_transition"
     android:background="@android:color/white"
-    tools:context="com.github.takahirom.materialelement.pattern.transition.ChildActivity">
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Sample"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+    android:id="@+id/navigational_transition_all_layout"
+    android:layout_width="match_parent"
+    android:transitionName="@string/transition_name_navigational_transition"
+    android:layout_height="match_parent"
+    tools:targetApi="lollipop">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/navigational_transition_share_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/ic_navigational_transition_circle"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:contentDescription="@null"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/navigational_transition_share_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/navigational_transition_share_image"
+        android:layout_toRightOf="@id/navigational_transition_share_image"
+        android:text="Parent to child"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/navigational_transition_share_image"
+        android:background="@android:drawable/divider_horizontal_bright" />
+
+    <TextView
+        android:id="@+id/navigational_transition_share_no_share_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/divider"
+        android:layout_margin="@dimen/spacing_normal_8dp"
+        android:layout_marginLeft="@dimen/spacing_normal_8dp"
+        android:text="Exploring deeper levels, or screens, of an app is a hierarchical journey that starts at a parent screen. From there, a user can explore multiple possible sub-screens, which are children to the parent screen."
+        />
+</com.github.takahirom.materialelement.view.ForegroundRelativeLayout>
