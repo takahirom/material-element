@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.github.takahirom.materialelement.MaterialElementActivity;
 import com.github.takahirom.materialelement.animation.OnetimeViewTreeObserver;
 import com.github.takahirom.materialelement.animation.transition.TransitionUtils;
 import com.github.takahirom.materialelement.main.ImplementationItem;
@@ -24,7 +25,7 @@ import com.github.takahirom.materialelement.R;
 import com.github.takahirom.materialelement.util.AndroidVersionUtil;
 import com.github.takahirom.materialelement.util.ScreenUtil;
 
-public class MovementActivity extends AppCompatActivity {
+public class MovementActivity extends MaterialElementActivity {
 
 
     public final static String RESULT_EXTRA_ITEM_ID = "RESULT_EXTRA_ITEM_ID";

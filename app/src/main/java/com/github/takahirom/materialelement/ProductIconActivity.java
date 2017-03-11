@@ -10,7 +10,7 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.github.takahirom.materialelement.animation.OnetimeViewTreeObserver;
 import com.github.takahirom.materialelement.main.MainActivity;
 
-public class ProductIconActivity extends AppCompatActivity {
+public class ProductIconActivity extends MaterialElementActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

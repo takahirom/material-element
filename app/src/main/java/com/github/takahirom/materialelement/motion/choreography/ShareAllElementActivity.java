@@ -7,10 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.github.takahirom.materialelement.MaterialElementActivity;
 import com.github.takahirom.materialelement.R;
 import com.github.takahirom.materialelement.view.ResourceUtil;
 
-public class ShareAllElementActivity extends AppCompatActivity {
+public class ShareAllElementActivity extends MaterialElementActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

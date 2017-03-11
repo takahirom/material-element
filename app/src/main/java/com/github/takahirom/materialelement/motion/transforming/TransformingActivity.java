@@ -15,13 +15,14 @@ import android.transition.Transition;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.github.takahirom.materialelement.MaterialElementActivity;
 import com.github.takahirom.materialelement.animation.transition.TransitionUtils;
 import com.github.takahirom.materialelement.main.ImplementationItem;
 import com.github.takahirom.materialelement.R;
 import com.github.takahirom.materialelement.animation.transition.FabTransform;
 import com.github.takahirom.materialelement.util.AndroidVersionUtil;
 
-public class TransformingActivity extends AppCompatActivity {
+public class TransformingActivity extends MaterialElementActivity {
 
     public final static String RESULT_EXTRA_ITEM_ID = "RESULT_EXTRA_ITEM_ID";
     public static final String INTENT_EXTRA_ITEM = "item";

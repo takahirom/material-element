@@ -2,6 +2,7 @@ package com.github.takahirom.materialelement.main;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.net.Uri;
@@ -19,13 +20,16 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.github.takahirom.materialelement.MaterialElementActivity;
 import com.github.takahirom.materialelement.R;
 import com.github.takahirom.materialelement.animation.transition.TransitionUtils;
 import com.github.takahirom.materialelement.util.ScreenUtil;
 import com.github.takahirom.materialelement.motion.durationeasing.DurationAndEasingActivity;
 import com.github.takahirom.materialelement.util.ThemeUtil;
 
-public class MainActivity extends AppCompatActivity {
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
+public class MainActivity extends MaterialElementActivity {
 
     private RecyclerView recyclerView;
     private static final int REQUEST_ID_DETAIL = 2;
@@ -202,5 +206,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    // For Calligraphy
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 }

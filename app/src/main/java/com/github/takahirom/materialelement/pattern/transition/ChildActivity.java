@@ -7,9 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.github.takahirom.materialelement.MaterialElementActivity;
 import com.github.takahirom.materialelement.R;
 
-public class ChildActivity extends AppCompatActivity {
+public class ChildActivity extends MaterialElementActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

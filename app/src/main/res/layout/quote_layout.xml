@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <merge xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -20,7 +18,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/padding_large_24dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:textColor="?android:textColorSecondary"
+        android:gravity="center_horizontal"
+        tools:ignore="MissingPrefix"
+        fontPath="fonts/Roboto-LightItalic.ttf"
         android:textStyle="italic" />
 
     <ImageView

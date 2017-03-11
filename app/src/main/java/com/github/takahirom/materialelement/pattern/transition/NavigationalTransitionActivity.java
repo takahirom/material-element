@@ -21,6 +21,7 @@ import android.transition.Transition;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.github.takahirom.materialelement.MaterialElementActivity;
 import com.github.takahirom.materialelement.R;
 import com.github.takahirom.materialelement.animation.ObservableColorMatrix;
 import com.github.takahirom.materialelement.animation.OnetimeViewTreeObserver;
@@ -28,7 +29,7 @@ import com.github.takahirom.materialelement.animation.transition.TransitionUtils
 import com.github.takahirom.materialelement.main.ImplementationItem;
 import com.github.takahirom.materialelement.util.ThemeUtil;
 
-public class NavigationalTransitionActivity extends AppCompatActivity {
+public class NavigationalTransitionActivity extends MaterialElementActivity {
 
     public final static String RESULT_EXTRA_ITEM_ID = "RESULT_EXTRA_ITEM_ID";
     public static final String INTENT_EXTRA_ITEM = "item";

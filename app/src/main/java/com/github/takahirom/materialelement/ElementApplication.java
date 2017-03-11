@@ -11,7 +11,7 @@ public class ElementApplication extends Application {
         // Install font
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("fonts/Roboto-Regular.ttf")
-                .setFontAttrId(com.github.takahirom.materialelement.R.attr.fontPath)
+                .setFontAttrId(uk.co.chrisjenx.calligraphy.R.attr.fontPath)
                 .build());
     }
 }

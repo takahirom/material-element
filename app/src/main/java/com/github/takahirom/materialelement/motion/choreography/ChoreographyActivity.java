@@ -36,6 +36,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.takahirom.materialelement.MaterialElementActivity;
 import com.github.takahirom.materialelement.animation.OnetimeViewTreeObserver;
 import com.github.takahirom.materialelement.animation.transition.TransitionUtils;
 import com.github.takahirom.materialelement.main.AnimateRecyclerAdapter;
@@ -45,7 +46,7 @@ import com.github.takahirom.materialelement.util.AndroidVersionUtil;
 import com.github.takahirom.materialelement.util.ScreenUtil;
 import com.github.takahirom.materialelement.view.ResourceUtil;
 
-public class ChoreographyActivity extends AppCompatActivity {
+public class ChoreographyActivity extends MaterialElementActivity {
 
 
     public final static String RESULT_EXTRA_ITEM_ID = "RESULT_EXTRA_ITEM_ID";

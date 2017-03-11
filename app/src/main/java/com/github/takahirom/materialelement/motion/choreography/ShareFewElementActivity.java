@@ -9,10 +9,11 @@ import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
+import com.github.takahirom.materialelement.MaterialElementActivity;
 import com.github.takahirom.materialelement.R;
 import com.github.takahirom.materialelement.view.ResourceUtil;
 
-public class ShareFewElementActivity extends AppCompatActivity {
+public class ShareFewElementActivity extends MaterialElementActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
