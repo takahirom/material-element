@@ -5,8 +5,7 @@ An Android app which provides  example of implementing material design animation
 
 [<img src="https://dply.me/qke65z/button/large" alt="Try it on your device via DeployGate">](https://dply.me/qke65z#install)
 
-![screenrecord](https://cloud.githubusercontent.com/assets/1386930/23822745/5b3e9ca8-0696-11e7-96fe-c850e3d75d92.gif)
-
+![screenrecord](https://cloud.githubusercontent.com/assets/1386930/23823658/7c5f09c2-06aa-11e7-8898-ab58859e251d.gif)
 
 
 ## Designer
