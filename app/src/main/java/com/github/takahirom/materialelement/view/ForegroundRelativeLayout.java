@@ -89,6 +89,7 @@ public class ForegroundRelativeLayout extends RelativeLayout {
      *
      * @return A Drawable or null if no foreground was set.
      */
+    @Override
     public Drawable getForeground() {
         return foreground;
     }
@@ -101,6 +102,7 @@ public class ForegroundRelativeLayout extends RelativeLayout {
      *
      * @param drawable The Drawable to be drawn on top of the children.
      */
+    @Override
     public void setForeground(Drawable drawable) {
         if (foreground != drawable) {
             if (foreground != null) {

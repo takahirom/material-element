@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'net.ltgt.errorprone'
 
 android {
     compileSdkVersion 25
@@ -28,10 +29,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        disable 'InvalidPackage'
+        abortOnError false
+        textReport true
+        textOutput 'stdout'
+        lintConfig file("lint.xml")
+    }
+}
+
+project.afterEvaluate {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << '-Werror'
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -45,4 +59,5 @@ dependencies {
     compile 'com.airbnb.android:lottie:1.5.2'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     testCompile 'junit:junit:4.12'
+
 }
