@@ -25,8 +25,9 @@ Choreography
 | SharedElement y position | 30ms | 375ms |
 | Entering View Alpha | 75ms | 225ms |　
 
+
 | Duration & Easing | Movement | Transforming material |
-|---|---|---|---|
+|---|---|---|
 | ![element_duration_easing](https://cloud.githubusercontent.com/assets/1386930/23667688/0ec91534-03a2-11e7-921a-b753e4ccac6f.gif) | ![element_movement](https://cloud.githubusercontent.com/assets/1386930/23667764/4f5a381c-03a2-11e7-85af-f894aef98eb3.gif) | ![element_transforming](https://cloud.githubusercontent.com/assets/1386930/23667832/831fb87a-03a2-11e7-86bb-a29a258da009.gif) |
 
 
