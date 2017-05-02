@@ -20,7 +20,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:transitionOrdering="together"
-    android:interpolator="@android:interpolator/fast_out_linear_in"
     tools:targetApi="lollipop">
 
     <transitionSet>

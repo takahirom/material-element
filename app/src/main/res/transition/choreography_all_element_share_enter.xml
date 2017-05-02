@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:transitionOrdering="together"
-    android:interpolator="@android:interpolator/fast_out_slow_in"
     tools:targetApi="lollipop">
     <changeBounds />
     <!-- for activity transition -->
@@ -30,5 +29,6 @@
     <transition
         android:duration="375"
         class="com.github.takahirom.materialelement.animation.transition.LiftOff"
+        android:interpolator="@android:interpolator/fast_out_slow_in"
         app:initialElevation="@dimen/touch_raise" />
 </transitionSet>

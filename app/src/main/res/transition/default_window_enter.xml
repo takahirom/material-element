@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:transitionOrdering="together"
-    android:interpolator="@android:interpolator/linear_out_slow_in"
     tools:targetApi="lollipop">
 
     <transitionSet>
@@ -23,6 +22,7 @@
             android:duration="300"
             android:interpolator="@android:interpolator/linear_out_slow_in" />
         <fade
+            android:interpolator="@android:interpolator/linear_out_slow_in"
             android:startDelay="250"
             android:duration="200" />
     </transitionSet>

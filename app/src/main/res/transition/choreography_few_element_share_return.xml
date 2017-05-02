@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:interpolator="@android:interpolator/fast_out_slow_in">
-    <transition class="com.github.takahirom.materialelement.animation.transition.AsymmetricTransform">
+    >
+    <transition class="com.github.takahirom.materialelement.animation.transition.AsymmetricTransform"
+        android:interpolator="@android:interpolator/fast_out_slow_in"
+        >
         <targets>
             <target android:targetId="@id/few_element_share_card" />
             <target android:targetId="@id/few_element_share_image" />

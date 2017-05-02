@@ -2,12 +2,14 @@
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:duration="350"
-    android:interpolator="@android:interpolator/fast_out_slow_in"
     android:transitionOrdering="together">
 
-    <changeBounds />
+    <changeBounds
+        android:interpolator="@android:interpolator/fast_out_slow_in"
+        />
     <transition
         class="com.github.takahirom.materialelement.animation.transition.LiftOff"
+        android:interpolator="@android:interpolator/fast_out_slow_in"
         app:finalElevation="0dp"
         app:initialElevation="@dimen/touch_raise" />
 </transitionSet>
