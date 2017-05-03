@@ -1,11 +1,33 @@
+/*
+ * Copyright (C) 2017 takahirom
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.github.takahirom.materialelement.animation.transition;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
+import android.animation.TypeConverter;
+import android.animation.TypeEvaluator;
 import android.content.Context;
+import android.graphics.Path;
+import android.graphics.PointF;
 import android.graphics.Rect;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.transition.Transition;
 import android.transition.TransitionValues;
@@ -56,6 +78,7 @@ public class AsymmetricTransform extends Transition {
                 view.getRight(), view.getBottom()));
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public Animator createAnimator(ViewGroup sceneRoot, TransitionValues startValues,
                                    TransitionValues endValues) {
@@ -103,12 +126,25 @@ public class AsymmetricTransform extends Transition {
             view.setBottom(startBottom);
         }
         if (startLeft != endLeft) {
-            pvhWidth[pvhIndex++] = PropertyValuesHolder.ofInt("left", startLeft, endLeft);
+            Path topLeftPath = getPathMotion().getPath(startLeft, startTop, endLeft,
+                    endTop);
+            pvhWidth[pvhIndex++] = PropertyValuesHolder.ofObject("left", new TypeConverter<PointF, Integer>(PointF.class, Integer.class) {
+                @Override
+                public Integer convert(PointF value) {
+                    return (int) value.x;
+                }
+            }, topLeftPath);
         }
 
         if (startRight != endRight) {
-            pvhWidth[pvhIndex++] = PropertyValuesHolder.ofInt("right",
-                    startRight, endRight);
+            Path topRightPath = getPathMotion().getPath(startRight, startTop, endRight,
+                    endTop);
+            pvhWidth[pvhIndex] = PropertyValuesHolder.ofObject("right", new TypeConverter<PointF, Integer>(PointF.class, Integer.class) {
+                @Override
+                public Integer convert(PointF value) {
+                    return (int) value.x;
+                }
+            }, topRightPath);
         }
 
         ObjectAnimator widthAnim = ObjectAnimator.ofPropertyValuesHolder(view, pvhWidth);
@@ -127,11 +163,24 @@ public class AsymmetricTransform extends Transition {
         PropertyValuesHolder pvhHeight[] = new PropertyValuesHolder[numChanges];
 
         if (startTop != endTop) {
-            pvhHeight[pvhIndex++] = PropertyValuesHolder.ofInt("top", startTop, endTop);
+            Path topRightPath = getPathMotion().getPath(startRight, startTop, endRight,
+                    endTop);
+            pvhHeight[pvhIndex++] = PropertyValuesHolder.ofObject("top", new TypeConverter<PointF, Integer>(PointF.class, Integer.class) {
+                @Override
+                public Integer convert(PointF value) {
+                    return (int) value.y;
+                }
+            }, topRightPath);
         }
         if (startBottom != endBottom) {
-            pvhHeight[pvhIndex++] = PropertyValuesHolder.ofInt("bottom",
-                    startBottom, endBottom);
+            Path topRightPath = getPathMotion().getPath(startRight, startBottom, endRight,
+                    endBottom);
+            pvhHeight[pvhIndex] = PropertyValuesHolder.ofObject("bottom", new TypeConverter<PointF, Integer>(PointF.class, Integer.class) {
+                @Override
+                public Integer convert(PointF value) {
+                    return (int) value.y;
+                }
+            }, topRightPath);
         }
         ObjectAnimator heightAnim = ObjectAnimator.ofPropertyValuesHolder(view, pvhHeight);
 
@@ -185,7 +234,7 @@ public class AsymmetricTransform extends Transition {
             };
             addListener(transitionListener);
         }
-        return new AnimatorUtils.NoPauseAnimator(animatorSet);
+        return animatorSet;
     }
 
 }
